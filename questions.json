@@ -5641,5 +5641,1715 @@
     "correct_answer": "A",
     "source_file": "unit2_s5_s6_questions_array.json",
     "exam_domain": ""
+  },
+  {
+    "id": "1",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "An engagement to evaluate a transportation department is being conducted. Review procedures include an analysis of \"rush shipment\" requests. The engagement objective in this case is the",
+    "options": {
+      "A": "Transportation arrangements to be used for rush shipments.",
+      "B": "Handling of claims for undelivered rush shipment goods.",
+      "C": "Determination of the need for rush shipment services.",
+      "D": "Financial settlement of the rush shipment."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "2",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 5,
+    "subunit_title": "Organizational Culture Audit",
+    "context": "",
+    "question": "A positive organizational culture benefits an organization by",
+    "options": {
+      "A": "Directly improving financial audit results.",
+      "B": "Ensuring regulatory compliance.",
+      "C": "Reducing the need for management intervention in daily operations.",
+      "D": "Increasing productivity and attracting well-qualified employees."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "3",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "An internal auditor found that employee time cards in one department are not properly approved by the supervisor. Which of the following could result?",
+    "options": {
+      "A": "Employees might be paid for hours they did not work.",
+      "B": "Payroll checks might not be distributed to the appropriate payees.",
+      "C": "The wrong hourly rate could be used to calculate gross pay.",
+      "D": "Duplicate paychecks might be issued."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "4",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "What aspect of employee participation is emphasized in compliance programs to ensure ethical behavior?",
+    "options": {
+      "A": "Context-specific training.",
+      "B": "Frequent financial incentives.",
+      "C": "Anonymous reporting systems.",
+      "D": "Regular performance appraisals."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "5",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "A financial engagement relating to the production function includes a procedure to compare recorded costs with actual costs. The purpose of this engagement procedure is to",
+    "options": {
+      "A": "Measure the effectiveness of the standard cost system.",
+      "B": "Determine the accuracy of the system used to record actual costs.",
+      "C": "Assist management in its evaluation of effectiveness and efficiency.",
+      "D": "Assess the reasonableness of actual costs."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "6",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "internal audit engagements vary in their degree of objectivity. Of the following, which is likely to be the most objective?",
+    "options": {
+      "A": "Financial control engagement relating to payroll procedures.",
+      "B": "Operational engagement relating to the personnel function's hiring and firing procedures.",
+      "C": "Performance engagement relating to the marketing department.",
+      "D": "Compliance engagement relating to an organization's overtime policy."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "7",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "The chief executive officer wants to know whether the purchasing function is properly meeting its charge to \"conform to all laws at all costs.\" Which of the following types of engagements addresses this request?",
+    "options": {
+      "A": "A compliance engagement relating to the purchasing function.",
+      "B": "A financial engagement relating to the purchasing department.",
+      "C": "An operational engagement relating to the purchasing function.",
+      "D": "A full-scope engagement relating to the manufacturing operation."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "8",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "What is an inherent risk in the financial capital and payment cycle that internal auditors should consider?",
+    "options": {
+      "A": "Mis appropriation of inventory.",
+      "B": "Mis application of labor laws.",
+      "C": "Inaccurate recording of interest and dividends received.",
+      "D": "Failure to capitalize expenditures properly."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "9",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "An operational assurance engagement may include an assessment of which of the following?",
+    "options": {
+      "A": "Development and effectiveness of the budgeting process.",
+      "B": "Accuracy and effectiveness of management reports.",
+      "C": "Detection of regulatory violations.",
+      "D": "Accuracy of financial reporting."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "10",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "To reduce the risk of delegating substantial discretionary authority to individuals who have a propensity to engage in illegal activities, an organization can take which of the following steps to ensure that such individuals are detected?",
+    "options": {
+      "A": "Administer a lie detector test.",
+      "B": "Monitor employee text messages on their personal phones.",
+      "C": "Screening of applicants for employment at all levels for evidence of past wrongdoing, especially past criminal convictions within the company's industry.",
+      "D": "Performing background checks without permission on employees' or applicants' credit reports to ensure that they are financially sound and are unlikely to commit theft or fraud."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "11",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "A program-results operational audit engagement is different from a process operational audit engagement because",
+    "options": {
+      "A": "A process audit evaluates specific organizational departments, while a program-results audit evaluates cross-functional processes.",
+      "B": "A program-results audit is an audit of a funded activity that is not part of an organization's continuing operations.",
+      "C": "The focus of a process audit is efficiency while the focus of a program-results audit is effectiveness.",
+      "D": "Benefits cannot be quantified in a program-results audit: therefore, the focus of this type of audit is comparing actual costs to budgeted costs."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "12",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "An internal auditor is conducting an operational audit to determine the efficiency of the company's production facilities. As part of the final assessment report, the auditor plans to calculate the company's operating ratio. Which one of the following statements correctly describes the operating ratio?",
+    "options": {
+      "A": "It compares resource usage to the total resources available.",
+      "B": "It calculates total production output as a percentage of total production potential.",
+      "C": "It calculates total production output as a percentage of the total Input.",
+      "D": "It compares total operating expenses to net sales."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "13",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "The personnel department receives an edit listing of payroll changes processed at every payroll cycle. If it does not verify the changes processed, the result could be",
+    "options": {
+      "A": "Undetected errors in payroll rates for new employees.",
+      "B": "Employees not being asked if they want to contribute to a company pension plan.",
+      "C": "Inaccurate payroll deductions.",
+      "D": "Labor hours charged to the wrong account in the cost reporting system."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "14",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "An ombudsperson is most effective when the individual",
+    "options": {
+      "A": "Reports to the chief audit executive (CAE).",
+      "B": "Reports to no one, thus ensuring a whistleblower's secrecy.",
+      "C": "Reports directly to the chief compliance office or the board of directors.",
+      "D": "Reports to the organization's general counsel."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "15",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "Discipline of employees may be limited by which of the following?",
+    "options": {
+      "A": "Exceptions to the employee-at-will doctrine.",
+      "B": "Nepotism.",
+      "C": "The organization's code of conduct policies.",
+      "D": "Arequirementto report certain employee violations to a governmental entity."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "16",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "An internal audit plan should include a review of the organization's compliance program and its procedures, including reviews to determine all but which of the following?",
+    "options": {
+      "A": "The effectiveness of written materials.",
+      "B": "The receipt of communications by employees.",
+      "C": "The performance of full background checks on employees and new hires.",
+      "D": "The appropriate handling of detected violations."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "17",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 5,
+    "subunit_title": "Organizational Culture Audit",
+    "context": "",
+    "question": "High turnover and absence rates may be indicators in an organizational culture audit because they",
+    "options": {
+      "A": "Suggest a positive organizational environment.",
+      "B": "Imply strong employee engagement.",
+      "C": "May indicate an underlying cultural problem.",
+      "D": "Confirm adherence to compliance standards."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "18",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 5,
+    "subunit_title": "Organizational Culture Audit",
+    "context": "",
+    "question": "Which of the following is the best example of an organizational culture risk factor?",
+    "options": {
+      "A": "Unreasonable expectations.",
+      "B": "Generous bonus plans.",
+      "C": "An experienced management hierarchy that is favorable to employees.",
+      "D": "A positive tone at the top."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "19",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "Which of the following is an example of a program-results engagement in operational auditing?",
+    "options": {
+      "A": "Evaluating compliance with environmental regulations.",
+      "B": "Reviewing the financial reports for material misstatements.",
+      "C": "Measuring the outcomes of a newly implemented customer retention program.",
+      "D": "Assessing the acquisition of new equipment for an ongoing production line."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "20",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "A program-results engagement",
+    "options": {
+      "A": "Concerns the ability to measure the effectiveness of the program.",
+      "B": "All of the answers are correct.",
+      "C": "Attempts to measure the accomplishment and success of the program.",
+      "D": "Obtains information about the costs of the program."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "21",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "Which one of the following is an example of a program?",
+    "options": {
+      "A": "The steps In preparing budgets.",
+      "B": "A cost-cutting initiative.",
+      "C": "A factory safety practice.",
+      "D": "Product modification procedures."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "22",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 5,
+    "subunit_title": "Organizational Culture Audit",
+    "context": "",
+    "question": "Which one of the following statements is the best description of organizational culture?",
+    "options": {
+      "A": "The invisible belief systems, values, norms, and preferences of Individuals in an organization",
+      "B": "The customs and geographical background of employees working for an organization.",
+      "C": "The moral principles and code of conduct that guide employee behavior within an organization.",
+      "D": "The tangible manifestation of organizational values through the actions, behaviors, and decisions of individuals."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "23",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "Direct staff as a percentage of total staff is an example of which of the following types of efficiency measures?",
+    "options": {
+      "A": "Productivity index.",
+      "B": "Resource utilization rate.",
+      "C": "Operating ratio.",
+      "D": "Productivity ratio."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "24",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "Which one of the following statements correctly describes process analysis?",
+    "options": {
+      "A": "A method of radically innovating how business functions are performed and how an organization is organized.",
+      "B": "A method of analyzing the operational steps taken to complete work with the coil identifying what Is working well and what needs improvement.",
+      "C": "A continuous effort to incrementally improve processes to make them more effective and more efficient.",
+      "D": "A systematic assessment of all aspects of the value chain with the goal of minimizing costs without negatively affecting customer satisfaction."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "25",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "A city operates a job retraining program funded by a governmental agency that requires periodic reports on the program's effectiveness. The internal auditors randomly select participants in the job retraining program for the past year to determine how many have retained a job. This type of engagement relates to",
+    "options": {
+      "A": "Operational effectiveness.",
+      "B": "Economy and efficiency",
+      "C": "Compliance.",
+      "D": "Program results."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "26",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 5,
+    "subunit_title": "Organizational Culture Audit",
+    "context": "",
+    "question": "What is the function of internal auditors in an organization's culture audit?",
+    "options": {
+      "A": "Defining the organization's culture.",
+      "B": "Evaluating how culture aligns with organizational values.",
+      "C": "Enforcing cultural policies.",
+      "D": "Managing day-to-day cultural adjustments."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "27",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 4,
+    "subunit_title": "Management Reporting",
+    "context": "",
+    "question": "In order to determine the effectiveness of internal reporting, the chief executive officer of a company has asked the chief audit executive to perform an audit of the company's management reports. This type of assurance engagement would include",
+    "options": {
+      "A": "Assessing the accuracy and timeliness of the reported results in compliance with regulatory agencies.",
+      "B": "Determining whether the reports are useful to external stakeholders.",
+      "C": "Assessing the value of each report to the organization's governance process.",
+      "D": "Ensuring that the reports conform with U.S. GAAP."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "28",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "During an operational engagement, the internal auditors compare the current staffing of a department with established industry standards to",
+    "options": {
+      "A": "Identify bogus employees on the department's payroll.",
+      "B": "Determine whether the department has complied with all laws and regulations governing its personnel.",
+      "C": "Assess the current performance of the department and make appropriate recommendations for improvement.",
+      "D": "Evaluate the adequacy of the established internal controls for the department."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "29",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "Aprogram-results engagement is most likely to be performed on",
+    "options": {
+      "A": "Safety practices and scrap handling",
+      "B": "Distribution of services and materials.",
+      "C": "The purchasing and receiving departments.",
+      "D": "An activity not part of normal operations."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "30",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "A good compliance environment is most likely to exist if a company has which of the following?",
+    "options": {
+      "A": "A written code of conduct that clearly identifies prohibited activities, a global compliance program, and.an organization chart identifying who is responsible for compliance.",
+      "B": "An organization that creates an organizational chart identifying personnel who are responsible for attesting to the effectiveness of the organization's internal controls.",
+      "C": "An organization whose code of conduct is principles-based and does not specify prohibited activities.",
+      "D": "An international organization that creates a global compliance program that is consistent and reflects the laws and regulations of the global headquarters' country."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "31",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 5,
+    "subunit_title": "Organizational Culture Audit",
+    "context": "",
+    "question": "For over 2 years, the chief executive officer (CEO) of a company has stated that innovation is the company's primary goal and has encouraged all employees to share ideas on how the company can create new value. However, very few innovative ideas have been shared with management. One of the ways the internal auditing function could help determine whether there are barriers to innovation in the company is to conduct a(n)",
+    "options": {
+      "A": "Culture audit.",
+      "B": "Compliance audit.",
+      "C": "Operational audit.",
+      "D": "Performance audit."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "32",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "An internal auditor is conducting an audit of environmental protection and alarm devices. Which is the most significant objective of such an assignment? To determine whether",
+    "options": {
+      "A": "The device specification documents are complete.",
+      "B": "Acquisitions and disposals are properly authorized.",
+      "C": "The costs of the devices were properly recorded.",
+      "D": "The devices are installed and operating properly."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "33",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "A determination of cost savings is most likely to be an objective of a(n)",
+    "options": {
+      "A": "Compliance engagement.",
+      "B": "Financial engagement.",
+      "C": "Program-results engagement.",
+      "D": "Operational engagement."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "34",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "What is a key component of effective compliance programs?",
+    "options": {
+      "A": "Substantial penalties for minor infractions.",
+      "B": "A complex organizational hierarchy.",
+      "C": "A user-friendly business code of conduct.",
+      "D": "Financial incentives aligning with misconduct."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "35",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 4,
+    "subunit_title": "Management Reporting",
+    "context": "",
+    "question": "The primary purpose of a management report is to",
+    "options": {
+      "A": "Ensure external stakeholders are informed of the company's performance.",
+      "B": "Provide financial assurance in accordance with legal requirements.",
+      "C": "Evaluate the effectiveness of internal controls",
+      "D": "Facilitate strategic decision making and monitor departmental progress."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "36",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 5,
+    "subunit_title": "Organizational Culture Audit",
+    "context": "",
+    "question": "Which of the following statements in regard to the effect culture can have on an organization is correct?",
+    "options": {
+      "A": "A poor culture may cause financial harm because it can undermine internal controls.",
+      "B": "All of the answers are correct.",
+      "C": "A positive culture reduces risks and increases productivity because it improves morale and team spirit.",
+      "D": "Organizations with a culture based on strong values are more likely to reach their objectives."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "37",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "What is the role of a chief audit executive (CAE) with regard to an inspection by a regulator?",
+    "options": {
+      "A": "Meet with the regulator after the Inspection to dispute any negative findings about compliance.",
+      "B": "Meet with specific managers to protect proprietary information.",
+      "C": "Meet with the regulator before and after the inspection to provide relevant information or receive advice on necessary compliance.",
+      "D": "Tour the facility with the regulator to ensure that no problems are uncovered."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "38",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "An organization establishes compliance standards and procedures and develops a written business code of conduct to be followed by its employees. Which of the following is true concerning business codes of conduct and the compliance standards?",
+    "options": {
+      "A": "In order to prevent future legal liability, the code should consist of legal terms and definitions.",
+      "B": "Compliance standards should be straightforward and reasonably capable of reducing the prospect of criminal conduct.",
+      "C": "The compliance standards should be codified in the charter of the audit committee.",
+      "D": "Companies with international operations should institute various compliance programs. based on selective geographic locations, that reflect appropriate local regulations"
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "39",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 5,
+    "subunit_title": "Organizational Culture Audit",
+    "context": "",
+    "question": "What characteristic is essential for effectively auditing the organizational culture?",
+    "options": {
+      "A": "Objectivity in evaluating cultural data and practices.",
+      "B": "In-depth knowledge of regulatory compliance standards.",
+      "C": "Familiarity with the company's financial statements.",
+      "D": "Strong technical auditing skills in financial audits."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "40",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "In the context of compliance programs, what is a critical role for senior management?",
+    "options": {
+      "A": "Directly monitoring all employee activities.",
+      "B": "Designing detailed departmental plans for compliance efforts.",
+      "C": "Enforcing compliance through appropriate discipline.",
+      "D": "Providing technical training to compliance officers."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "41",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 4,
+    "subunit_title": "Management Reporting",
+    "context": "",
+    "question": "A company revised its internal reporting system 1 year ago. The Director of Financial Planning states that the revised reporting system is more accurate and will lead to better decisions. The previous internal reports used U.S. GAAP-based financial statements to monitor the results of operations. The type of assurance engagement that would test this assertion is a(n)",
+    "options": {
+      "A": "Management reporting audit.",
+      "B": "Operational audit.",
+      "C": "Performance audit.",
+      "D": "Quality audit."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "42",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "An operational audit's main objective is to",
+    "options": {
+      "A": "Ensure adherence to internal policies.",
+      "B": "Measure profitability.",
+      "C": "Assess the efficiency and effectiveness of operations.",
+      "D": "Assess risk management controls."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "43",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "The primary goal of an operational audit is to",
+    "options": {
+      "A": "Evaluate the efficiency and effectiveness of operations.",
+      "B": "Assess the financial correctness of transactions.",
+      "C": "Detect fraud.",
+      "D": "Ensure compliance with laws and regulations."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "44",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 5,
+    "subunit_title": "Organizational Culture Audit",
+    "context": "",
+    "question": "Which characteristic best reflects a strong organizational culture?",
+    "options": {
+      "A": "Incentives aligned with core values.",
+      "B": "Rigid adherence to procedures allowing no flexibility.",
+      "C": "Strong focus on-short-term profits.",
+      "D": "High employee turnover."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "45",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "Senior management has requested a compliance audit of the organization's employee benefits package. Which of the following is considered the primary engagement objective by both the chief audit executive and senior management?",
+    "options": {
+      "A": "The level of organizational contributions is adequate to meet the program's demands.",
+      "B": "Participation levels support continuation of individual programs",
+      "C": "Benefit payments, when appropriate, are accurate and timely.",
+      "D": "Individual programs are operating in accordance with contractual requirements and government regulations."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "46",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "Employees have the most confidence in a hotline monitored by which of the following?",
+    "options": {
+      "A": "An expert from the legal department, backed by a nonretaliation policy.",
+      "B": "An in-house representative, backed by a retaliation policy.",
+      "C": "An in-house representative, backed by a nonretaliation policy.",
+      "D": "An off-site attorney who can better protect attorney-client privilege."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "47",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "A sales department has been giving away expensive items in conjunction with new product sales to stimulate demand. The promotion seems successful, but management believes the cost may be too high and has asked for a review by the internal audit function. Which of the following procedures would be the most useful to determine the effectiveness of the promotion?",
+    "options": {
+      "A": "Comparing the unit cost of the products sold before and during the promotion period.",
+      "B": "Comparing product sales during the promotion period with sales during a similar non-promotion period.",
+      "C": "Performing an analysis of marginal revenue and marginal cost for the promotion period, compared with the period before the promotion",
+      "D": "Performing a review of the sales managers' bonus payments during the promotion period with bonuses during a similar non-promotion period."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "48",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "Which type of internal audit engagement most likely may be difficult because of the conflicting objectives of organizational units?",
+    "options": {
+      "A": "A program-results engagement.",
+      "B": "Process engagement.",
+      "C": "Compliance audit.",
+      "D": "Performance audit."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "49",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "Compliance programs most directly assist organizations by doing which of the following?",
+    "options": {
+      "A": "Determining director and officer liability.",
+      "B": "Assuring that quality processes are operating as planned.",
+      "C": "Planning for disaster recovery.",
+      "D": "Developing a plan for business continuity management."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "50",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "The chief executive officer wants to know whether the purchasing function is properly meeting its charge to \"purchase the right materials at the right time in the right quantities.\" Which of the following types of engagements addresses this request?",
+    "options": {
+      "A": "An operational engagement relating to the purchasing function.",
+      "B": "A financial engagement relating to the purchasing department",
+      "C": "A compliance engagement relating to the purchasing function.",
+      "D": "A full-scope engagement relating to the manufacturing operation"
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "51",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "Fact Pattern: A certified internal auditor is the CAE for a large city and is planning the engagement work schedule for the next year. The city has a number of different funds, some that are restricted in use by government grants and some that require compliance reports to the government. One of the programs for which the city has received a grant is job retraining and placement. The grant specifies certain conditions a participant in the program must meet to be eligible for the funding. The internal auditors must determine the applicable laws and regulations. Which of the following procedures is the most effective in learning about the applicable laws and regulations?",
+    "options": {
+      "A": "Determine that the granting agency followed the appropriate laws and regulations.",
+      "B": "Discuss the matter with the board and make inquiries as to the nature of the requirements and the board's objectives for the engagement.",
+      "C": "Follow the procedures for the prior year's engagements related to this specific grant.",
+      "D": "Review prior year working papers and inquire of officials as to changes."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "52",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "An internal auditor is performing an operational audit of the process of handling and disposing of scrap within the organization's factory. One of the metrics included in the internal auditor's final report is a productivity ratio. Which one of the following is the best description of how to calculate this ratio for this type of process?",
+    "options": {
+      "A": "The revenue from sales of scrap divided by the cost to process scrap.",
+      "B": "The cost of handling and disposing of scrap divided by the cost of production.",
+      "C": "The actual revenue from scrap as a percentage of the potential revenue.",
+      "D": "The volume of scrap generated as a percentage of production volume."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "53",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "Which of the following is an appropriate response to an offense detected by an organization's compliance program?",
+    "options": {
+      "A": "Self-reporting the violation to the government.",
+      "B": "Attributing responsibility to former employees.",
+      "C": "Documenting the offense in the responsible employee's record but not taking any further action.",
+      "D": "Reporting the offense to the CEO without a plan to follow up."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "54",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "The initial responsibility of the internal auditor who finds an error during a financial statement audit is to",
+    "options": {
+      "A": "Further test the internal controls over the process of preparing financial statements.",
+      "B": "Report the error to the board immediately because of the risk of misrepresenting financial results.",
+      "C": "Correct the error and submit the corrected financial statements to the accounting department.",
+      "D": "Assess the risk of misrepresentation because only errors having a material effect on the financial statements must be reported."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "55",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "The previous year's audited financial statements had higher debt-to-equity than was expected. In their work on this year's interim financial statements, internal auditors are most likely to emphasize",
+    "options": {
+      "A": "Whether payables were accrued properly at the end of the interim period.",
+      "B": "The timing of revenue recognition and the measurement of inventories.",
+      "C": "Whether changes in accounting principles have occurred that materially affect the financial statements;",
+      "D": "Whether accounting estimates are reasonable given past actual results."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "56",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "The internal auditor recognizes that certain limitations are inherent in any internal control system. Which one of the following scenarios is the result of an inherent limitation of internal control?",
+    "options": {
+      "A": "An employee, who is unable to read, is assigned custody of the firm's computer tape library and run manuals that are used during the third shift.",
+      "B": "A security guard allows one of the warehouse employees to remove company assets from the premises without proper authorization.",
+      "C": "The controller both makes and records cash deposits.",
+      "D": "The firm sells to customers on account, without credit approval."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "57",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "During a financial audit, an internal auditor primarily should focus on",
+    "options": {
+      "A": "Surveying employee job satisfaction.",
+      "B": "Enhancing marketing strategies.",
+      "C": "Assessing compliance with environmenta! laws.",
+      "D": "Evaluating internal control effectiveness over financial reporting."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "58",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "The CAE plans an engagement to verify that the job retraining program complies with applicable grant provisions. One of the provisions is that the city adopt a budget for the program and subsequently follow procedures to ensure that the budget is adhered to and that only allowable costs are charged to the program, In performing an engagement concerning compliance with this provision, the internal auditors should perform which of the following procedures?",
+    "options": {
+      "A": "Select a sample of expenditures to determine that the expenditures are (1) properly classified as to type, (2) appropriate to the program, and (3) designed to meet the program's objectives.",
+      "B": "Evaluate the accuracy and effectiveness of the city's management reporting processes.",
+      "C": "Determine that the budget was reviewed and approved by supervisory personnel within the granting agency.",
+      "D": "Use data analytics to model the applicants' credit score history."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "59",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 4,
+    "subunit_title": "Management Reporting",
+    "context": "",
+    "question": "Which of the following is representative of a management report?",
+    "options": {
+      "A": "Financial statements reported to the Securities and Exchange Commission.",
+      "B": "Data-based dashboard evaluations of an organization's performance.",
+      "C": "Advanced warning signals identifying key performance Indicators that are in danger of not meeting regulatory compliance targets.",
+      "D": "Graphical depictions of insights into what should change in order to achieve publicly monitored goals."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "60",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "A key objective of operational audits Is to",
+    "options": {
+      "A": "Assess the efficiency and effectiveness of an organization's operations",
+      "B": "Evaluate the effects of organizational culture on performance.",
+      "C": "Evaluate management reporting.",
+      "D": "Ensure financial statements comply with GAAP standards."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "61",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "Which type of engagement attempts to measure the accomplishment and relative success of the undertaking?",
+    "options": {
+      "A": "Program-results engagement.",
+      "B": "Process engagement.",
+      "C": "Compliance engagement",
+      "D": "Privacy engagement."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "62",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "Which of the following is not 2 measure used to assess the effectiveness of an operational audit?",
+    "options": {
+      "A": "Productivity ratio",
+      "B": "Operating ratio.",
+      "C": "Resource usage rate.",
+      "D": "Return on equity."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "63",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "The ability to measure effectiveness is a special concernina",
+    "options": {
+      "A": "Compliance audit.",
+      "B": "Functional engagement.",
+      "C": "Program-results engagement. dt",
+      "D": "Process engagement."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "64",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "The chief compliance officer of an organization should report to the",
+    "options": {
+      "A": "Chief executive officer",
+      "B": "Chief audit executive.",
+      "C": "Chief general counsel",
+      "D": "Chief operating officer."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "65",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "The primary difference between operational engagements and financial engagements is that, in the former, the internal auditors",
+    "options": {
+      "A": "Start with the financial statements of the client entity and work backward to the basic processes involved in producing them.",
+      "B": "Can use analytical skills and tools that are not necessary in financial engagements.",
+      "C": "Are seeking to help management use resources in the most effective manner possible.",
+      "D": "Are not concerned with whether the client entity is generating information in compliance with financial accounting standards."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "66",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 5,
+    "subunit_title": "Organizational Culture Audit",
+    "context": "",
+    "question": "Senior management is primarily responsible for",
+    "options": {
+      "A": "Designing and operating a control system that provides reasonable assurance that established objectives and goals will be achieved.",
+      "B": "Establishing a proper ethical culture.",
+      "C": "Implementing and monitoring controls designed by the board of directors.",
+      "D": "Ensuring that the internal and external auditors oversee the internal control system."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "67",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "The internal auditors randomly select participants in the job retraining program for the past year to verify that they had met all the eligibility requirements. This type of engagement Is concerned with",
+    "options": {
+      "A": "Compliance.",
+      "B": "Economy and efficiency.",
+      "C": "Operational effectiveness.",
+      "D": "Program results."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "68",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "Which fundamental objective is crucial for internal auditors to ensure during the engagement planning phase when evaluating financial statements?",
+    "options": {
+      "A": "Assessing key risks and controls.",
+      "B": "Ensuring the reduction of operational costs.",
+      "C": "Improving employee productivity.",
+      "D": "Maximizing shareholder value."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "69",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 5,
+    "subunit_title": "Organizational Culture Audit",
+    "context": "",
+    "question": "An organization's directors, management, and internal auditors all have important roles in creating a proper control environment. Senior management is primarily responsible for",
+    "options": {
+      "A": "Designing and operating a control system that provides reasonable assurance that established objectives and goals will be achieved.",
+      "B": "Ensuring that external and internal auditors adequately monitor the control environment.",
+      "C": "Implementing and monitoring controls designed by the board of directors.",
+      "D": "Establishing a proper ethical culture."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "70",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "Which of the following is an effective tool for uncovering unethical or illegal activity in an organization?",
+    "options": {
+      "A": "The screening of applicants.",
+      "B": "The background check.",
+      "C": "The ethics interview.",
+      "D": "The ethics questionnaire."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "71",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 4,
+    "subunit_title": "Management Reporting",
+    "context": "",
+    "question": "At the end of an organization's fiscal year, an accountant prepared a variance analysis of actual financial results compared to the budget at the beginning of the year, The report included an analysis of sales and expenses. This type of report is an example of 2",
+    "options": {
+      "A": "Management report.",
+      "B": "Financial report required by the U.S. Securities and Exchange Commission.",
+      "C": "Quality control report.",
+      "D": "Supporting schedule for the U.S. GAAP external financial statements."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "72",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "An operational engagement relating to the production function includes a procedure to compare actual costs with standard costs. The purpose of this engagement procedure is to",
+    "options": {
+      "A": "Assess the reasonableness of standard costs.",
+      "B": "Determine the accuracy of the system used to record actual costs.",
+      "C": "Measure the effectiveness of the standard cost system.",
+      "D": "Assist management in its evaluation of effectiveness and efficiency."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "73",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "A specific objective of an audit of a company's expenditure cycle is to determine whether all goods paid for have been charged to the correct account, This objective addresses which of the following primary objectives identified in the Standards?",
+    "options": {
+      "A": "Compliance with laws, regulations, procedures, and contracts.",
+      "B": "Reliability and integrity of financial and operational information.",
+      "C": "Safeguarding of assets.",
+      "D": "Effectiveness and efficiency. of operations and programs."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "74",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "An organization with an effective regulatory compliance program displays which of the following characteristics?",
+    "options": {
+      "A": "It punishes unethical or illegal activity based on seniority.",
+      "B": "It disciplines those who knew of the misconduct and did not report it. but not those who should have known but did not know.",
+      "C": "After an offense is detected, the organization takes the necessary steps, short of modifying its program, to prevent further similar offenses.",
+      "D": "It thoroughly documents employee discipline."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "75",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "An operational engagement communication that concerns the scrap disposal function in a manufacturer should address",
+    "options": {
+      "A": "Whether the scrap material Inventory is reported as a current asset.",
+      "B": "Whether the physical Inventory count of the scrap material equals the recorded amount.",
+      "C": "Whether the scrap material inventory is valued at the lower of cost or market.",
+      "D": "The efficiency and effectiveness of the scrap disposal function and include any observations requiring corrective action."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "76",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "A company has computerized sales and cash receipts journals. The computer programs for these journals have been properly debugged. The auditor discovered that the total of the accounts receivable subsidiary accounts differs materially from the accounts receivable control account. This discrepancy could indicate",
+    "options": {
+      "A": "Receivables not being properly aged.",
+      "B": "Lapping of receivables",
+      "C": "Credit memoranda being improperly recorded.",
+      "D": "Statements being intercepted prior to mailing."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "77",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "An airline is preparing for an inspection of its operations by a government agency. The agency emphasizes inspecting whether safety modifications required by the government have been made on aircraft. Penalties for violations are severe. The chief audit executive has been asked to audit the modification records and inspect the fleet of aircraft to determine whether required modifications have been made and properly documented. The auditors will be performing a(n)",
+    "options": {
+      "A": "Compliance audit.",
+      "B": "Financial audit.",
+      "C": "Due diligence audit.",
+      "D": "Operational audit."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "78",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 5,
+    "subunit_title": "Organizational Culture Audit",
+    "context": "",
+    "question": "Which one of the following is the best description of a culture audit?",
+    "options": {
+      "A": "An audit of the effectiveness of the organization's risk management and control processes.",
+      "B": "An assessment of the efficiency and effectiveness of an organization's governance structure.",
+      "C": "A test of an organization's consistency in meeting the requirements of the reporting procedures outlined in the code of conduct.",
+      "D": "A comprehensive evaluation of how an organization's behaviors and practices align with its stated values and beliefs."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "79",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "The role of internal auditors in compliance auditing is to",
+    "options": {
+      "A": "Verify adherence to policies, laws, and regulations.",
+      "B": "Perform financial statement reviews.",
+      "C": "Ensure the organization's internal controls are functioning.",
+      "D": "Manage the organization's compliance programs."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "80",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "To better monitor the performance of operating management, executive management has requested that the internal auditors examine interim financial statements that are prepared for internal use only. Although interim financial statements have been prepared for several years, this will be the first time that the internal auditors have been involved. The primary reason for this request was that executive management was surprised at the lower-than-anticipated net profit eventually reflected in last year's audited financial statements. Earnings had been artificially manipulated on quarterly financial statements. In their work on this year's interim financial statements, internal auditors are likely to focus on which of the following?",
+    "options": {
+      "A": "Whether there have been changes in accounting principles that materially affect the financial statements.",
+      "B": "Whether payables have been accrued properly at the end of the interim period.",
+      "C": "The timing of revenue recognition and the valuation of inventories.",
+      "D": "Whether accounting estimates are reasonable given past actual results."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "81",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "The primary focus of a compliance audit is to",
+    "options": {
+      "A": "Improve the productivity ratio of business processes.",
+      "B": "Review the organization's financial statement assertions.",
+      "C": "Ensure the organization is adhering to policies, laws, and contracts.",
+      "D": "Assess management's reporting mechanisms for decision making."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "82",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "The chief audit executive was reviewing recent reports that had recommended additional engagements because of risk exposures to the organization, Which of the following represents the greatest risk and should be the next assignment?",
+    "options": {
+      "A": "Three prenumbered receiving reports were missing.",
+      "B": "Payment had been made for routine inventory items without a purchase order or receiving report.",
+      "C": "There were several purchase orders issued without purchase requisitions.",
+      "D": "Several times cash receipts had been held over an extra day before depositing."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "83",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "The financial reporting process encompasses the steps to",
+    "options": {
+      "A": "Create information to help prepare the financial statements and related notes.",
+      "B": "Make sure the internal control matches up to the specifications from the AICPA.",
+      "C": "Detect all fraud that is occurring throughout the organization.",
+      "D": "Provide all staff with information regarding raises and promotions."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "84",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 4,
+    "subunit_title": "Management Reporting",
+    "context": "",
+    "question": "In the context of management reporting, a primary goal is to",
+    "options": {
+      "A": "Suppress unfavorable information.",
+      "B": "Enhance communication among stakeholders.",
+      "C": "Ensure all reports conform to GAAP.",
+      "D": "Increase regulatory compliance."
+    },
+    "correct_answer": "B",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "85",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 2,
+    "subunit_title": "Compliance Auditing",
+    "context": "",
+    "question": "Which of the following best describes the purpose of a compliance audit?",
+    "options": {
+      "A": "Verifying adherence to external and internal standards.",
+      "B": "Evaluating internal financial controls.",
+      "C": "Assessing market competitiveness.",
+      "D": "Monitoring employee satisfaction."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "86",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "In a financial audit, the relationship between internal auditors and external auditors is that internal auditors",
+    "options": {
+      "A": "Have the same responsibilities.",
+      "B": "Exclusively verify external audits.",
+      "C": "Assist by identifying weaknesses prior to external audits.",
+      "D": "Replicate external auditors' work."
+    },
+    "correct_answer": "C",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "87",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "Which of the following procedures is the most valuable in an engagement involving the efficiency and effectiveness of traffic department operations of a large manufacturer?",
+    "options": {
+      "A": "Review procedures for selection of routes and carriers.",
+      "B": "Verify that all bills of lading are prenumbered.",
+      "C": "Obtain written confirmation from the regulatory agencies that all carriers used are properly licensed and bonded.",
+      "D": "Trace selected items from the weekly demurrage (car detention charge) report to supporting documentation."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "88",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 1,
+    "subunit_title": "Operational Auditing",
+    "context": "",
+    "question": "Which type of engagement focuses on operations and how effectively and efficiently the organizational units affected will cooperate?",
+    "options": {
+      "A": "Process engagement.",
+      "B": "Privacy engagement.",
+      "C": "Program-results engagement.",
+      "D": "Compliance engagement."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "89",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "The primary difference between operational engagements and financial engagements is that, in the latter, the internal auditors",
+    "options": {
+      "A": "Can use analytical skills and tools that are not necessary in financial engagements.",
+      "B": "Are seeking to help management use resources in the most effective manner possible.",
+      "C": "Are not concerned with whether the client entity is generating information in compliance with financial accounting standards.",
+      "D": "Start with the financial statements of the client entity and work backward to the basic processes involved in producing them."
+    },
+    "correct_answer": "D",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "90",
+    "type": "single_choice",
+    "unit_number": 3,
+    "unit_title": "Assurance Services II",
+    "subunit_number": 3,
+    "subunit_title": "Financial Audits",
+    "context": "",
+    "question": "Which of the following best describes an internal auditor's initial responsibility regarding errors uncovered during a financial statement audit?",
+    "options": {
+      "A": "Assess the risk of misrepresentation.",
+      "B": "Report the material errors.",
+      "C": "Inform the audit committee.",
+      "D": "Discuss the situation with the engagement client."
+    },
+    "correct_answer": "A",
+    "source_file": "unit3_questions_array.json",
+    "exam_domain": ""
   }
 ]
