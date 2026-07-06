@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>IIA CIA Part 1 Training App</title>
+<!-- v10 external JSON source-of-truth + podcast section; no embedded question data -->
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#142033;--muted:#667085;--line:#d7deea;--brand:#1d4ed8;--brand2:#0f172a;--ok:#15803d;--bad:#b91c1c;--warn:#b45309;}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:12px 16px}
+h1{font-size:20px;margin:0 0 4px} h2{margin:0 0 10px} h3{margin:12px 0 8px} .small{font-size:13px;color:var(--muted);line-height:1.35} .wrap{max-width:1050px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 1px 4px rgba(16,24,40,.05)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center} .grow{flex:1 1 240px} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+label{display:block;font-weight:700;margin:8px 0 6px} input,select,button,textarea{font:inherit;font-size:16px} input,select,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:white}
+button{border:0;border-radius:12px;padding:12px 14px;font-weight:800;cursor:pointer;background:var(--brand);color:white} button.secondary{background:#e8edf7;color:#172036} button.ghost{background:#fff;color:#172036;border:1px solid var(--line)} button.danger{background:#fee2e2;color:#991b1b} button:disabled{opacity:.5;cursor:not-allowed}
+.hidden{display:none!important} .pill{display:inline-flex;gap:6px;align-items:center;background:#eef2ff;color:#1e3a8a;border-radius:999px;padding:6px 10px;font-size:13px;margin:3px} .pill.gray{background:#f1f5f9;color:#334155} .pill.ok{background:#dcfce7;color:#166534} .pill.warn{background:#fef3c7;color:#92400e}
+.countTable{width:100%;border-collapse:collapse} .countTable td,.countTable th{border-bottom:1px solid var(--line);padding:8px;text-align:left;font-size:14px} .countTable .indent{padding-left:26px;color:#334155}
+.selectorBox{border:1px solid var(--line);border-radius:14px;padding:10px;background:#fbfcff} .checkrow{display:flex;gap:8px;align-items:flex-start;margin:8px 0} .checkrow input{width:auto;margin-top:4px;transform:scale(1.15)} .checkrow label{margin:0;font-weight:650;line-height:1.3}
+.unitHead{background:#f8fafc;border-radius:10px;padding:8px;margin-top:8px} .subList{margin-left:10px;border-left:2px solid #e5e7eb;padding-left:10px}
+.timer{font-variant-numeric:tabular-nums;font-weight:900;font-size:18px} .timer.bad{color:var(--bad)} .qtitle{font-size:18px;font-weight:800;line-height:1.35;margin:10px 0} .context{white-space:pre-wrap;background:#f8fafc;border-left:4px solid #cbd5e1;padding:10px;border-radius:8px;color:#334155;margin:8px 0}
+.option{display:block;width:100%;text-align:left;margin:9px 0;padding:13px;border:1px solid var(--line);border-radius:12px;background:#fff;color:#111827;font-weight:650;line-height:1.35} .option.correct{border-color:#16a34a;background:#dcfce7} .option.wrong{border-color:#dc2626;background:#fee2e2}
+.feedback{font-weight:850;margin-top:12px} .good{color:var(--ok)} .badtext{color:var(--bad)} .warntext{color:var(--warn)} .progressbar{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden} .progressbar>div{height:100%;background:var(--brand);width:0%}
+hr{border:0;border-top:1px solid var(--line);margin:14px 0} .footer-note{font-size:12px;color:var(--muted);line-height:1.4}
+audio{width:100%;margin-top:10px}.podcastGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.podcastBtn{background:#fff;color:#172036;border:1px solid var(--line);text-align:left}.podcastBtn b{display:block}.podcastBtn span{display:block;font-size:12px;color:var(--muted);margin-top:3px}.podcastPlayer{background:#f8fafc;border-color:#dbeafe}
+@media(max-width:650px){.wrap{padding:12px} .card{border-radius:14px;padding:14px} button{width:100%;margin-top:6px} h1{font-size:18px} .qtitle{font-size:17px} .countTable td,.countTable th{font-size:13px;padding:7px 4px}}
+</style>
+</head>
+<body>
+<header><h1>IIA CIA Part 1 Training App</h1><div class="small">Internal Auditor trainer · official Part 1 blueprint · external editable questions.json · no embedded question data</div></header>
+<div class="wrap">
+<section id="login" class="card">
+<h2>Password</h2>
+<p class="small">This blocks casual use only. GitHub Pages is static, so it is not real security against technical users.</p>
+<label>Password</label><input id="passwordInput" type="password" autocomplete="current-password" placeholder="Enter password">
+<div class="row" style="margin-top:12px"><button onclick="login()">Unlock app</button></div><div id="loginMsg" class="feedback badtext"></div>
+</section>
+<section id="app" class="hidden">
+<div id="topControls" class="card"><div class="row"><div class="grow"><div id="bankStats" class="small"></div></div><button class="ghost" onclick="showPanel('setup')">Train</button><button class="ghost" onclick="showPanel('podcasts')">Podcasts</button><button class="ghost" onclick="showPanel('data')">Data / Add JSON</button><button class="ghost" onclick="logout()">Lock</button></div><div id="coverage" class="hidden"></div></div>
+<section id="setup" class="card panel"><h2>Start a session</h2>
+<div class="grid"><div><label>Mode</label><select id="mode" onchange="updateModeUI()"><option value="exam">Real exam simulation - CIA Part 1</option><option value="practice">Practice / study mode</option><option value="wrong">Repeat wrong questions only</option></select></div><div><label>Number of questions</label><input id="numQuestions" type="number" min="1" value="125" oninput="updateSelectionSummary(); renderBlueprint(); updateTimerSuggestion();"></div><div><label>Timer</label><select id="timerMode" onchange="updateModeUI()"><option value="exam">Official proportional timing: 1.2 min / question</option><option value="off">No timer</option><option value="custom">Custom minutes</option></select></div><div id="customTimerBox" class="hidden"><label>Custom minutes</label><input id="customMinutes" type="number" min="1" value="30"></div></div><div id="timerSuggestion" class="small" style="margin-top:10px"></div>
+<div id="practiceFilters"><hr><div class="row"><div class="grow"><h3>Choose units and subunits</h3><div class="small">Select one or more units/subunits. Counts show how many questions exist in the current bank.</div></div><button class="secondary" onclick="selectAllTopics(true)">Select all</button><button class="secondary" onclick="selectAllTopics(false)">Clear all</button></div><div id="multiSelectors" class="selectorBox"></div><div id="selectionSummary" class="small" style="margin-top:10px"></div></div>
+<div class="row" style="margin-top:14px"><button onclick="startSession()">Start</button><button class="secondary" onclick="quickExam()">Full 125-question exam</button></div><p class="footer-note">CIA Part 1 full official setting is 125 questions and 150 minutes. Shorter simulations keep the same official pace and blueprint proportions. The IIA uses a scaled score, so this app reports training percentage, not official pass/fail.</p>
+<div id="blueprintBox" class="selectorBox" style="margin-top:12px"></div>
+</section>
+<section id="quiz" class="card panel hidden"><div class="row"><div class="grow"><div class="small" id="sessionMeta"></div><div class="progressbar"><div id="bar"></div></div></div><div class="timer" id="timer"></div></div><div id="questionArea"></div><div class="row" style="margin-top:12px"><button id="nextBtn" class="secondary hidden" onclick="nextQuestion()">Next</button><button class="ghost" onclick="endSession()">End session</button></div></section>
+<section id="results" class="card panel hidden"><h2>Results</h2><div id="resultText"></div><div class="row" style="margin-top:12px"><button onclick="showPanel('setup')">New session</button><button class="secondary" onclick="startWrongOnly()">Repeat wrong only</button></div></section>
+<section id="podcasts" class="card panel hidden"><h2>Podcasts</h2>
+<p class="small">Upload your audio files to the same GitHub folder as <code>index.html</code> and <code>questions.json</code>. The app looks for files named <code>Podcast_Unit_01</code>, <code>Podcast_Unit_02</code>, etc. It also supports common extensions like <code>.mp3</code>, <code>.m4a</code>, <code>.wav</code>, and <code>.ogg</code>.</p>
+<div id="podcastButtons" class="podcastGrid"></div>
+<div id="podcastPlayerBox" class="card podcastPlayer hidden">
+  <h3 id="podcastTitle">Podcast</h3>
+  <audio id="podcastAudio" controls preload="none"></audio>
+  <div id="podcastMsg" class="small" style="margin-top:8px"></div>
+</div>
+</section>
+<section id="data" class="card panel hidden"><h2>Data / Add more questions</h2>
+<div class="pill warn"><b>Important:</b> GitHub Pages is static. The browser cannot directly save into GitHub's <code>questions.json</code>.</div>
+<p class="small" style="margin-top:10px"><b>Source of truth:</b> <code>questions.json</code>. This HTML contains no question database. The app always loads the current GitHub <code>questions.json</code> when it opens.</p>
+<div class="grid">
+  <div>
+    <label>Step 1 — Add new JSON files temporarily</label>
+    <input id="jsonFiles" type="file" multiple accept=".json,application/json">
+    <button style="margin-top:8px" onclick="importFiles()">Import / merge JSON into this session</button>
+    <p class="small">After importing, the new questions exist only in this browser session until you download the updated <code>questions.json</code> and replace the file on GitHub.</p>
+  </div>
+  <div>
+    <label>Step 2 — Save permanently</label>
+    <button onclick="exportBank()">Download UPDATED questions.json</button>
+    <button class="secondary" style="margin-top:8px" onclick="exportBankCsv()">Download merged CSV</button>
+    <p class="small">To make changes permanent: upload this downloaded file to GitHub root and overwrite the old <code>questions.json</code>. Keep the filename exactly <code>questions.json</code>.</p>
+  </div>
+</div>
+<div id="sessionSaveBox" class="card hidden" style="background:#fff7ed;border-color:#fed7aa">
+  <h3>Unsaved session changes</h3>
+  <p class="small">You imported extra questions. They are loaded now, but they are <b>not saved to GitHub</b>. Click <b>Download UPDATED questions.json</b>, then replace <code>questions.json</code> in your GitHub repository.</p>
+  <button onclick="exportBank()">Download UPDATED questions.json now</button>
+</div>
+<hr><h3>Editing strategy</h3>
+<p class="small">For corrections: edit <code>questions.json</code> directly on GitHub, commit, and refresh the app. For adding bulk questions: import JSON files here, download the updated <code>questions.json</code>, then replace the GitHub file. A pure static GitHub Pages app cannot write back to GitHub automatically without an unsafe token or a backend.</p></section>
+</section></div>
+<script>
+const PASSWORD = "IIA2026!";
+const QUESTION_FILE = "questions.json";
+let BASE_BANK = [];
+let SESSION_IMPORT_BANK = [];
+let externalQuestionLoadAttempted = false;
+let externalQuestionLoadError = "";
+
+async function loadExternalQuestionFile(){
+  if(externalQuestionLoadAttempted) return;
+  externalQuestionLoadAttempted = true;
+  try{
+    const res = await fetch(QUESTION_FILE, {cache:"no-store"});
+    if(!res.ok) throw new Error("Could not load " + QUESTION_FILE + " (HTTP " + res.status + ")");
+    const data = await res.json();
+    const arr = Array.isArray(data) ? data : (data.questions || []);
+    BASE_BANK = arr;
+    externalQuestionLoadError = "";
+  }catch(e){
+    externalQuestionLoadError = e.message || String(e);
+    BASE_BANK = [];
+  }
+}
+
+const OFFICIAL_BLUEPRINT = [
+  {key:'foundations', label:'Foundations of Internal Auditing', weight:35, target:44},
+  {key:'ethics', label:'Ethics and Professionalism', weight:20, target:25},
+  {key:'grc', label:'Governance, Risk Management, and Control', weight:30, target:37},
+  {key:'fraud', label:'Fraud Risks', weight:15, target:19}
+];
+let lastExamWarnings = [];
+
+function domainOf(q){
+  const explicit = String(q.exam_domain || q.domain || '').toLowerCase();
+  const text = [q.unit_title, q.subunit_title, q.unit, q.subunit].join(' ').toLowerCase();
+  if(explicit.includes('ethic')) return 'ethics';
+  if(explicit.includes('fraud')) return 'fraud';
+  if(explicit.includes('governance') || explicit.includes('risk management') || explicit.includes('control')) return 'grc';
+  if(explicit.includes('foundation') || explicit.includes('assurance')) return 'foundations';
+  // Current Gleim-style Study Unit 1 and 2 files are treated as Part 1 internal-audit fundamentals/foundations until a future JSON specifies a more precise exam_domain.
+  if(Number(q.unit_number)===1 || Number(q.unit_number)===2) return 'foundations';
+  if(text.includes('ethic')) return 'ethics';
+  if(text.includes('fraud')) return 'fraud';
+  if(text.includes('governance') || text.includes('risk management')) return 'grc';
+  if(text.includes('foundation') || text.includes('assurance')) return 'foundations';
+  return 'unmapped';
+}
+function domainLabel(key){ const d=OFFICIAL_BLUEPRINT.find(x=>x.key===key); return d?d.label:'Unmapped / not assigned'; }
+function examTargets(total){
+  total = Math.max(1, Number(total||125));
+  const raw = OFFICIAL_BLUEPRINT.map(d=>({ ...d, exact: total*d.weight/100 }));
+  let targets = raw.map(d=>({ ...d, targetN: Math.floor(d.exact) }));
+  let used = targets.reduce((s,d)=>s+d.targetN,0);
+  targets.sort((a,b)=>(b.exact-b.targetN)-(a.exact-a.targetN));
+  for(let i=0; used<total; i=(i+1)%targets.length){ targets[i].targetN++; used++; }
+  return OFFICIAL_BLUEPRINT.map(d=>targets.find(x=>x.key===d.key));
+}
+function officialSecondsFor(n){ return Math.max(1, Math.round(Number(n||1) * 72)); }
+function formatDuration(sec){ sec=Math.max(0, Math.round(sec)); const m=Math.floor(sec/60), s=sec%60; return `${m}:${String(s).padStart(2,'0')}`; }
+
+let BANK = [];
+let current = [];
+let idx = 0;
+let score = 0;
+let wrong = [];
+let answered = false;
+let timerInt = null;
+let remaining = 0;
+
+function el(id){ return document.getElementById(id); }
+function escapeHtml(s){ return String(s??'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+function shuffle(a){ a=[...a]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a; }
+function topicKey(q){ return `${q.unit_number}::${q.subunit_number}`; }
+function normalizeQuestion(q, source='import'){
+  const u = Number(q.unit_number ?? q.study_unit ?? 0);
+  const su = Number(q.subunit_number ?? q.subunit ?? 0);
+  const opts = q.options || {};
+  const cleanOpts = {};
+  Object.keys(opts).forEach(k=>{ if(opts[k]!==undefined && opts[k]!==null) cleanOpts[String(k).trim().toUpperCase()] = String(opts[k]).trim(); });
+  let ans = String(q.correct_answer ?? '').trim().toUpperCase().replace('.','');
+  if(!cleanOpts[ans] && ans.length>1){ const m = ans.match(/[A-D]/g); if(m) ans = m[m.length-1]; }
+  return {
+    id: q.id ? String(q.id) : `${u}-${su}-${Date.now()}-${Math.random().toString(36).slice(2)}`,
+    type: q.type || 'single_choice', unit_number:u, unit_title:String(q.unit_title ?? q.study_unit_title ?? '').trim(), subunit_number:su, subunit_title:String(q.subunit_title ?? '').trim(), context:String(q.context ?? '').trim(), question:String(q.question ?? '').trim(), options:cleanOpts, correct_answer:ans, source_file:q.source_file || source, exam_domain:String(q.exam_domain || q.domain || '').trim()
+  };
+}
+function valid(q){ return q.question && q.options && Object.keys(q.options).length >= 2 && q.correct_answer && q.options[q.correct_answer]; }
+async function loadBank(){
+  await loadExternalQuestionFile();
+  const merged=[...BASE_BANK, ...SESSION_IMPORT_BANK].map(q=>normalizeQuestion(q)).filter(valid);
+  const seen = new Set(); BANK=[];
+  merged.forEach(q=>{ const key=[q.unit_number,q.subunit_number,q.question,JSON.stringify(q.options)].join('|'); if(!seen.has(key)){seen.add(key); BANK.push(q);} });
+  renderStats(); renderSelectors(); renderBlueprint(); renderPodcastButtons(); updateModeUI();
+}
+function getCounts(){
+  const units = {};
+  BANK.forEach(q=>{
+    const u=q.unit_number, su=q.subunit_number;
+    if(!units[u]) units[u]={title:q.unit_title || `Unit ${u}`, count:0, subunits:{}};
+    units[u].count++;
+    if(!units[u].subunits[su]) units[u].subunits[su]={title:q.subunit_title || `Subunit ${su}`, count:0};
+    units[u].subunits[su].count++;
+  });
+  return units;
+}
+function renderStats(){
+  const units=getCounts();
+  const total=BANK.length;
+  const subCount = Object.values(units).reduce((n,u)=>n+Object.keys(u.subunits).length,0);
+  el('bankStats').innerHTML = `<b>${total}</b> questions loaded from <code>questions.json</code> · <b>${Object.keys(units).length}</b> units · <b>${subCount}</b> subunits`;
+  if(SESSION_IMPORT_BANK.length){ el('bankStats').innerHTML += ` <span class="pill warn">${SESSION_IMPORT_BANK.length} session-only imported questions</span>`; }
+  if(externalQuestionLoadError){ el('bankStats').innerHTML += ` <span class="pill warn">questions.json not loaded: ${escapeHtml(externalQuestionLoadError)}</span>`; }
+  if(el('coverage')) el('coverage').innerHTML = '';
+}
+
+function domainCounts(){
+  const counts = {foundations:0, ethics:0, grc:0, fraud:0, unmapped:0};
+  BANK.forEach(q=>{ const d=domainOf(q); counts[d]=(counts[d]||0)+1; });
+  return counts;
+}
+function renderBlueprint(){
+  if(!el('blueprintBox')) return;
+  const counts=domainCounts();
+  const totalReq=Math.max(1, Number(el('numQuestions')?.value || 125));
+  const targets=examTargets(totalReq);
+  let rows='<table class="countTable"><thead><tr><th>Official CIA Part 1 domain</th><th>Weight</th><th>Target for this simulation</th><th>Available now</th></tr></thead><tbody>';
+  targets.forEach(d=>{
+    const ok = counts[d.key] >= d.targetN;
+    rows += `<tr><td>${escapeHtml(d.label)}</td><td>${d.weight}%</td><td>${d.targetN}</td><td><span class="pill ${ok?'ok':'warn'}">(${counts[d.key]||0})</span></td></tr>`;
+  });
+  if(counts.unmapped) rows += `<tr><td>Unmapped / not assigned</td><td>-</td><td>-</td><td><span class="pill warn">(${counts.unmapped})</span></td></tr>`;
+  rows+='</tbody></table>';
+  const enough = targets.every(d=>(counts[d.key]||0)>=d.targetN);
+  el('blueprintBox').innerHTML = `<h3>Official CIA Part 1 blueprint</h3><p class="small">Real exam mode uses the official Part 1 domain proportions for the number of questions you choose. Full exam = 125 questions / 150 minutes. Short simulations use proportional timing and proportional domain targets.</p>${rows}<div>${enough?'<span class="pill ok">Enough questions for this strict split</span>':'<span class="pill warn">Bank incomplete for this strict split; missing domains are filled from available questions</span>'}</div>`;
+}
+function renderSelectors(){
+  const units=getCounts();
+  let html='';
+  Object.keys(units).sort((a,b)=>a-b).forEach(u=>{
+    html += `<div class="unitHead"><div class="checkrow"><input type="checkbox" class="unitCheck" id="unit_${u}" data-unit="${u}" onchange="toggleUnit(${u}, this.checked)"><label for="unit_${u}">Unit ${u}: ${escapeHtml(units[u].title)} <span class="pill gray">(${units[u].count})</span></label></div></div>`;
+    html += `<div class="subList">`;
+    Object.keys(units[u].subunits).sort((a,b)=>a-b).forEach(su=>{
+      const key=`${u}::${su}`;
+      html += `<div class="checkrow"><input type="checkbox" class="subCheck" id="sub_${u}_${su}" data-unit="${u}" data-subunit="${su}" data-key="${key}" onchange="syncUnitCheck(${u})"><label for="sub_${u}_${su}">Subunit ${su}: ${escapeHtml(units[u].subunits[su].title)} <span class="pill gray">(${units[u].subunits[su].count})</span></label></div>`;
+    });
+    html += `</div>`;
+  });
+  el('multiSelectors').innerHTML = html;
+  selectAllTopics(true);
+}
+function toggleUnit(u, checked){ document.querySelectorAll(`.subCheck[data-unit="${u}"]`).forEach(cb=>cb.checked=checked); updateSelectionSummary(); }
+function syncUnitCheck(u){ const subs=[...document.querySelectorAll(`.subCheck[data-unit="${u}"]`)]; const unit=el(`unit_${u}`); unit.checked=subs.every(x=>x.checked); unit.indeterminate=subs.some(x=>x.checked) && !unit.checked; updateSelectionSummary(); }
+function selectAllTopics(v){ document.querySelectorAll('.unitCheck,.subCheck').forEach(cb=>{cb.checked=v; cb.indeterminate=false;}); updateSelectionSummary(); }
+function selectedKeys(){ return [...document.querySelectorAll('.subCheck:checked')].map(cb=>cb.dataset.key); }
+function selectedPool(){ const keys=selectedKeys(); if(!keys.length) return []; const set=new Set(keys); return BANK.filter(q=>set.has(topicKey(q))); }
+function updateSelectionSummary(){
+  if(!el('selectionSummary')) return;
+  const pool=selectedPool();
+  const want=Number(el('numQuestions')?.value||0);
+  const keys=selectedKeys();
+  const max=pool.length;
+  const recommended = want ? formatDuration(officialSecondsFor(want)) : '0:00';
+  el('selectionSummary').innerHTML = `<span class="pill ${keys.length?'ok':'warn'}">Selected subunits: ${keys.length}</span><span class="pill ${max?'ok':'warn'}">Available questions: ${max}</span><span class="pill gray">Requested: ${want||0}</span><span class="pill gray">Suggested timer: ${recommended}</span>${want>max && max?'<span class="pill warn">Will use only '+max+'</span>':''}${!max?'<span class="pill warn">Select at least one subunit</span>':''}`;
+  updateTimerSuggestion();
+}
+function updateTimerSuggestion(){
+  if(!el('timerSuggestion')) return;
+  const mode=el('mode')?.value || 'practice';
+  const want=Math.max(1, Number(el('numQuestions')?.value||1));
+  const suggested=formatDuration(officialSecondsFor(want));
+  if(mode==='exam') el('timerSuggestion').innerHTML = `Exam simulation: ${want} questions · official proportional timer <b>${suggested}</b> · blueprint split adjusted to ${want} questions.`;
+  else if(mode==='practice') el('timerSuggestion').innerHTML = `Study mode suggestion: for ${want} questions, use about <b>${suggested}</b> if you want real-exam pace.`;
+  else el('timerSuggestion').innerHTML = `Wrong-only mode suggestion: timer is based on the number of questions selected, about <b>${suggested}</b>.`;
+}
+const PODCAST_EXTENSIONS = ['.mp3','.m4a','.wav','.ogg',''];
+let podcastTryState = null;
+function podcastBaseName(unit){ return 'Podcast_Unit_' + String(unit).padStart(2,'0'); }
+function podcastCandidates(unit){ const base=podcastBaseName(unit); return PODCAST_EXTENSIONS.map(ext=>base+ext); }
+function podcastUnitTitle(unit){
+  const units=getCounts();
+  const u=units[unit];
+  return u && u.title ? u.title : `Unit ${String(unit).padStart(2,'0')}`;
+}
+function renderPodcastButtons(){
+  const box=el('podcastButtons'); if(!box) return;
+  let html='';
+  for(let i=1;i<=10;i++){
+    const label=podcastUnitTitle(i);
+    const base=podcastBaseName(i);
+    html += `<button class="podcastBtn" onclick="playPodcast(${i})"><b>Unit ${String(i).padStart(2,'0')}</b><span>${escapeHtml(label)}</span><span>File: ${base}</span></button>`;
+  }
+  box.innerHTML=html;
+}
+function playPodcast(unit){
+  const player=el('podcastPlayerBox'), audio=el('podcastAudio'), msg=el('podcastMsg'), title=el('podcastTitle');
+  if(!player || !audio) return;
+  player.classList.remove('hidden');
+  title.textContent = `Unit ${String(unit).padStart(2,'0')} podcast`;
+  const candidates=podcastCandidates(unit);
+  podcastTryState={unit,candidates,index:0};
+  msg.innerHTML = `Loading <code>${escapeHtml(candidates[0])}</code> ...`;
+  audio.onerror = tryNextPodcastCandidate;
+  audio.oncanplay = () => { msg.innerHTML = `Loaded: <code>${escapeHtml(audio.getAttribute('src')||'')}</code>`; };
+  audio.src = candidates[0];
+  audio.load();
+  audio.play().catch(()=>{});
+}
+function tryNextPodcastCandidate(){
+  const audio=el('podcastAudio'), msg=el('podcastMsg');
+  if(!podcastTryState || !audio) return;
+  podcastTryState.index += 1;
+  if(podcastTryState.index >= podcastTryState.candidates.length){
+    const base=podcastBaseName(podcastTryState.unit);
+    msg.innerHTML = `<span class="warntext"><b>Podcast not found yet.</b></span> Upload one of these files to GitHub root: <code>${base}.mp3</code>, <code>${base}.m4a</code>, <code>${base}.wav</code>, <code>${base}.ogg</code>, or exactly <code>${base}</code>.`;
+    audio.removeAttribute('src'); audio.load();
+    return;
+  }
+  const next=podcastTryState.candidates[podcastTryState.index];
+  msg.innerHTML = `Trying <code>${escapeHtml(next)}</code> ...`;
+  audio.src = next; audio.load(); audio.play().catch(()=>{});
+}
+function showPanel(id){ document.querySelectorAll('.panel').forEach(p=>p.classList.add('hidden')); el(id).classList.remove('hidden'); if(el('topControls')) el('topControls').classList.toggle('hidden', id==='quiz'); if(id==='setup'){renderSelectors(); renderBlueprint(); updateModeUI(); updateTimerSuggestion();} if(id==='podcasts'){renderPodcastButtons();} }
+function login(){ if(el('passwordInput').value===PASSWORD){ sessionStorage.setItem('IIA_UNLOCK','1'); el('login').classList.add('hidden'); el('app').classList.remove('hidden'); loadBank(); } else el('loginMsg').textContent='Wrong password.'; }
+function logout(){ sessionStorage.removeItem('IIA_UNLOCK'); location.reload(); }
+function updateModeUI(){
+  const mode=el('mode').value;
+  el('practiceFilters').classList.toggle('hidden', mode==='exam' || mode==='wrong');
+  el('customTimerBox').classList.toggle('hidden', el('timerMode').value!=='custom');
+  el('numQuestions').disabled=false;
+  if(mode==='exam' && (!el('numQuestions').value || Number(el('numQuestions').value)<1)) el('numQuestions').value=125;
+  renderBlueprint();
+  updateSelectionSummary();
+  updateTimerSuggestion();
+}
+function quickExam(){ el('mode').value='exam'; el('numQuestions').value=125; updateModeUI(); startSession(); }
+function startWrongOnly(){ el('mode').value='wrong'; updateModeUI(); startSession(); }
+
+function buildOfficialExam(totalQuestions){
+  lastExamWarnings = [];
+  const total = Math.max(1, Number(totalQuestions||125));
+  const chosen=[]; const used=new Set();
+  const targets=examTargets(total);
+  targets.forEach(d=>{
+    const pool=shuffle(BANK.filter(q=>domainOf(q)===d.key && !used.has(q.id)));
+    const take=Math.min(d.targetN, pool.length);
+    pool.slice(0,take).forEach(q=>{chosen.push(q); used.add(q.id);});
+    if(take<d.targetN) lastExamWarnings.push(`${d.label}: target ${d.targetN}, available ${take}.`);
+  });
+  if(chosen.length<total){
+    const filler=shuffle(BANK.filter(q=>!used.has(q.id)));
+    filler.slice(0,total-chosen.length).forEach(q=>{chosen.push(q); used.add(q.id);});
+    if(chosen.length<total) lastExamWarnings.push(`Only ${chosen.length} total questions available, so this simulation is shorter than requested.`);
+    else lastExamWarnings.push('Missing official-domain questions were filled from other available questions.');
+  }
+  return shuffle(chosen).slice(0,total);
+}
+function startSession(){
+  const mode=el('mode').value;
+  let pool=[];
+  let n = Math.max(1, Number(el('numQuestions').value||25));
+  if(mode==='wrong'){ pool=JSON.parse(localStorage.getItem('IIA_PART1_WRONG')||'[]'); pool=pool.map(id=>BANK.find(q=>q.id===id)).filter(Boolean); if(!pool.length){alert('No wrong questions saved yet.'); return;} }
+  else if(mode==='practice'){ pool=selectedPool(); if(!pool.length){alert('Select at least one unit/subunit.'); return;} }
+  else { pool=buildOfficialExam(n); }
+  n = Math.min(n, pool.length);
+  current = mode==='exam' ? pool.slice(0,n) : shuffle(pool).slice(0,n); idx=0; score=0; wrong=[]; answered=false;
+  setupTimer(mode, current.length); showPanel('quiz'); renderQuestion();
+}
+function setupTimer(mode, questionCount){
+  clearInterval(timerInt); timerInt=null; remaining=0; el('timer').textContent='';
+  const tm=el('timerMode').value;
+  if(tm==='off') return;
+  if(tm==='custom'){
+    remaining=Math.max(1, Number(el('customMinutes').value||30))*60;
+  } else {
+    remaining=officialSecondsFor(questionCount || current.length || Number(el('numQuestions').value||1));
+  }
+  tick(); timerInt=setInterval(()=>{remaining--; tick(); if(remaining<=0){clearInterval(timerInt); endSession(true);}},1000);
+}
+function tick(){ const m=Math.floor(remaining/60), s=remaining%60; el('timer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`; el('timer').classList.toggle('bad', remaining<300); }
+function renderQuestion(){
+  answered=false; el('nextBtn').classList.add('hidden');
+  const q=current[idx]; const pct=(idx/current.length)*100; el('bar').style.width=pct+'%';
+  el('sessionMeta').innerHTML=`Question ${idx+1} of ${current.length} · Score ${score} · ${domainLabel(domainOf(q))} · Unit ${q.unit_number} / Subunit ${q.subunit_number}`;
+  let options=Object.keys(q.options).sort().map(k=>`<button class="option" id="opt_${k}" onclick="answer('${k}')"><b>${k}.</b> ${escapeHtml(q.options[k])}</button>`).join('');
+  el('questionArea').innerHTML=`<div><span class="pill ok">${escapeHtml(domainLabel(domainOf(q)))}</span><span class="pill gray">Unit ${q.unit_number}: ${escapeHtml(q.unit_title)}</span><span class="pill gray">Subunit ${q.subunit_number}: ${escapeHtml(q.subunit_title)}</span></div>${q.context?`<div class="context">${escapeHtml(q.context)}</div>`:''}<div class="qtitle">${escapeHtml(q.question)}</div><div>${options}</div><div id="feedback" class="feedback"></div>`;
+}
+function answer(k){
+  if(answered) return; answered=true;
+  const q=current[idx]; const correct=q.correct_answer;
+  document.querySelectorAll('.option').forEach(btn=>btn.disabled=true);
+  const cbtn=el('opt_'+correct); if(cbtn) cbtn.classList.add('correct');
+  if(k===correct){ score++; el('feedback').innerHTML='<span class="good">Correct.</span>'; }
+  else { const wbtn=el('opt_'+k); if(wbtn) wbtn.classList.add('wrong'); wrong.push(q); el('feedback').innerHTML=`<span class="badtext">Wrong.</span> Correct answer: <b>${correct}</b>.`; }
+  el('nextBtn').classList.remove('hidden');
+  el('bar').style.width=((idx+1)/current.length*100)+'%';
+}
+function nextQuestion(){ if(idx<current.length-1){idx++; renderQuestion();} else endSession(false); }
+function endSession(timeout=false){
+  clearInterval(timerInt); timerInt=null;
+  const prev=new Set(JSON.parse(localStorage.getItem('IIA_PART1_WRONG')||'[]'));
+  wrong.forEach(q=>prev.add(q.id));
+  if(wrong.length===0 && current.length>0){ current.forEach(q=>prev.delete(q.id)); }
+  localStorage.setItem('IIA_PART1_WRONG', JSON.stringify([...prev]));
+  const pct=current.length?Math.round(score/current.length*100):0;
+  const byTopic={}; current.forEach(q=>{ const key=`U${q.unit_number} S${q.subunit_number}`; if(!byTopic[key]) byTopic[key]={n:0,w:0,title:q.subunit_title}; byTopic[key].n++; }); wrong.forEach(q=>{ const key=`U${q.unit_number} S${q.subunit_number}`; if(byTopic[key]) byTopic[key].w++; });
+  let rows='<table class="countTable"><tr><th>Topic</th><th>Session questions</th><th>Wrong</th></tr>';
+  Object.keys(byTopic).sort().forEach(k=>rows+=`<tr><td>${k} - ${escapeHtml(byTopic[k].title)}</td><td>${byTopic[k].n}</td><td>${byTopic[k].w}</td></tr>`); rows+='</table>';
+  const byDomain={}; current.forEach(q=>{ const d=domainOf(q); byDomain[d]=(byDomain[d]||0)+1; });
+  let drows='<table class="countTable"><tr><th>Official domain in this session</th><th>Questions</th></tr>';
+  Object.keys(byDomain).sort().forEach(k=>drows+=`<tr><td>${escapeHtml(domainLabel(k))}</td><td>${byDomain[k]}</td></tr>`); drows+='</table>';
+  const warnHtml = lastExamWarnings.length ? `<div class="card" style="background:#fffbeb"><b>Blueprint warning:</b><ul>${lastExamWarnings.map(w=>`<li>${escapeHtml(w)}</li>`).join('')}</ul></div>` : '';
+  el('resultText').innerHTML=`${timeout?'<p class="badtext"><b>Time is over.</b></p>':''}<p><b>${score} / ${current.length}</b> correct = <b>${pct}%</b></p><p>Wrong this session: <b>${wrong.length}</b></p>${warnHtml}<h3>Official domain split used</h3>${drows}<h3>Unit/subunit breakdown</h3>${rows}`;
+  showPanel('results');
+}
+async function importFiles(){
+  const files=[...el('jsonFiles').files]; if(!files.length){alert('Choose JSON files first.'); return;}
+  let imported=[];
+  for(const f of files){ try{ const txt=await f.text(); const data=JSON.parse(txt); const arr=Array.isArray(data)?data:(data.questions||[]); arr.forEach(q=>imported.push(normalizeQuestion(q,f.name))); } catch(e){ alert('Could not import '+f.name+': '+e.message); } }
+  imported=imported.filter(valid);
+  SESSION_IMPORT_BANK = [...SESSION_IMPORT_BANK, ...imported];
+  await loadBank();
+  const box = el('sessionSaveBox'); if(box) box.classList.remove('hidden');
+  alert(`Loaded ${imported.length} valid questions for this session. They are NOT saved to GitHub yet. Download UPDATED questions.json and replace questions.json on GitHub.`);
+}
+function exportBank(){ const blob=new Blob([JSON.stringify(BANK,null,2)],{type:'application/json'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='questions.json'; a.click(); URL.revokeObjectURL(url); }
+function csvEscape(v){ const s=String(v??''); return /[",\n\r]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s; }
+function exportBankCsv(){ const headers=['id','type','exam_domain','unit_number','unit_title','subunit_number','subunit_title','context','question','option_A','option_B','option_C','option_D','correct_answer','source_file']; const rows=BANK.map(q=>[q.id,q.type,domainLabel(domainOf(q)),q.unit_number,q.unit_title,q.subunit_number,q.subunit_title,q.context,q.question,q.options?.A||'',q.options?.B||'',q.options?.C||'',q.options?.D||'',q.correct_answer,q.source_file||'']); const csv=[headers,...rows].map(r=>r.map(csvEscape).join(',')).join('\n'); const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='iia_part1_merged_question_bank.csv'; a.click(); URL.revokeObjectURL(url); }
+window.addEventListener('load',()=>{ if(sessionStorage.getItem('IIA_UNLOCK')==='1'){ el('login').classList.add('hidden'); el('app').classList.remove('hidden'); loadBank(); } });
+</script>
+</body>
+</html>
