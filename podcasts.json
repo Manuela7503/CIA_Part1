@@ -1,359 +1,301 @@
 {
-  "version": 1,
-  "how_to_edit": "Edit start/end times to control subsection buttons. Use MM:SS or HH:MM:SS. Empty end means play until the file ends or until the next manual stop.",
+  "version": 2,
+  "mode": "separate_subunit_files",
+  "how_to_edit": "Each subunit has its own audio file. Edit title/file to match the exact path uploaded to GitHub. Recommended folders: Podcast_Unit_01/, Podcast_Unit_02/, etc.",
   "units": {
     "01": {
       "title": "Foundations of Internal Auditing",
-      "file": "Podcast_Unit_01.mp3",
-      "also_try_extensions": [
-        ".m4a",
-        ".wav",
-        ".ogg",
-        ""
-      ],
-      "chapters": [
+      "folder": "Podcast_Unit_01",
+      "subunits": [
         {
-          "title": "Intro / Chapter overview",
-          "start": "00:00",
-          "end": "01:43"
+          "title": "1.0 Introduction",
+          "file": "Podcast_Unit_01/00_Subunit_1.0_Introduction.mp3"
         },
         {
           "title": "1.1 Purpose of Internal Auditing",
-          "start": "01:43",
-          "end": "09:22"
+          "file": "Podcast_Unit_01/01_Subunit_1.1_Purpose_of_Internal_Auditing.mp3"
         },
         {
-          "title": "1.2 The Audit Committee Charter and the Internal Audit Charter",
-          "start": "09:22",
-          "end": "15:15"
+          "title": "1.2 Internal Audit Charter",
+          "file": "Podcast_Unit_01/02_Subunit_1.2_Internal_Audit_Charter.mp3"
         },
         {
           "title": "1.3 Impairment of Independence",
-          "start": "15:15",
-          "end": "23:03"
+          "file": "Podcast_Unit_01/03_Subunit_1.3_Impairment_of_Independence.mp3"
         },
         {
           "title": "1.4 Role in Risk Management",
-          "start": "23:03",
-          "end": "29:40"
+          "file": "Podcast_Unit_01/04_Subunit_1.4_Role_in_Risk_Management.mp3"
         },
         {
-          "title": "Final mixed exam drill",
-          "start": "29:40",
-          "end": "32:44"
-        },
-        {
-          "title": "Closing memory story",
-          "start": "32:44",
-          "end": "33:56"
+          "title": "1.5 Mixed Exam Drill / Closing",
+          "file": "Podcast_Unit_01/05_Subunit_1.5_Mixed_Exam_Drill_Closing.mp3"
         }
       ],
-      "note": "Timestamps are estimated from the Chapter 1 script and uploaded audio duration; correct them in podcasts.json if needed."
+      "note": "Upload the Unit 1 subunit MP3 files inside the GitHub folder Podcast_Unit_01/. If filenames differ, edit this file."
     },
     "02": {
       "title": "Assurance Services",
-      "file": "Podcast_Unit_02.mp3",
-      "also_try_extensions": [
-        ".m4a",
-        ".wav",
-        ".ogg",
-        ""
-      ],
-      "chapters": [
+      "folder": "Podcast_Unit_02",
+      "subunits": [
         {
-          "title": "Intro / Chapter overview",
-          "start": "00:00",
-          "end": "02:35"
+          "title": "2.0 Introduction",
+          "file": "Podcast_Unit_02/00_Subunit_2.0_Introduction.mp3"
         },
         {
           "title": "2.1 Assurance Services",
-          "start": "02:35",
-          "end": "17:22"
+          "file": "Podcast_Unit_02/01_Subunit_2.1_Assurance_Services.mp3"
         },
         {
           "title": "2.2 Risk and Control Self-Assessment",
-          "start": "17:22",
-          "end": "30:26"
+          "file": "Podcast_Unit_02/02_Subunit_2.2_Risk_and_Control_Self-Assessment_CSA.mp3"
         },
         {
-          "title": "2.3 Audits of Third Parties and Contract Auditing",
-          "start": "30:26",
-          "end": "37:50"
+          "title": "2.3 Third-Party and Contract Audits",
+          "file": "Podcast_Unit_02/03_Subunit_2.3_Third-Party_and_Contract_Audits.mp3"
         },
         {
           "title": "2.4 Quality Auditing",
-          "start": "37:50",
-          "end": "49:12"
+          "file": "Podcast_Unit_02/04_Subunit_2.4_Quality_Auditing.mp3"
         },
         {
-          "title": "Final review / exam drill",
-          "start": "49:12",
-          "end": "51:47"
+          "title": "2.5 Security and Privacy Audits",
+          "file": "Podcast_Unit_02/05_Subunit_2.5_Security_and_Privacy_Audits.mp3"
+        },
+        {
+          "title": "2.6 Performance Audits",
+          "file": "Podcast_Unit_02/06_Subunit_2.6_Performance_Audits.mp3"
+        },
+        {
+          "title": "2.7 Final Mixed Exam Drill / Closing",
+          "file": "Podcast_Unit_02/07_Subunit_2.7_Final_Mixed_Exam_Drill_Closing.mp3"
         }
       ],
-      "note": "Timestamps are estimated from current question-bank proportions and uploaded audio duration; correct them in podcasts.json if needed."
+      "note": "Upload the Unit 2 subunit MP3 files inside the GitHub folder Podcast_Unit_02/. If filenames differ, edit this file."
     },
     "03": {
-        "title": "Assurance Services II",
-        "folder": "Podcast_Unit_03",
-        "subunits": [
-          {
-            "title": "3.0 Introduction",
-            "file": "Podcast_Unit_03/00_Subunit_3.0_Introduction.mp3"
-          },
-          {
-            "title": "3.1 Operational Auditing",
-            "file": "Podcast_Unit_03/01_Subunit_3.1_Operational_Auditing.mp3"
-          },
-          {
-            "title": "3.2 Compliance Auditing",
-            "file": "Podcast_Unit_03/02_Subunit_3.2_Compliance_Auditing.mp3"
-          },
-          {
-            "title": "3.3 Financial Audits",
-            "file": "Podcast_Unit_03/03_Subunit_3.3_Financial_Audits.mp3"
-          },
-          {
-            "title": "3.4 Management Reporting",
-            "file": "Podcast_Unit_03/04_Subunit_3.4_Management_Reporting.mp3"
-          },
-          {
-            "title": "3.5 Organizational Culture Audit",
-            "file": "Podcast_Unit_03/05_Subunit_3.5_Organizational_Culture_Audit.mp3"
-          }
-        ],
-      "note": "Placeholder chapter titles/timestamps. Edit podcasts.json once you know exact Unit 3 subsection starts."
+      "title": "Assurance Services II",
+      "folder": "Podcast_Unit_03",
+      "subunits": [
+        {
+          "title": "3.0 Introduction",
+          "file": "Podcast_Unit_03/00_Subunit_3.0_Introduction.mp3"
+        },
+        {
+          "title": "3.1 Operational Auditing",
+          "file": "Podcast_Unit_03/01_Subunit_3.1_Operational_Auditing.mp3"
+        },
+        {
+          "title": "3.2 Compliance Auditing",
+          "file": "Podcast_Unit_03/02_Subunit_3.2_Compliance_Auditing.mp3"
+        },
+        {
+          "title": "3.3 Financial Audits",
+          "file": "Podcast_Unit_03/03_Subunit_3.3_Financial_Audits.mp3"
+        },
+        {
+          "title": "3.4 Management Reporting",
+          "file": "Podcast_Unit_03/04_Subunit_3.4_Management_Reporting.mp3"
+        },
+        {
+          "title": "3.5 Organizational Culture Audit",
+          "file": "Podcast_Unit_03/05_Subunit_3.5_Organizational_Culture_Audit.mp3"
+        },
+        {
+          "title": "3.6 Final Mixed Exam Drill / Closing",
+          "file": "Podcast_Unit_03/06_Subunit_3.6_Final_Mixed_Exam_Drill_Closing.mp3"
+        }
+      ],
+      "note": "Upload the Unit 3 subunit MP3 files inside the GitHub folder Podcast_Unit_03/. If filenames differ, edit this file."
     },
     "04": {
       "title": "Unit 04 podcast",
-      "file": "Podcast_Unit_04.mp3",
-      "also_try_extensions": [
-        ".m4a",
-        ".wav",
-        ".ogg",
-        ""
-      ],
-      "chapters": [
+      "folder": "Podcast_Unit_04",
+      "subunits": [
         {
-          "title": "4.1 Subsection 1 — edit in podcasts.json",
-          "start": "00:00",
-          "end": ""
+          "title": "4.0 Introduction — edit title/file",
+          "file": "Podcast_Unit_04/00_Subunit_4.0_Introduction.mp3"
         },
         {
-          "title": "4.2 Subsection 2 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "4.1 Subunit 1 — edit title/file",
+          "file": "Podcast_Unit_04/01_Subunit_4.1_Subunit_1.mp3"
         },
         {
-          "title": "4.3 Subsection 3 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "4.2 Subunit 2 — edit title/file",
+          "file": "Podcast_Unit_04/02_Subunit_4.2_Subunit_2.mp3"
         },
         {
-          "title": "4.4 Subsection 4 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "4.3 Subunit 3 — edit title/file",
+          "file": "Podcast_Unit_04/03_Subunit_4.3_Subunit_3.mp3"
+        },
+        {
+          "title": "4.4 Subunit 4 — edit title/file",
+          "file": "Podcast_Unit_04/04_Subunit_4.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the audio and edit these timestamps/titles in podcasts.json."
+      "note": "Placeholder only. Upload the Unit 4 subunit MP3 files inside Podcast_Unit_04/ and edit titles/files if needed."
     },
     "05": {
       "title": "Unit 05 podcast",
-      "file": "Podcast_Unit_05.mp3",
-      "also_try_extensions": [
-        ".m4a",
-        ".wav",
-        ".ogg",
-        ""
-      ],
-      "chapters": [
+      "folder": "Podcast_Unit_05",
+      "subunits": [
         {
-          "title": "5.1 Subsection 1 — edit in podcasts.json",
-          "start": "00:00",
-          "end": ""
+          "title": "5.0 Introduction — edit title/file",
+          "file": "Podcast_Unit_05/00_Subunit_5.0_Introduction.mp3"
         },
         {
-          "title": "5.2 Subsection 2 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "5.1 Subunit 1 — edit title/file",
+          "file": "Podcast_Unit_05/01_Subunit_5.1_Subunit_1.mp3"
         },
         {
-          "title": "5.3 Subsection 3 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "5.2 Subunit 2 — edit title/file",
+          "file": "Podcast_Unit_05/02_Subunit_5.2_Subunit_2.mp3"
         },
         {
-          "title": "5.4 Subsection 4 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "5.3 Subunit 3 — edit title/file",
+          "file": "Podcast_Unit_05/03_Subunit_5.3_Subunit_3.mp3"
+        },
+        {
+          "title": "5.4 Subunit 4 — edit title/file",
+          "file": "Podcast_Unit_05/04_Subunit_5.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the audio and edit these timestamps/titles in podcasts.json."
+      "note": "Placeholder only. Upload the Unit 5 subunit MP3 files inside Podcast_Unit_05/ and edit titles/files if needed."
     },
     "06": {
       "title": "Unit 06 podcast",
-      "file": "Podcast_Unit_06.mp3",
-      "also_try_extensions": [
-        ".m4a",
-        ".wav",
-        ".ogg",
-        ""
-      ],
-      "chapters": [
+      "folder": "Podcast_Unit_06",
+      "subunits": [
         {
-          "title": "6.1 Subsection 1 — edit in podcasts.json",
-          "start": "00:00",
-          "end": ""
+          "title": "6.0 Introduction — edit title/file",
+          "file": "Podcast_Unit_06/00_Subunit_6.0_Introduction.mp3"
         },
         {
-          "title": "6.2 Subsection 2 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "6.1 Subunit 1 — edit title/file",
+          "file": "Podcast_Unit_06/01_Subunit_6.1_Subunit_1.mp3"
         },
         {
-          "title": "6.3 Subsection 3 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "6.2 Subunit 2 — edit title/file",
+          "file": "Podcast_Unit_06/02_Subunit_6.2_Subunit_2.mp3"
         },
         {
-          "title": "6.4 Subsection 4 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "6.3 Subunit 3 — edit title/file",
+          "file": "Podcast_Unit_06/03_Subunit_6.3_Subunit_3.mp3"
+        },
+        {
+          "title": "6.4 Subunit 4 — edit title/file",
+          "file": "Podcast_Unit_06/04_Subunit_6.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the audio and edit these timestamps/titles in podcasts.json."
+      "note": "Placeholder only. Upload the Unit 6 subunit MP3 files inside Podcast_Unit_06/ and edit titles/files if needed."
     },
     "07": {
       "title": "Unit 07 podcast",
-      "file": "Podcast_Unit_07.mp3",
-      "also_try_extensions": [
-        ".m4a",
-        ".wav",
-        ".ogg",
-        ""
-      ],
-      "chapters": [
+      "folder": "Podcast_Unit_07",
+      "subunits": [
         {
-          "title": "7.1 Subsection 1 — edit in podcasts.json",
-          "start": "00:00",
-          "end": ""
+          "title": "7.0 Introduction — edit title/file",
+          "file": "Podcast_Unit_07/00_Subunit_7.0_Introduction.mp3"
         },
         {
-          "title": "7.2 Subsection 2 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "7.1 Subunit 1 — edit title/file",
+          "file": "Podcast_Unit_07/01_Subunit_7.1_Subunit_1.mp3"
         },
         {
-          "title": "7.3 Subsection 3 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "7.2 Subunit 2 — edit title/file",
+          "file": "Podcast_Unit_07/02_Subunit_7.2_Subunit_2.mp3"
         },
         {
-          "title": "7.4 Subsection 4 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "7.3 Subunit 3 — edit title/file",
+          "file": "Podcast_Unit_07/03_Subunit_7.3_Subunit_3.mp3"
+        },
+        {
+          "title": "7.4 Subunit 4 — edit title/file",
+          "file": "Podcast_Unit_07/04_Subunit_7.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the audio and edit these timestamps/titles in podcasts.json."
+      "note": "Placeholder only. Upload the Unit 7 subunit MP3 files inside Podcast_Unit_07/ and edit titles/files if needed."
     },
     "08": {
       "title": "Unit 08 podcast",
-      "file": "Podcast_Unit_08.mp3",
-      "also_try_extensions": [
-        ".m4a",
-        ".wav",
-        ".ogg",
-        ""
-      ],
-      "chapters": [
+      "folder": "Podcast_Unit_08",
+      "subunits": [
         {
-          "title": "8.1 Subsection 1 — edit in podcasts.json",
-          "start": "00:00",
-          "end": ""
+          "title": "8.0 Introduction — edit title/file",
+          "file": "Podcast_Unit_08/00_Subunit_8.0_Introduction.mp3"
         },
         {
-          "title": "8.2 Subsection 2 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "8.1 Subunit 1 — edit title/file",
+          "file": "Podcast_Unit_08/01_Subunit_8.1_Subunit_1.mp3"
         },
         {
-          "title": "8.3 Subsection 3 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "8.2 Subunit 2 — edit title/file",
+          "file": "Podcast_Unit_08/02_Subunit_8.2_Subunit_2.mp3"
         },
         {
-          "title": "8.4 Subsection 4 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "8.3 Subunit 3 — edit title/file",
+          "file": "Podcast_Unit_08/03_Subunit_8.3_Subunit_3.mp3"
+        },
+        {
+          "title": "8.4 Subunit 4 — edit title/file",
+          "file": "Podcast_Unit_08/04_Subunit_8.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the audio and edit these timestamps/titles in podcasts.json."
+      "note": "Placeholder only. Upload the Unit 8 subunit MP3 files inside Podcast_Unit_08/ and edit titles/files if needed."
     },
     "09": {
       "title": "Unit 09 podcast",
-      "file": "Podcast_Unit_09.mp3",
-      "also_try_extensions": [
-        ".m4a",
-        ".wav",
-        ".ogg",
-        ""
-      ],
-      "chapters": [
+      "folder": "Podcast_Unit_09",
+      "subunits": [
         {
-          "title": "9.1 Subsection 1 — edit in podcasts.json",
-          "start": "00:00",
-          "end": ""
+          "title": "9.0 Introduction — edit title/file",
+          "file": "Podcast_Unit_09/00_Subunit_9.0_Introduction.mp3"
         },
         {
-          "title": "9.2 Subsection 2 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "9.1 Subunit 1 — edit title/file",
+          "file": "Podcast_Unit_09/01_Subunit_9.1_Subunit_1.mp3"
         },
         {
-          "title": "9.3 Subsection 3 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "9.2 Subunit 2 — edit title/file",
+          "file": "Podcast_Unit_09/02_Subunit_9.2_Subunit_2.mp3"
         },
         {
-          "title": "9.4 Subsection 4 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "9.3 Subunit 3 — edit title/file",
+          "file": "Podcast_Unit_09/03_Subunit_9.3_Subunit_3.mp3"
+        },
+        {
+          "title": "9.4 Subunit 4 — edit title/file",
+          "file": "Podcast_Unit_09/04_Subunit_9.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the audio and edit these timestamps/titles in podcasts.json."
+      "note": "Placeholder only. Upload the Unit 9 subunit MP3 files inside Podcast_Unit_09/ and edit titles/files if needed."
     },
     "10": {
       "title": "Unit 10 podcast",
-      "file": "Podcast_Unit_10.mp3",
-      "also_try_extensions": [
-        ".m4a",
-        ".wav",
-        ".ogg",
-        ""
-      ],
-      "chapters": [
+      "folder": "Podcast_Unit_10",
+      "subunits": [
         {
-          "title": "10.1 Subsection 1 — edit in podcasts.json",
-          "start": "00:00",
-          "end": ""
+          "title": "10.0 Introduction — edit title/file",
+          "file": "Podcast_Unit_10/00_Subunit_10.0_Introduction.mp3"
         },
         {
-          "title": "10.2 Subsection 2 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "10.1 Subunit 1 — edit title/file",
+          "file": "Podcast_Unit_10/01_Subunit_10.1_Subunit_1.mp3"
         },
         {
-          "title": "10.3 Subsection 3 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "10.2 Subunit 2 — edit title/file",
+          "file": "Podcast_Unit_10/02_Subunit_10.2_Subunit_2.mp3"
         },
         {
-          "title": "10.4 Subsection 4 — edit in podcasts.json",
-          "start": "",
-          "end": ""
+          "title": "10.3 Subunit 3 — edit title/file",
+          "file": "Podcast_Unit_10/03_Subunit_10.3_Subunit_3.mp3"
+        },
+        {
+          "title": "10.4 Subunit 4 — edit title/file",
+          "file": "Podcast_Unit_10/04_Subunit_10.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the audio and edit these timestamps/titles in podcasts.json."
+      "note": "Placeholder only. Upload the Unit 10 subunit MP3 files inside Podcast_Unit_10/ and edit titles/files if needed."
     }
   }
 }
