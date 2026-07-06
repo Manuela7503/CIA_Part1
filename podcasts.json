@@ -32,7 +32,7 @@
           "file": "Podcast_Unit_01/05_Subunit_1.5_Mixed_Exam_Drill_Closing.mp3"
         }
       ],
-      "note": "Upload the Unit 1 subunit MP3 files inside the GitHub folder Podcast_Unit_01/. If filenames differ, edit this file."
+      "note": "Matches the current GitHub folder/file names for Unit 01."
     },
     "02": {
       "title": "Assurance Services",
@@ -71,7 +71,7 @@
           "file": "Podcast_Unit_02/07_Subunit_2.7_Final_Mixed_Exam_Drill_Closing.mp3"
         }
       ],
-      "note": "Upload the Unit 2 subunit MP3 files inside the GitHub folder Podcast_Unit_02/. If filenames differ, edit this file."
+      "note": "Matches the current GitHub folder/file names for Unit 02."
     },
     "03": {
       "title": "Assurance Services II",
@@ -106,7 +106,7 @@
           "file": "Podcast_Unit_03/06_Subunit_3.6_Final_Mixed_Exam_Drill_Closing.mp3"
         }
       ],
-      "note": "Upload the Unit 3 subunit MP3 files inside the GitHub folder Podcast_Unit_03/. If filenames differ, edit this file."
+      "note": "Matches the current GitHub folder/file names for Unit 03."
     },
     "04": {
       "title": "Unit 04 podcast",
@@ -133,7 +133,7 @@
           "file": "Podcast_Unit_04/04_Subunit_4.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the Unit 4 subunit MP3 files inside Podcast_Unit_04/ and edit titles/files if needed."
+      "note": "Placeholder only. Replace with exact Unit 04 GitHub file names after upload."
     },
     "05": {
       "title": "Unit 05 podcast",
@@ -160,7 +160,7 @@
           "file": "Podcast_Unit_05/04_Subunit_5.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the Unit 5 subunit MP3 files inside Podcast_Unit_05/ and edit titles/files if needed."
+      "note": "Placeholder only. Replace with exact Unit 05 GitHub file names after upload."
     },
     "06": {
       "title": "Unit 06 podcast",
@@ -187,7 +187,7 @@
           "file": "Podcast_Unit_06/04_Subunit_6.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the Unit 6 subunit MP3 files inside Podcast_Unit_06/ and edit titles/files if needed."
+      "note": "Placeholder only. Replace with exact Unit 06 GitHub file names after upload."
     },
     "07": {
       "title": "Unit 07 podcast",
@@ -214,7 +214,7 @@
           "file": "Podcast_Unit_07/04_Subunit_7.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the Unit 7 subunit MP3 files inside Podcast_Unit_07/ and edit titles/files if needed."
+      "note": "Placeholder only. Replace with exact Unit 07 GitHub file names after upload."
     },
     "08": {
       "title": "Unit 08 podcast",
@@ -241,7 +241,7 @@
           "file": "Podcast_Unit_08/04_Subunit_8.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the Unit 8 subunit MP3 files inside Podcast_Unit_08/ and edit titles/files if needed."
+      "note": "Placeholder only. Replace with exact Unit 08 GitHub file names after upload."
     },
     "09": {
       "title": "Unit 09 podcast",
@@ -268,7 +268,7 @@
           "file": "Podcast_Unit_09/04_Subunit_9.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the Unit 9 subunit MP3 files inside Podcast_Unit_09/ and edit titles/files if needed."
+      "note": "Placeholder only. Replace with exact Unit 09 GitHub file names after upload."
     },
     "10": {
       "title": "Unit 10 podcast",
@@ -295,7 +295,7 @@
           "file": "Podcast_Unit_10/04_Subunit_10.4_Subunit_4.mp3"
         }
       ],
-      "note": "Placeholder only. Upload the Unit 10 subunit MP3 files inside Podcast_Unit_10/ and edit titles/files if needed."
+      "note": "Placeholder only. Replace with exact Unit 10 GitHub file names after upload."
     }
   }
 }
