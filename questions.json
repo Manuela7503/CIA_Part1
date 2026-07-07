@@ -7351,5 +7351,1506 @@
     "correct_answer": "A",
     "source_file": "unit3_questions_array.json",
     "exam_domain": ""
+  },
+  {
+    "id": "1",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "Which statement about advisory engagements is true?",
+    "options": {
+      "A": "The internal audit function may assume management responsibility to the extent agreed upon with the client.",
+      "B": "Internal auditors keep senior management and the board informed about how audit resources are being deployed.",
+      "C": "Work programs for formal advisory engagements address policies and issues related to ownership of advisory engagement records to protect the organization and avoid any potential misunderstandings.",
+      "D": "Documentation requirements applicable to assurance engagements apply to advisory engagements."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "2",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "An internal auditor performed a formal advisory engagement for XYZ Corporation on June 1, Year 1. When is the earliest time the auditor can perform assurance services for XYZ Corporation and be considered independent and objective?",
+    "options": {
+      "A": "January 1, Year 2.",
+      "B": "June 2, Year 1.",
+      "C": "June 1, Year 2.",
+      "D": "July 1, Year 1."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "3",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "A corporate audit committee is assessing internal audit offerings. How should it analyze the differences between assurance and advisory services?",
+    "options": {
+      "A": "Assurance services result in formal, independent evaluations of risks, and advisory services supply nonbinding recommendations for control improvements.",
+      "B": "Assurance services yield independent, formal assessments of processes, while advisory services serve as consultative partners for internal control design.",
+      "C": "Assurance services deliver formal opinions based on independent reviews, while advisory services offer consultative advice without formal conclusions.",
+      "D": "Assurance services provide formal evaluations of risk and control, while advisory services provide guidance to help improve operations without formal opinions."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "4",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "At an internal audit workshop. a facilitator asks participants to define advisory services. Which statement best describes them?",
+    "options": {
+      "A": "Advisory services are routine checks that focus solely on regulatory compliance.",
+      "B": "Advisory services are structured evaluations that produce formal opinions on risk management.",
+      "C": "Advisory services are external audit engagements that assess the accuracy of financial reporting.",
+      "D": "Advisory services are non-audit, consultative activities that help organizations identify and implement process improvements."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "5",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "Upon completion of a reengineering project, the internal audit function was asked by management to direct the implementation of the redesigned process. is this an appropriate task for internal auditors?",
+    "options": {
+      "A": "No, because internal auditors should not participate in a reengineering project because it is a conflict of interest.",
+      "B": "Yes, because implementing redesigned processes is generally included in the internal audit charter.",
+      "C": "Yes, as part of their mandate to redesign processes, internal auditors may also direct the implementation.",
+      "D": "No, internal auditors should not become directly involved in the implementation of the redesigned process."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "6",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "The chief financial officer (CFO) of a company has asked the controller to shorten the time it takes to prepare monthly financial reports. To determine a reasonable stretch goal for the accounting department, the controller is researching the time it takes other companies in their industry to close the financial system and prepare the monthly financial report. This is an example of",
+    "options": {
+      "A": "Continuous improvement.",
+      "B": "Benchmarking.",
+      "C": "Best-practice analysis.",
+      "D": "Reengineering."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "7",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "Which of the following types of engagements, if any, involve an internal auditor conducting performance audits to measure how well an organization is achieving the targets for its key performance indicators?",
+    "options": {
+      "A": "Performance assurance engagement.",
+      "B": "Performance advisory engagement.",
+      "C": "Financial audit.",
+      "D": "Performance assurance and performance advisory engagements."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "8",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "When internal auditors perform an advisory engagement, what is the best statement of their responsibility regarding risk?",
+    "options": {
+      "A": "Be alert to the existence of significant risks.",
+      "B": "Address risk consistent with engagement objectives and be alert to certain other risks.",
+      "C": "Assume responsibility for managing risks.",
+      "D": "Consider only the risk consistent with engagement objectives."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "9",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "In an internal audit review, how can differences between assurance and advisory services be analyzed for their impact on decision making?",
+    "options": {
+      "A": "Assurance services result in formal opinions, but may lack independence, while advisory services serve as consultative, objective advice to aid process improvements.",
+      "B": "Assurance services provide independent assessments with formal conclusions, whereas advisory services direct management to make required process changes.",
+      "C": "Assurance services offer formal, independent evaluations that lead to opinions, while advisory services provide consultative advice without formal conclusions.",
+      "D": "Assurance services provide objective examinations and formal assessments, while advisory services offer advice and recommendations without formal assurance."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "10",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "Fact Pattern: The legislative auditing bureau of a country is required to perform compliance engagements involving organizations that are issued defense contracts on a cost-plus basis. Contracts are clearly written to define acceptable costs, including developmental research cost and appropriate overhead rates During the past year, the government has engaged in extensive outsourcing of its activities. The outsourcing included contracts to run cafeterias, provide janitorial services, manage computer operations and systems development, and provide engineering of construction projects. The contracts were modeled after those used for years in the defense industry. The internal auditors are being called upon to expand their efforts to include compliance engagements involving these contracts. Upon initial investigation of these outsourced areas, the internal auditor found many areas in which the outsourced management has apparently expanded its authority and responsibility. For example, the contractor that manages computer operations has developed a highly sophisticated security program that may represent the most advanced information security in the industry. The internal auditor reviews the contract and sees reference only to providing appropriate levels of computing security. The internal auditor suspects that the governmental agency may be incurring developmental costs that the outsourcer may use for competitive advantage in marketing services to other organizations, Assuming that a high degree of security is needed, which of the following potential sources of information also will be relevant to the internal auditor's assessment of whether the governmental unit is being charged for computer security that exceeds the entity's needs?",
+    "options": {
+      "A": "Review of the contractor's internal management reports.",
+      "B": "Tests of the functionality of the security system.",
+      "C": "Analysis of the contractor's financial statements.",
+      "D": "Comparison of the security system with best practices implemented for similar systems and reviewing publications of state-of-the-art systems."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "11",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "Internal auditors must maintain independence and objectivity when performing advisory services to",
+    "options": {
+      "A": "Provide detailed financial analysis and forecasting.",
+      "B": "Prevent conflicts of interest and maintain professional credibility.",
+      "C": "Ensure the success of management's business strategies.",
+      "D": "Enhance the profitability of the organization."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "12",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "The internal audit function performed a formal advisory engagement for the controls over the development of a new information system. Six months later, the chief audit executive (CAE) was asked to provide assurance services for this new system. Which one of the following would be an appropriate next step for the CAE?",
+    "options": {
+      "A": "Begin the process of hiring an external auditor to perform the audit.",
+      "B": "Inform management and the board that independence and objectivity may be impaired, but steps can be taken to minimize this risk.",
+      "C": "Immediately refuse the engagement because it is a conflict of interest.",
+      "D": "Inform management and the board that waiting at least 1 year after the advisory engagement is necessary."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "13",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "An organization is considering purchasing a small toxic waste disposal business. The internal auditors are part of the team doing a due diligence review for the acquisition. The scope of the internal auditors' work will most likely not include",
+    "options": {
+      "A": "Assessment of the efficiency of the operations of the acquiree.",
+      "B": "An evaluation of the merit of lawsuits currently filed against the acquiree.",
+      "C": "Analysis of the acquiree's compliance with, and disclosure of, loan covenants.",
+      "D": "A review of the acquiree's procedures for acceptance of waste material and comparison with legal requirements."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "14",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "A manufacturer that wants to improve its staging process compares its procedures against the check-in process for a major airline. Which of the following tools is the manufacturer using?",
+    "options": {
+      "A": "Economic value added.",
+      "B": "Benchmarking.",
+      "C": "Statistical process control.",
+      "D": "Total quality management."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "15",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "A financial institution is reviewing its internal audit function. How can the differences between assurance and advisory services be interpreted?",
+    "options": {
+      "A": "Assurance services yield formal opinions through independent reviews, while advisory services provide required recommendations to support improvement.",
+      "B": "Assurance services deliver independent assessments and formal opinions, whereas advisory services advise on enhancing operations.",
+      "C": "Assurance services provide formal evaluations of controls and risks, while advisory services offer consultative guidance without providing assurance.",
+      "D": "Assurance services result in formal evaluations of controls, and advisory services supply consultative suggestions and opinions."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "16",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "If impairments of independence or objectivity exist prior to commencement of an advisory engagement or develop during the engagement, what action should be taken?",
+    "options": {
+      "A": "Disclosure should be made immediately to the external auditors.",
+      "B": "Disclosure should be made immediately to the board.",
+      "C": "The internal auditor should withdraw from the engagement.",
+      "D": "Disclosure should be made immediately to the engagement client."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "17",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "The treasury function of an entity has hired outside consultants to help prepare the organization's bond offering. The internal auditor then performs an engagement to determine whether the consultants followed governmental regulations. The auditor has performed which type of engagement?",
+    "options": {
+      "A": "Benchmarking.",
+      "B": "Compliance.",
+      "C": "Financial audit.",
+      "D": "Operational audit."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "18",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Internal auditors may provide advisory services. The performance of these services",
+    "options": {
+      "A": "Impairs internal auditors' objectivity with respect to an assurance service involving the same engagement client.",
+      "B": "Precludes generation of assurance from an advisory engagement.",
+      "C": "Imposes no responsibility to communicate information other than to the engagement client.",
+      "D": "Should be consistent with the internal audit function's empowerment reflected in the charter."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "19",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "The internal auditing function for an organization is working with an attorney and a financial M&A expert to verify the validity of a proposed business combination. This is an example of a(n)",
+    "options": {
+      "A": "Performance audit.",
+      "B": "Compliance engagement.",
+      "C": "Operational audit.",
+      "D": "Due diligence engagement."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "20",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "Benchmarking compares the current performance of operations to which of the following factors related to competing organizations?",
+    "options": {
+      "A": "Exceptional performance measures.",
+      "B": "Prior performance measures.",
+      "C": "Current performance measures.",
+      "D": "Standard cost of developing performance measures."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "21",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "In an external quality assessment, how should internal audit services be differentiated between assurance and advisory roles?",
+    "options": {
+      "A": "Assurance services provide objective examinations with formal conclusions, while advisory services offer consultative advice without assurance.",
+      "B": "Assurance services lack independence resulting in informal opinions, while advisory services advise on process enhancements through flexible guidance.",
+      "C": "Assurance services provide formal assessments and opinions, while advisory services produce coIIAborative guidance focused on improving operations.",
+      "D": "Assurance services provide formal independent assessments, while advisory services offer advice and recommendations without formal conclusions."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "22",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "During an advisory engagement, an internal auditor observed a minor internal control weakness in one process under review. The internal auditor should communicate this observation to",
+    "options": {
+      "A": "Engagement client.",
+      "B": "Senior management.",
+      "C": "Management.",
+      "D": "Audit committee."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "23",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Advisory services add value to an organization by",
+    "options": {
+      "A": "Assuming management's decision-making responsibilities.",
+      "B": "Providing formal financial statements and audit opinions.",
+      "C": "Supplying independent, risk-based, and forward-looking advice.",
+      "D": "Enforcing compliance with all internal policies and procedures."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "24",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "During advisory engagements, internal auditors",
+    "options": {
+      "A": "Cannot obtain assurance from work performed during advisory engagements.",
+      "B": "All of the answers are correct.",
+      "C": "May gain knowledge of risks that should be included in subsequent assurance engagements.",
+      "D": "May gain knowledge of controls that should be included in evaluating organizational controls."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "25",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "The phase of the benchmarking process in which the team must be able to justify its recommendations is the",
+    "options": {
+      "A": "Data collection and analysis phase.",
+      "B": "Prioritize benchmarking projects phase.",
+      "C": "Researching and identifying best in class performance phase.",
+      "D": "Implementation phase."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "26",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "Which one of the following statements describes how the objectives are set for advisory engagements and assurance engagements?",
+    "options": {
+      "A": "In an advisory engagement, the objectives are agreed upon by the internal auditors and management of the engagement client.",
+      "B": "In an assurance engagement, the objectives are set primarily by senior management.",
+      "C": "In an advisory engagement, the objectives are set primarily by the internal auditors.",
+      "D": "In an advisory engagement, the objectives and scope ordinarily are set jointly by the internal auditors and management of the reviewed activity."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "27",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "A company with many branch stores has decided to benchmark one of its stores for the purpose of analyzing the accuracy and reliability of branch store financial reporting. Which one of the following is the most likely measure to be included in a financial benchmark?",
+    "options": {
+      "A": "High amount of bad debt write-offs.",
+      "B": "High turnover of employees.",
+      "C": "High level of employee participation in setting budgets.",
+      "D": "High number of suppliers."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "28",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Advisory services provided by internal auditors differ from assurance services because they",
+    "options": {
+      "A": "Are intended to provide formal, independent audit opinions.",
+      "B": "Improve operations without formal assurance.",
+      "C": "Include assuming management responsibilities.",
+      "D": "Involve providing formal evaluations."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "29",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "The proper way for every internal auditor to resolve conflict is by following the",
+    "options": {
+      "A": "Guidelines set out in the organization's code of conduct.",
+      "B": "Procedures designated by the CAE.",
+      "C": "Guidelines set out in The IIA's Global Internal Audit Standards.",
+      "D": "AICPA Code of Professional Conduct."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "30",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Which type of advisory engagement is appropriate for training internal audit staff in assessing and managing risks?",
+    "options": {
+      "A": "Informal advisory.",
+      "B": "Educational advisory.",
+      "C": "Special advisory.",
+      "D": "Emergency advisory."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "31",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "The internal auditor should decline to perform which of the following types of advisory engagements?",
+    "options": {
+      "A": "Engagements that conflict with the values and goals of the organization.",
+      "B": "Engagements that have no conflict with the policies and procedures of the internal audit function.",
+      "C": "Engagements that are allowed by the terms of the internal audit charter.",
+      "D": "Engagements that add value and promote the best interests of the organization."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "32",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "During a continuous improvement initiative, how do internal auditors contribute to process mapping?",
+    "options": {
+      "A": "They assume responsibility for redesigning process steps and directing implementation.",
+      "B": "They identify and evaluate process risks, controls, and opportunities for improvement.",
+      "C": "They focus on cost reduction by updating process maps without evaluating associated controls.",
+      "D": "They prepare process maps to identify potential control gaps and streamline processes."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "33",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "An example of an internal nonfinancial benchmark is",
+    "options": {
+      "A": "The labor rate of comparably skilled employees at the company's major competitor's plant.",
+      "B": "The average actual cost per pound of a specific product at the company's most efficient plant.",
+      "C": "A $50,000 limit on the cost of employee training programs at each of the company's plants.",
+      "D": "The percentage of customer orders delivered on time at the company's most efficient plant."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "34",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "Substantial risk exposures or material control weaknesses discovered during a formal advisory engagement are brought to the attention of management. In some situations, the internal auditor's concerns also are communicated to A 4 allof the answers are correct.",
+    "options": {
+      "A": "Senior management.",
+      "B": "Audit committee.",
+      "C": "Board of directors.",
+      "D": "Executive management."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "35",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "The internal auditors are part of the team performing a due diligence review for the purchase of a waste disposal business. The scope of their work will most likely not include",
+    "options": {
+      "A": "An assessment of the acquiree's profits over the past 10 years.",
+      "B": "An appraisal of the value of investments owned by the acquiree.",
+      "C": "An assessment of the benefit of integrating the acquiree with the acquirer's business.",
+      "D": "Analysis of the acquiree's compliance with employment laws."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "36",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "The internal audit function has undertaken an audit of the shipping and receiving department of a department store chain. The best engagement tool for this purpose most likely is",
+    "options": {
+      "A": "Functional benchmarking.",
+      "B": "Internal benchmarking.",
+      "C": "Strategic benchmarking.",
+      "D": "Competitive benchmarking."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "37",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "A board member is comparing internal audit offerings. How should the differences between assurance and advisory services be evaluated?",
+    "options": {
+      "A": "Assurance services result in formal opinions based on independent assessments, while advisory services offer flexible, nonbinding advice on improvements.",
+      "B": "Assurance services offer formal evaluations of risk and controls, while advisory services deliver formal recommendations to improve processes.",
+      "C": "Assurance services provide consultative insights without formal opinions, while advisory services provide independent evaluations and opinions.",
+      "D": "Assurance services provide independent reviews without formal conclusions, whereas advisory services focus on consultative recommendations for performance enhancement."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "38",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "Internal auditors are often called upon to either perform or assist the external auditor in performing a due diligence review. A due diligence review may be a(n)",
+    "options": {
+      "A": "Review of the organization's financial statements by an independent outside auditor.",
+      "B": "Review of interim financial statements as directed by an underwriting firm.",
+      "C": "Review of operations as requested by the audit committee to determine whether the operations comply with audit committee and organizational policies.",
+      "D": "Review of financial statements and related disclosures in conjunction with a potential acquisition."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "39",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "When planning an advisory engagement in a dynamic environment, how is the scope established?",
+    "options": {
+      "A": "By following a predetermined checklist that uses only prior audit scopes.",
+      "B": "By evaluating the engagement objectives, conducting risk assessments, and incorporating stakeholder feedback to meet current needs.",
+      "C": "By evaluating existing protocols and stakeholder feedback into the engagement scope.",
+      "D": "By using a pre-existing template that relies on historical data and standard processes."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "40",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "A manufacturer compares its accounts payable practices with those of an investment bank. This comparison is an example of",
+    "options": {
+      "A": "Process benchmarking.",
+      "B": "Strategic benchmarking.",
+      "C": "Internal benchmarking.",
+      "D": "Generic benchmarking."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "41",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "Which of the following is a characteristic of business process reengineering?",
+    "options": {
+      "A": "Gradual, incremental streamlining of existing procedures.",
+      "B": "A change in the nature of the business it'slf.",
+      "C": "The bottom-up revision of the way the organization carries out a particular business process.",
+      "D": "The movement of manual processes to computers."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "42",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Which of the following is an example of an advisory engagement?",
+    "options": {
+      "A": "The internal audit function assisted management in developing performance criteria for a new bonus program.",
+      "B": "The CAE recommended that management develop a disaster recovery plan.",
+      "C": "The internal audit function has been asked to verify that the organization is adhering to the policy requirements.",
+      "D": "The CAE was asked by the board to evaluate the effectiveness of the organization's operations."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "43",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "An organization wants to improve its performance measures for a new business line. Which type of benchmarking is most likely to provide information useful for this purpose?",
+    "options": {
+      "A": "Competitive.",
+      "B": "Generic.",
+      "C": "Functional.",
+      "D": "Internal."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "44",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "Which of the following best describes generic benchmarking?",
+    "options": {
+      "A": "Identifying ways to optimize functions of the organization by studying the operations of entities with similar processes.",
+      "B": "Studying the best practices in one part of the organization to apply them in other parts.",
+      "C": "Applying best practices in one part of the organization to its other parts.",
+      "D": "Studying an organization in the same industry."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "45",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Senior management of an entity has requested that the internal audit function provide ongoing internal control training for all managerial personnel. This request most likely should be addressed by a(n)",
+    "options": {
+      "A": "Educational advisory engagement.",
+      "B": "Informal advisory engagement.",
+      "C": "Formal advisory engagement.",
+      "D": "Emergency advisory engagement."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "46",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "Which of the following methods involves comparing a company's internal processes that need to be improved to those of external companies identified as being best in class?",
+    "options": {
+      "A": "Process mapping.",
+      "B": "Economic value added.",
+      "C": "Balanced scorecard.",
+      "D": "Benchmarking."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "47",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "An example of a competitive financial benchmark is",
+    "options": {
+      "A": "A data cap on the information that can be stored on a company issued smart phone.",
+      "B": "The customer satisfaction rating of a comparable process from an organization in a different industry.",
+      "C": "The average actual cost per pound of a specific product at the organization's most efficient plant.",
+      "D": "The labor rate of comparably skilled employees at a major competitor's plant."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "48",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "A method that identifies ways to optimize functions of the organization by studying operations of entities with similar processes is called",
+    "options": {
+      "A": "Benchmarking.",
+      "B": "Process mapping.",
+      "C": "Reengineering.",
+      "D": "Best-practice analysis."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "49",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Advisory services might negatively affect internal audit objectivity when",
+    "options": {
+      "A": "Internal auditors perform assurance over areas where they previously had management responsibility.",
+      "B": "Participating in developing risk management strategies.",
+      "C": "Auditors provide routine feedback on control processes.",
+      "D": "An informal communication of audit results is made."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "50",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Which of the following statements describes a facilitative advisory engagement?",
+    "options": {
+      "A": "An engagement that includes providing training on risk management to internal audit staff.",
+      "B": "An engagement that includes facilitating a control self-assessment workshop.",
+      "C": "An engagement that involves routine activities, such as participation in standing committees or limited-life projects.",
+      "D": "An engagement that includes participation in a team assembled to supply temporary help to meet a special request or unusual deadline."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "51",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "An organization is undergoing a business process reengineering initiative, which may lead to job function elimination and downsizing. Which one of the following would be an appropriate role for the internal audit function for this initiative?",
+    "options": {
+      "A": "Recommending functions to consider for reengineering.",
+      "B": "Participating in the meetings informing employees that their positions have been eliminated.",
+      "C": "Approving the reengineering initiative and recommendations.",
+      "D": "Determining whether the process has management support."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "52",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "How do internal auditors determine the appropriate scope for an advisory engagement?",
+    "options": {
+      "A": "They follow a fixed template that avoids risk assessment.",
+      "B": "They primarily define scope on historical data and routine procedures, thereby providing consultative guidance.",
+      "C": "They use standard protocols, limited risk evaluations, and informal management discussions when defining the engagement's scope.",
+      "D": "They define scope based on clear engagement objectives, in-depth risk assessment, and stakeholder feedback to ensure focused service delivery."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "53",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "Internal auditors may participate in the benchmarking process by",
+    "options": {
+      "A": "Providing assurance over all benchmark data.",
+      "B": "Selecting key benchmarks independently of management.",
+      "C": "Facilitating the identification and evaluation of appropriate benchmarks.",
+      "D": "Setting organizational strategy based on benchmarking outcomes."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "54",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "An internal audit team is performing a due diligence audit to assess plans for a potential merger or acquisition. Which of the following is likely the primary audit focus?",
+    "options": {
+      "A": "The financial statements of the acquiree.",
+      "B": "All of the answers are correct.",
+      "C": "The impact on taxes.",
+      "D": "The impact on labor."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "55",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "The internal auditor for ABC Corporation has received a special request from management. The internal auditor believes that the objectives that should be pursued go beyond those requested by management. What should the internal auditor do?",
+    "options": {
+      "A": "Include the objectives that are necessary in the current advisory engagement and inform management in the final communication of the engagement results.",
+      "B": "Refuse to accept the engagement unless management can be persuaded to include the additional objectives in the advisory engagement.",
+      "C": "Try to persuade management to include the additional objectives in the advisory engagement.",
+      "D": "Document the fact that the objectives were not pursued and disclose that observation to the audit committee in a formal report."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "56",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "Which of the following is an example of business process reengineering?",
+    "options": {
+      "A": "Rethinking the way that a bill is processed to significantly speed it up.",
+      "B": "Adding a new machine to the existing production line to speed up production.",
+      "C": "Repairing a machine on the process line to speed up production.",
+      "D": "Updating the computer systems involved on the production line to speed up production."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "57",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "One of the ways that an internal auditor exercises due professional care in conducting an advisory engagement is by",
+    "options": {
+      "A": "Providing services for issues that are likely to be routine.",
+      "B": "Providing exactly what management officials want and need.",
+      "C": "Understanding the possible motivations of those requesting the service.",
+      "D": "Immediately outsourcing advisory engagements requested after the annual audit plan has been finalized."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "58",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "How can an internal audit function effectively modify the scope of its advisory services in response to evolving risks and stakeholder requirements?",
+    "options": {
+      "A": "By continuously evaluating risk changes, stakeholder feedback, and engagement objectives to adjust the scope appropriately.",
+      "B": "By postponing scope modifications until the annual review despite noticeable changes in risk and stakeholder input.",
+      "C": "By maintaining the advisory objective set at the beginning of the engagement.",
+      "D": "By adjusting the scope based on historical engagement data and current processes."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "59",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Client service activities, the nature and scope of which are agreed upon with the client, are best described as",
+    "options": {
+      "A": "Assurance services.",
+      "B": "Audit services.",
+      "C": "Advisory services.",
+      "D": "Internal audit services."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "60",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "The management of a company would do which of the following to compare and contrast its financial information to published information reflecting optimal amounts?",
+    "options": {
+      "A": "Use financial ratios.",
+      "B": "Utilize best practices.",
+      "C": "Budget.",
+      "D": "Benchmark."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "61",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "What is the process by which products and services of a business entity are measured and evaluated relative to the best possible levels of performance?",
+    "options": {
+      "A": "Benchmarking.",
+      "B": "Variance management.",
+      "C": "Standard measurement.",
+      "D": "Measuring the performance gap."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "62",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "George is the new internal auditor for XYZ Corporation. George was in charge of payroll for XYZ just 10 months ago. Performing what services in regard to payroll is considered an impairment of independence or objectivity if performed by George?",
+    "options": {
+      "A": "Advisory services only.",
+      "B": "Assurance or advisory services.",
+      "C": "Assurance services.",
+      "D": "Neither assurance nor advisory services."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "63",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "When an internal auditor has a potential impairment of independence or objectivity relating to a proposed advisory engagement, what action must be taken?",
+    "options": {
+      "A": "The internal auditor must disclose the impairment to the engagement client before accepting the engagement.",
+      "B": "The internal auditor must not disclose the potential impairment to the chief audit executive.",
+      "C": "The internal auditor must immediately refuse the advisory engagement.",
+      "D": "The internal auditor need not disclose the potential impairment and may accept the engagement."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "64",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "Before internal auditors begin to offer advisory services to an organization, certain events must occur. What is the order in which the following items should occur? 1. The internal audit function develops appropriate policies and procedures for conducting such engagements. 2. The CAE confirms that the board understands and approves the concept of providing advisory services. 3. The internal audit charter is updated to include advisory services.",
+    "options": {
+      "A": "1, 2, 3.",
+      "B": "2, 1, 3.",
+      "C": "3, 2, 1.",
+      "D": "2, 3, 1."
+    },
+    "correct_answer": "D",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "65",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "During a risk assessment, how can one interpret the distinct roles of assurance and advisory services provided by internal auditing?",
+    "options": {
+      "A": "Assurance services offer independent, formal assessments of risks and controls, while advisory services give consultative suggestions for improvement.",
+      "B": "Assurance services conduct formal evaluations focused on process improvement, and advisory services focus on opportunities to improve control effectiveness.",
+      "C": "Assurance services produce opinions from structured reviews, while advisory services supply consultative guidance and formal conclusions.",
+      "D": "Assurance services deliver objective evaluations of processes without formal opinions, whereas advisory services advise on control design."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "66",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "An internal auditor concludes that the results of an advisory engagement should be communicated beyond those who received or requested the services. The auditor follows a series of steps until satisfied with the resolution. In what order will the auditor perform the following steps? 1. Attempt to convince those receiving or requesting the service to expand voluntarily the communication to the appropriate parties. 2. Determine what guidance is provided in the organization's code of conduct and other relevant policies, administrative directives, or procedures. 3. Determine what direction is provided in the agreement about the advisory engagement and related communications.",
+    "options": {
+      "A": "3, 1, 2.",
+      "B": "1, 3, 2.",
+      "C": "2, 1, 3.",
+      "D": "1, 2, 3."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "67",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "The CEO of an organization has initiated a project that will involve completely rethinking how business functions are performed to deliver value to customers. it will likely involve a radical restructuring of the business. This type of analysis is",
+    "options": {
+      "A": "Benchmarking.",
+      "B": "Business process reengineering (BPR).",
+      "C": "Process mapping.",
+      "D": "Continuous improvement."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "68",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "Who is responsible for determining information obtained in advisory engagements that is communicated to the board and senior management?",
+    "options": {
+      "A": "Management.",
+      "B": "The board.",
+      "C": "The chief audit executive.",
+      "D": "External auditor."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "69",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "Which of the following is true of benchmarking?",
+    "options": {
+      "A": "Benchmarking is accomplished by comparing an organization against other organizations or internally against other subunits.",
+      "B": "Benchmarking is typically accomplished by comparing an organization's performance with the performance of its closest competitors.",
+      "C": "Benchmarking can be performed by using only qualitative comparisons.",
+      "D": "Benchmarking is normally limited to manufacturing operations and production processes."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "70",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "Which of the following best describes due diligence auditing?",
+    "options": {
+      "A": "Addressing the audit procedures that would be applicable to an acquisition.",
+      "B": "Assessing the benefits and risks of a potential acquisition.",
+      "C": "Monitoring and evaluating significant construction contracts.",
+      "D": "Reviewing the adequacy and effectiveness of the controls over hazardous waste."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "71",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Senior management of an entity has requested that the internal audit function assist the purchasing department's switch from a manual entry inventory system to a fully automated inventory system. This service is best performed in a(n)",
+    "options": {
+      "A": "Special advisory engagement agreement.",
+      "B": "Formal advisory engagement agreement.",
+      "C": "Emergency advisory engagement agreement.",
+      "D": "Informal advisory engagement agreement."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "72",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Which of the following is a type of advisory engagement provided by internal auditors?",
+    "options": {
+      "A": "Educational.",
+      "B": "Financial opinion.",
+      "C": "Assurance.",
+      "D": "System implementation."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "73",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Members of the internal auditing function conducted an advisory engagement analyzing the controls in the development of a new information system. The internal auditors noted several control issues. The result of this engagement would most likely be",
+    "options": {
+      "A": "A report to management containing advice and recommendations on control design.",
+      "B": "A report criticizing management's weak internal controls over new information system development sent directly to the board.",
+      "C": "The formation of a temporary cross-functional team that includes members of the internal audit function to implement new controls.",
+      "D": "Implementation of new, stronger internal controls by the internal auditors."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "74",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 3,
+    "subunit_title": "Benchmarking",
+    "context": "",
+    "question": "Internal auditors may use benchmarking when performing an advisory service by",
+    "options": {
+      "A": "Implementing changes within management processes.",
+      "B": "Solely comparing financial statements within an industry.",
+      "C": "Identifying best practices that may improve organizational performance.",
+      "D": "Creating regulatory compliance guidelines."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "75",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Advisory services performed by internal auditors most likely benefit the organization because",
+    "options": {
+      "A": "They are the best method of ensuring the efficient operation of the organization.",
+      "B": "They need not be defined in the internal audit charter.",
+      "C": "They are intended to improve the organization's controls.",
+      "D": "The constraints of The IIA's Global Internal Audit Standards do not apply."
+    },
+    "correct_answer": "C",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "76",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 1,
+    "subunit_title": "Overview",
+    "context": "",
+    "question": "Internal audit advisory services",
+    "options": {
+      "A": "Include training.",
+      "B": "Involve assuming certain responsibilities for managing risks.",
+      "C": "Exclude investigations and nonaudit roles.",
+      "D": "Add value in ways not necessarily consistent with the definition of internal auditing."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "77",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "What should be considered when internal auditors perform advisory services related to business process reengineering?",
+    "options": {
+      "A": "Overseeing all changes to maintain control of the project.",
+      "B": "Ensuring they do not become too involved in process implementation.",
+      "C": "Complete autonomy over the process design and implementation.",
+      "D": "Solely focusing on reducing headcount to improve efficiency."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "78",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 4,
+    "subunit_title": "Other Advisory Services",
+    "context": "",
+    "question": "A company uses process mapping to enhance its internal control system. What is the internal auditor's role in this context?",
+    "options": {
+      "A": "The auditor designs and implements new controls based on the process map.",
+      "B": "The auditor verifies process accuracy and indicates the identified controls.",
+      "C": "The auditor compiles mapping results for management review and focuses on documenting processes.",
+      "D": "The auditor assists in depicting workflows and providing general oversight of process documentation."
+    },
+    "correct_answer": "B",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
+  },
+  {
+    "id": "79",
+    "type": "single_choice",
+    "unit_number": 4,
+    "unit_title": "Advisory Services",
+    "subunit_number": 2,
+    "subunit_title": "Internal Auditor Responsibilities",
+    "context": "",
+    "question": "After the chief audit executive receives approval from the board to offer advisory services, what should be done?",
+    "options": {
+      "A": "The internal audit charter should be amended.",
+      "B": "The CAE should begin performing advisory services.",
+      "C": "The CAE should get approval from the internal auditors.",
+      "D": "The board should develop appropriate policies and procedures for conducting such engagements."
+    },
+    "correct_answer": "A",
+    "source_file": "unit4_questions_array_same_format_as_unit3.json",
+    "exam_domain": ""
   }
 ]
