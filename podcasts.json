@@ -113,27 +113,30 @@
       "folder": "Podcast_Unit_04",
       "subunits": [
         {
-          "title": "4.0 Introduction — edit title/file",
+          "title": "4.0 Introduction — Introduction",
           "file": "Podcast_Unit_04/00_Subunit_4.0_Introduction.mp3"
         },
         {
-          "title": "4.1 Subunit 1 — edit title/file",
-          "file": "Podcast_Unit_04/01_Subunit_4.1_Subunit_1.mp3"
+          "title": "4.1 Subunit 1 — Overview",
+          "file": "Podcast_Unit_04/01_Subunit_4.1_Overview.mp3"
         },
         {
-          "title": "4.2 Subunit 2 — edit title/file",
-          "file": "Podcast_Unit_04/02_Subunit_4.2_Subunit_2.mp3"
+          "title": "4.2 Subunit 2 — Internal Auditor Responsibilities",
+          "file": "Podcast_Unit_04/02_Subunit_4.2_Internal_Auditor_Responsibilities.mp3"
         },
         {
-          "title": "4.3 Subunit 3 — edit title/file",
-          "file": "Podcast_Unit_04/03_Subunit_4.3_Subunit_3.mp3"
+          "title": "4.3 Subunit 3 — Benchmarking",
+          "file": "Podcast_Unit_04/03_Subunit_4.3_Benchmarking.mp3"
         },
         {
-          "title": "4.4 Subunit 4 — edit title/file",
-          "file": "Podcast_Unit_04/04_Subunit_4.4_Subunit_4.mp3"
+          "title": "4.4 Subunit 4 — Other Advisory Services",
+          "file": "Podcast_Unit_04/04_Subunit_4.4_Other_Advisory_Services.mp3"
+        },
+        {
+          "title": "4.5 Subunit 4 — Exam Drill Closing",
+          "file": "Podcast_Unit_04/05_Subunit_4.5_Mixed_Exam_Drill_Closing.mp3"
         }
       ],
-      "note": "Placeholder only. Replace with exact Unit 04 GitHub file names after upload."
     },
     "05": {
       "title": "Unit 05 podcast",
