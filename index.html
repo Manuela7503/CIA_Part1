@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>IIA CIA Part 1 Training App</title>
-<!-- v13 external questions.json + external podcasts.json; unit -> subunit podcast player; separate MP3 per subunit; no embedded question data -->
+<!-- v14 external questions.json + official exam domains + external podcasts.json; unit -> subunit podcast player; no embedded question data -->
 <style>
 :root{--bg:#f6f7fb;--card:#fff;--ink:#142033;--muted:#667085;--line:#d7deea;--brand:#1d4ed8;--brand2:#0f172a;--ok:#15803d;--bad:#b91c1c;--warn:#b45309;}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);}
@@ -142,24 +142,45 @@ const OFFICIAL_BLUEPRINT = [
   {key:'grc', label:'Governance, Risk Management, and Control', weight:30, target:37},
   {key:'fraud', label:'Fraud Risks', weight:15, target:19}
 ];
+
+// Default mapping from study-unit menus to the official CIA Part 1 exam domains.
+// The JSON can override this with exam_domain_key or exam_domain on each question.
+const EXAM_DOMAIN_BY_UNIT = {
+  1:'foundations',
+  2:'foundations',
+  3:'foundations',
+  4:'foundations',
+  5:'ethics',
+  6:'grc',
+  7:'grc',
+  8:'grc',
+  9:'grc',
+  10:'fraud'
+};
 let lastExamWarnings = [];
 
 function domainOf(q){
+  const explicitKey = String(q.exam_domain_key || '').toLowerCase().trim();
+  if(OFFICIAL_BLUEPRINT.some(d=>d.key===explicitKey)) return explicitKey;
+
   const explicit = String(q.exam_domain || q.domain || '').toLowerCase();
-  const text = [q.unit_title, q.subunit_title, q.unit, q.subunit].join(' ').toLowerCase();
   if(explicit.includes('ethic')) return 'ethics';
   if(explicit.includes('fraud')) return 'fraud';
-  if(explicit.includes('governance') || explicit.includes('risk management') || explicit.includes('control')) return 'grc';
-  if(explicit.includes('foundation') || explicit.includes('assurance')) return 'foundations';
-  // Current Gleim-style Study Unit 1 and 2 files are treated as Part 1 internal-audit fundamentals/foundations until a future JSON specifies a more precise exam_domain.
-  if(Number(q.unit_number)===1 || Number(q.unit_number)===2) return 'foundations';
+  if(explicit.includes('governance') || explicit.includes('risk management') || explicit.includes('control') || explicit.includes('grc')) return 'grc';
+  if(explicit.includes('foundation') || explicit.includes('assurance') || explicit.includes('advisory')) return 'foundations';
+
+  const unitKey = EXAM_DOMAIN_BY_UNIT[Number(q.unit_number)];
+  if(unitKey) return unitKey;
+
+  const text = [q.unit_title, q.subunit_title, q.unit, q.subunit].join(' ').toLowerCase();
   if(text.includes('ethic')) return 'ethics';
   if(text.includes('fraud')) return 'fraud';
   if(text.includes('governance') || text.includes('risk management')) return 'grc';
-  if(text.includes('foundation') || text.includes('assurance')) return 'foundations';
+  if(text.includes('foundation') || text.includes('assurance') || text.includes('advisory')) return 'foundations';
   return 'unmapped';
 }
 function domainLabel(key){ const d=OFFICIAL_BLUEPRINT.find(x=>x.key===key); return d?d.label:'Unmapped / not assigned'; }
+function domainWeight(key){ const d=OFFICIAL_BLUEPRINT.find(x=>x.key===key); return d?d.weight:null; }
 function examTargets(total){
   total = Math.max(1, Number(total||125));
   const raw = OFFICIAL_BLUEPRINT.map(d=>({ ...d, exact: total*d.weight/100 }));
@@ -193,10 +214,28 @@ function normalizeQuestion(q, source='import'){
   Object.keys(opts).forEach(k=>{ if(opts[k]!==undefined && opts[k]!==null) cleanOpts[String(k).trim().toUpperCase()] = String(opts[k]).trim(); });
   let ans = String(q.correct_answer ?? '').trim().toUpperCase().replace('.','');
   if(!cleanOpts[ans] && ans.length>1){ const m = ans.match(/[A-D]/g); if(m) ans = m[m.length-1]; }
-  return {
+
+  const base = {
     id: q.id ? String(q.id) : `${u}-${su}-${Date.now()}-${Math.random().toString(36).slice(2)}`,
-    type: q.type || 'single_choice', unit_number:u, unit_title:String(q.unit_title ?? q.study_unit_title ?? '').trim(), subunit_number:su, subunit_title:String(q.subunit_title ?? '').trim(), context:String(q.context ?? '').trim(), question:String(q.question ?? '').trim(), options:cleanOpts, correct_answer:ans, source_file:q.source_file || source, exam_domain:String(q.exam_domain || q.domain || '').trim()
+    type: q.type || 'single_choice',
+    unit_number:u,
+    unit_title:String(q.unit_title ?? q.study_unit_title ?? '').trim(),
+    subunit_number:su,
+    subunit_title:String(q.subunit_title ?? '').trim(),
+    context:String(q.context ?? '').trim(),
+    question:String(q.question ?? '').trim(),
+    options:cleanOpts,
+    correct_answer:ans,
+    source_file:q.source_file || source,
+    exam_domain_key:String(q.exam_domain_key || '').trim(),
+    exam_domain:String(q.exam_domain || q.domain || '').trim(),
+    exam_domain_weight:q.exam_domain_weight ?? null
   };
+  const key = domainOf(base);
+  base.exam_domain_key = key;
+  base.exam_domain = domainLabel(key);
+  base.exam_domain_weight = domainWeight(key);
+  return base;
 }
 function valid(q){ return q.question && q.options && Object.keys(q.options).length >= 2 && q.correct_answer && q.options[q.correct_answer]; }
 async function loadBank(){
@@ -210,10 +249,10 @@ async function loadBank(){
 function getCounts(){
   const units = {};
   BANK.forEach(q=>{
-    const u=q.unit_number, su=q.subunit_number;
-    if(!units[u]) units[u]={title:q.unit_title || `Unit ${u}`, count:0, subunits:{}};
+    const u=q.unit_number, su=q.subunit_number, dk=domainOf(q);
+    if(!units[u]) units[u]={title:q.unit_title || `Unit ${u}`, domainKey:dk, domainLabel:domainLabel(dk), count:0, subunits:{}};
     units[u].count++;
-    if(!units[u].subunits[su]) units[u].subunits[su]={title:q.subunit_title || `Subunit ${su}`, count:0};
+    if(!units[u].subunits[su]) units[u].subunits[su]={title:q.subunit_title || `Subunit ${su}`, domainKey:dk, domainLabel:domainLabel(dk), count:0};
     units[u].subunits[su].count++;
   });
   return units;
@@ -222,7 +261,9 @@ function renderStats(){
   const units=getCounts();
   const total=BANK.length;
   const subCount = Object.values(units).reduce((n,u)=>n+Object.keys(u.subunits).length,0);
-  el('bankStats').innerHTML = `<b>${total}</b> questions loaded from <code>questions.json</code> · <b>${Object.keys(units).length}</b> units · <b>${subCount}</b> subunits`;
+  const dc=domainCounts();
+  const domainSummary = OFFICIAL_BLUEPRINT.map(d=>`${d.label}: ${dc[d.key]||0}`).join(' · ');
+  el('bankStats').innerHTML = `<b>${total}</b> questions loaded from <code>questions.json</code> · <b>${Object.keys(units).length}</b> units · <b>${subCount}</b> subunits<br><span class="small">${domainSummary}</span>`;
   if(SESSION_IMPORT_BANK.length){ el('bankStats').innerHTML += ` <span class="pill warn">${SESSION_IMPORT_BANK.length} session-only imported questions</span>`; }
   if(externalQuestionLoadError){ el('bankStats').innerHTML += ` <span class="pill warn">questions.json not loaded: ${escapeHtml(externalQuestionLoadError)}</span>`; }
   if(el('coverage')) el('coverage').innerHTML = '';
@@ -252,7 +293,7 @@ function renderSelectors(){
   const units=getCounts();
   let html='';
   Object.keys(units).sort((a,b)=>a-b).forEach(u=>{
-    html += `<div class="unitHead"><div class="checkrow"><input type="checkbox" class="unitCheck" id="unit_${u}" data-unit="${u}" onchange="toggleUnit(${u}, this.checked)"><label for="unit_${u}">Unit ${u}: ${escapeHtml(units[u].title)} <span class="pill gray">(${units[u].count})</span></label></div></div>`;
+    html += `<div class="unitHead"><div class="checkrow"><input type="checkbox" class="unitCheck" id="unit_${u}" data-unit="${u}" onchange="toggleUnit(${u}, this.checked)"><label for="unit_${u}">Unit ${u}: ${escapeHtml(units[u].title)} <span class="pill gray">(${units[u].count})</span><span class="pill ok">${escapeHtml(units[u].domainLabel)}</span></label></div></div>`;
     html += `<div class="subList">`;
     Object.keys(units[u].subunits).sort((a,b)=>a-b).forEach(su=>{
       const key=`${u}::${su}`;
