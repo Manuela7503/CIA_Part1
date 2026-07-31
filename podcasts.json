@@ -3,6 +3,33 @@
   "mode": "separate_subunit_files",
   "how_to_edit": "Each subunit has its own audio file. Edit title/file to match the exact path uploaded to GitHub. Recommended folders: Podcast_Unit_01/, Podcast_Unit_02/, etc.",
   "units": {
+    "10": {
+      "title": "Fraud Risks",
+      "folder": "Podcast_Unit_10",
+      "subunits": [
+        {
+          "title": "10.0 Introduction",
+          "file": "Podcast_Unit_10/00_Subunit_10.0_Introduction.mp3"
+        },
+        {
+          "title": "10.1 Fraud -- Risks and Types",
+          "file": "Podcast_Unit_10/01_Subunit_10.1_Fraud_Risks_and_Types.mp3"
+        },
+        {
+          "title": "10.2 Fraud -- Controls",
+          "file": "Podcast_Unit_10/02_Subunit_10.2_Fraud_Controls.mp3"
+        },
+        {
+          "title": "10.3 Fraud -- Investigation",
+          "file": "Podcast_Unit_10/03_Subunit_10.3_Fraud_Investigation.mp3"
+        },
+        {
+          "title": "10.4 Final Mixed Exam Drill / Closing",
+          "file": "Podcast_Unit_10/04_Subunit_10.4_Mixed_Exam_Drill_Closing.mp3"
+        }
+      ],
+      "note": "Placeholder subunit structure from the exam outline (question counts confirmed). Replace file paths with the exact GitHub names after the audio is uploaded."
+    },
     "01": {
       "title": "Foundations of Internal Auditing",
       "folder": "Podcast_Unit_01",
@@ -138,166 +165,146 @@
       ]
     },
     "05": {
-      "title": "Unit 05 podcast",
+      "title": "Ethics and Professionalism",
       "folder": "Podcast_Unit_05",
       "subunits": [
         {
-          "title": "5.0 Introduction — edit title/file",
+          "title": "5.0 Introduction",
           "file": "Podcast_Unit_05/00_Subunit_5.0_Introduction.mp3"
         },
         {
-          "title": "5.1 Subunit 1 — edit title/file",
-          "file": "Podcast_Unit_05/01_Subunit_5.1_Subunit_1.mp3"
+          "title": "5.1 Integrity",
+          "file": "Podcast_Unit_05/01_Subunit_5.1_Integrity.mp3"
         },
         {
-          "title": "5.2 Subunit 2 — edit title/file",
-          "file": "Podcast_Unit_05/02_Subunit_5.2_Subunit_2.mp3"
+          "title": "5.2 Objectivity",
+          "file": "Podcast_Unit_05/02_Subunit_5.2_Objectivity.mp3"
         },
         {
-          "title": "5.3 Subunit 3 — edit title/file",
-          "file": "Podcast_Unit_05/03_Subunit_5.3_Subunit_3.mp3"
+          "title": "5.3 Competency",
+          "file": "Podcast_Unit_05/03_Subunit_5.3_Competency.mp3"
         },
         {
-          "title": "5.4 Subunit 4 — edit title/file",
-          "file": "Podcast_Unit_05/04_Subunit_5.4_Subunit_4.mp3"
+          "title": "5.4 Due Professional Care",
+          "file": "Podcast_Unit_05/04_Subunit_5.4_Due_Professional_Care.mp3"
+        },
+        {
+          "title": "5.5 Confidentiality",
+          "file": "Podcast_Unit_05/05_Subunit_5.5_Confidentiality.mp3"
+        },
+        {
+          "title": "5.6 Final Mixed Exam Drill / Closing",
+          "file": "Podcast_Unit_05/06_Subunit_5.6_Mixed_Exam_Drill_Closing.mp3"
         }
-      ],
-      "note": "Placeholder only. Replace with exact Unit 05 GitHub file names after upload."
+      ]
     },
     "06": {
-      "title": "Unit 06 podcast",
+      "title": "Governance",
       "folder": "Podcast_Unit_06",
       "subunits": [
         {
-          "title": "6.0 Introduction — edit title/file",
+          "title": "6.0 Introduction",
           "file": "Podcast_Unit_06/00_Subunit_6.0_Introduction.mp3"
         },
         {
-          "title": "6.1 Subunit 1 — edit title/file",
-          "file": "Podcast_Unit_06/01_Subunit_6.1_Subunit_1.mp3"
+          "title": "6.1 Governance Principles",
+          "file": "Podcast_Unit_06/01_Subunit_6.1_Governance_Principles.mp3"
         },
         {
-          "title": "6.2 Subunit 2 — edit title/file",
-          "file": "Podcast_Unit_06/02_Subunit_6.2_Subunit_2.mp3"
+          "title": "6.2 Organizational Culture",
+          "file": "Podcast_Unit_06/02_Subunit_6.2_Organizational_Culture.mp3"
         },
         {
-          "title": "6.3 Subunit 3 — edit title/file",
-          "file": "Podcast_Unit_06/03_Subunit_6.3_Subunit_3.mp3"
+          "title": "6.3 Roles of Internal Auditors in Governance",
+          "file": "Podcast_Unit_06/03_Subunit_6.3_Roles_of_Internal_Auditors_in_Governance.mp3"
         },
         {
-          "title": "6.4 Subunit 4 — edit title/file",
-          "file": "Podcast_Unit_06/04_Subunit_6.4_Subunit_4.mp3"
+          "title": "6.4 Final Mixed Exam Drill / Closing",
+          "file": "Podcast_Unit_06/04_Subunit_6.4_Mixed_Exam_Drill_Closing.mp3"
         }
       ],
-      "note": "Placeholder only. Replace with exact Unit 06 GitHub file names after upload."
+      "note": "Placeholder subunit structure from the exam outline (question counts confirmed). Replace file paths with the exact GitHub names after the audio is uploaded."
     },
     "07": {
-      "title": "Unit 07 podcast",
+      "title": "Risk Management",
       "folder": "Podcast_Unit_07",
       "subunits": [
         {
-          "title": "7.0 Introduction — edit title/file",
+          "title": "7.0 Introduction",
           "file": "Podcast_Unit_07/00_Subunit_7.0_Introduction.mp3"
         },
         {
-          "title": "7.1 Subunit 1 — edit title/file",
-          "file": "Podcast_Unit_07/01_Subunit_7.1_Subunit_1.mp3"
+          "title": "7.1 Risk Management Processes",
+          "file": "Podcast_Unit_07/01_Subunit_7.1_Risk_Management_Processes.mp3"
         },
         {
-          "title": "7.2 Subunit 2 — edit title/file",
-          "file": "Podcast_Unit_07/02_Subunit_7.2_Subunit_2.mp3"
+          "title": "7.2 COSO Framework -- Enterprise Risk Management (ERM) Overview",
+          "file": "Podcast_Unit_07/02_Subunit_7.2_COSO_Framework_Enterprise_Risk_Management_ERM_Overview.mp3"
         },
         {
-          "title": "7.3 Subunit 3 — edit title/file",
-          "file": "Podcast_Unit_07/03_Subunit_7.3_Subunit_3.mp3"
+          "title": "7.3 COSO Framework -- ERM Components and Limitations",
+          "file": "Podcast_Unit_07/03_Subunit_7.3_COSO_Framework_ERM_Components_and_Limitations.mp3"
         },
         {
-          "title": "7.4 Subunit 4 — edit title/file",
-          "file": "Podcast_Unit_07/04_Subunit_7.4_Subunit_4.mp3"
+          "title": "7.4 ISO 31000 Risk Management Framework",
+          "file": "Podcast_Unit_07/04_Subunit_7.4_ISO_31000_Risk_Management_Framework.mp3"
+        },
+        {
+          "title": "7.5 Final Mixed Exam Drill / Closing",
+          "file": "Podcast_Unit_07/05_Subunit_7.5_Mixed_Exam_Drill_Closing.mp3"
         }
       ],
-      "note": "Placeholder only. Replace with exact Unit 07 GitHub file names after upload."
+      "note": "Placeholder subunit structure from the exam outline (question counts confirmed). Replace file paths with the exact GitHub names after the audio is uploaded."
     },
     "08": {
-      "title": "Unit 08 podcast",
+      "title": "Controls: Types",
       "folder": "Podcast_Unit_08",
       "subunits": [
         {
-          "title": "8.0 Introduction — edit title/file",
+          "title": "8.0 Introduction",
           "file": "Podcast_Unit_08/00_Subunit_8.0_Introduction.mp3"
         },
         {
-          "title": "8.1 Subunit 1 — edit title/file",
-          "file": "Podcast_Unit_08/01_Subunit_8.1_Subunit_1.mp3"
+          "title": "8.1 Overview of Control",
+          "file": "Podcast_Unit_08/01_Subunit_8.1_Overview_of_Control.mp3"
         },
         {
-          "title": "8.2 Subunit 2 — edit title/file",
-          "file": "Podcast_Unit_08/02_Subunit_8.2_Subunit_2.mp3"
+          "title": "8.2 Types of Controls",
+          "file": "Podcast_Unit_08/02_Subunit_8.2_Types_of_Controls.mp3"
         },
         {
-          "title": "8.3 Subunit 3 — edit title/file",
-          "file": "Podcast_Unit_08/03_Subunit_8.3_Subunit_3.mp3"
-        },
-        {
-          "title": "8.4 Subunit 4 — edit title/file",
-          "file": "Podcast_Unit_08/04_Subunit_8.4_Subunit_4.mp3"
+          "title": "8.3 Final Mixed Exam Drill / Closing",
+          "file": "Podcast_Unit_08/03_Subunit_8.3_Mixed_Exam_Drill_Closing.mp3"
         }
       ],
-      "note": "Placeholder only. Replace with exact Unit 08 GitHub file names after upload."
+      "note": "Placeholder subunit structure from the exam outline (question counts confirmed). Replace file paths with the exact GitHub names after the audio is uploaded."
     },
     "09": {
-      "title": "Unit 09 podcast",
+      "title": "Controls: Application",
       "folder": "Podcast_Unit_09",
       "subunits": [
         {
-          "title": "9.0 Introduction — edit title/file",
+          "title": "9.0 Introduction",
           "file": "Podcast_Unit_09/00_Subunit_9.0_Introduction.mp3"
         },
         {
-          "title": "9.1 Subunit 1 — edit title/file",
-          "file": "Podcast_Unit_09/01_Subunit_9.1_Subunit_1.mp3"
+          "title": "9.1 Accounting Cycles and Associated Controls",
+          "file": "Podcast_Unit_09/01_Subunit_9.1_Accounting_Cycles_and_Associated_Controls.mp3"
         },
         {
-          "title": "9.2 Subunit 2 — edit title/file",
-          "file": "Podcast_Unit_09/02_Subunit_9.2_Subunit_2.mp3"
+          "title": "9.2 Management Controls",
+          "file": "Podcast_Unit_09/02_Subunit_9.2_Management_Controls.mp3"
         },
         {
-          "title": "9.3 Subunit 3 — edit title/file",
-          "file": "Podcast_Unit_09/03_Subunit_9.3_Subunit_3.mp3"
+          "title": "9.3 Control Frameworks",
+          "file": "Podcast_Unit_09/03_Subunit_9.3_Control_Frameworks.mp3"
         },
         {
-          "title": "9.4 Subunit 4 — edit title/file",
-          "file": "Podcast_Unit_09/04_Subunit_9.4_Subunit_4.mp3"
+          "title": "9.4 Final Mixed Exam Drill / Closing",
+          "file": "Podcast_Unit_09/04_Subunit_9.4_Mixed_Exam_Drill_Closing.mp3"
         }
       ],
-      "note": "Placeholder only. Replace with exact Unit 09 GitHub file names after upload."
-    },
-    "10": {
-      "title": "Unit 10 podcast",
-      "folder": "Podcast_Unit_10",
-      "subunits": [
-        {
-          "title": "10.0 Introduction — edit title/file",
-          "file": "Podcast_Unit_10/00_Subunit_10.0_Introduction.mp3"
-        },
-        {
-          "title": "10.1 Subunit 1 — edit title/file",
-          "file": "Podcast_Unit_10/01_Subunit_10.1_Subunit_1.mp3"
-        },
-        {
-          "title": "10.2 Subunit 2 — edit title/file",
-          "file": "Podcast_Unit_10/02_Subunit_10.2_Subunit_2.mp3"
-        },
-        {
-          "title": "10.3 Subunit 3 — edit title/file",
-          "file": "Podcast_Unit_10/03_Subunit_10.3_Subunit_3.mp3"
-        },
-        {
-          "title": "10.4 Subunit 4 — edit title/file",
-          "file": "Podcast_Unit_10/04_Subunit_10.4_Subunit_4.mp3"
-        }
-      ],
-      "note": "Placeholder only. Replace with exact Unit 10 GitHub file names after upload."
+      "note": "Placeholder subunit structure from the exam outline (question counts confirmed). Replace file paths with the exact GitHub names after the audio is uploaded."
     }
   }
 }
