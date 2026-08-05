@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>IIA CIA Part 1 Training App</title>
-<!-- v14 external questions.json + official exam domains + external podcasts.json; unit -> subunit podcast player; no embedded question data -->
+<!-- v15 external questions.json + official exam domains + external podcasts.json; unit -> selectable subunit playlist with mobile-safe auto-advance; no embedded question data -->
 <style>
 :root{--bg:#f6f7fb;--card:#fff;--ink:#142033;--muted:#667085;--line:#d7deea;--brand:#1d4ed8;--brand2:#0f172a;--ok:#15803d;--bad:#b91c1c;--warn:#b45309;}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);}
@@ -22,7 +22,7 @@ button{border:0;border-radius:12px;padding:12px 14px;font-weight:800;cursor:poin
 .option{display:block;width:100%;text-align:left;margin:9px 0;padding:13px;border:1px solid var(--line);border-radius:12px;background:#fff;color:#111827;font-weight:650;line-height:1.35} .option.correct{border-color:#16a34a;background:#dcfce7} .option.wrong{border-color:#dc2626;background:#fee2e2}
 .feedback{font-weight:850;margin-top:12px} .good{color:var(--ok)} .badtext{color:var(--bad)} .warntext{color:var(--warn)} .progressbar{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden} .progressbar>div{height:100%;background:var(--brand);width:0%}
 hr{border:0;border-top:1px solid var(--line);margin:14px 0} .footer-note{font-size:12px;color:var(--muted);line-height:1.4}
-audio{width:100%;margin-top:10px}.podcastGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.podcastBtn{background:#fff;color:#172036;border:1px solid var(--line);text-align:left}.podcastBtn b{display:block}.podcastBtn span{display:block;font-size:12px;color:var(--muted);margin-top:3px}.podcastBtn.active{background:#dbeafe;border-color:#60a5fa}.podcastPlayer{background:#f8fafc;border-color:#dbeafe}.chapterGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin-top:10px}.chapterActions{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 8px}.chapterActions button{width:auto}.chapterBtn{background:#fff;color:#172036;border:1px solid var(--line);text-align:left;padding:10px 12px;font-weight:750}.chapterBtn.active{background:#dbeafe;border-color:#60a5fa}.chapterBtn small{display:block;color:var(--muted);font-weight:600;margin-top:3px}.chapterTools{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+audio{width:100%;margin-top:10px}.podcastGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}.podcastBtn{background:#fff;color:#172036;border:1px solid var(--line);text-align:left}.podcastBtn b{display:block}.podcastBtn span{display:block;font-size:12px;color:var(--muted);margin-top:3px}.podcastBtn.active{background:#dbeafe;border-color:#60a5fa}.podcastPlayer{background:#f8fafc;border-color:#dbeafe}.chapterGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin-top:10px}.chapterActions{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 8px}.chapterActions button{width:auto}.chapterBtn{background:#fff;color:#172036;border:1px solid var(--line);text-align:left;padding:10px 12px;font-weight:750}.chapterBtn.active{background:#dbeafe;border-color:#60a5fa}.chapterBtn small{display:block;color:var(--muted);font-weight:600;margin-top:3px}.chapterTools{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.chapterList{display:flex;flex-direction:column;gap:8px;margin-top:12px}.chapterActions{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 4px}.chapterActions button,.chapterTools button{width:auto;flex:0 1 auto;margin-top:0}.trackRow{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:8px 10px}.trackRow.active{background:#dbeafe;border-color:#60a5fa}.trackRow.failed{background:#fff7ed;border-color:#fed7aa}.trackRow input[type=checkbox]{width:22px;height:22px;flex:0 0 auto;margin:0;padding:0}.trackNum{flex:0 0 auto;font-size:12px;font-weight:800;color:var(--muted);min-width:22px}.trackPlay{flex:1 1 auto;width:auto;margin:0;background:transparent;color:#172036;border:0;text-align:left;padding:4px 2px;font-weight:750;line-height:1.3}.trackPlay small{display:block;color:var(--muted);font-weight:600;margin-top:3px;word-break:break-all}.optRow{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:10px}.inlineOpt{display:inline-flex;align-items:center;gap:8px;margin:0;font-weight:700;white-space:nowrap}.inlineOpt input{width:auto;margin:0;transform:scale(1.15)}.inlineOpt select{width:auto;padding:6px 8px}.resumeBox{margin-top:10px;background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:10px}#podcastNowPlaying{margin:4px 0 2px}
 @media(max-width:650px){.wrap{padding:12px} .card{border-radius:14px;padding:14px} button{width:100%;margin-top:6px} h1{font-size:18px} .qtitle{font-size:17px} .countTable td,.countTable th{font-size:13px;padding:7px 4px}}
 </style>
 </head>
@@ -46,16 +46,39 @@ audio{width:100%;margin-top:10px}.podcastGrid{display:grid;grid-template-columns
 <section id="quiz" class="card panel hidden"><div class="row"><div class="grow"><div class="small" id="sessionMeta"></div><div class="progressbar"><div id="bar"></div></div></div><div class="timer" id="timer"></div></div><div id="questionArea"></div><div class="row" style="margin-top:12px"><button id="nextBtn" class="secondary hidden" onclick="nextQuestion()">Next</button><button class="ghost" onclick="endSession()">End session</button></div></section>
 <section id="results" class="card panel hidden"><h2>Results</h2><div id="resultText"></div><div class="row" style="margin-top:12px"><button onclick="showPanel('setup')">New session</button><button class="secondary" onclick="startWrongOnly()">Repeat wrong only</button></div></section>
 <section id="podcasts" class="card panel hidden"><h2>Podcasts</h2>
-<p class="small">Select a unit first. Then the app shows the available subunit podcast files for that unit. You can play one subunit or play the whole unit in order.</p>
+<p class="small">Pick a unit. Then tick the subunits you want and press <b>Play selected</b>. The app plays them in order and moves on automatically.</p>
 <div class="pill warn"><b>Source of truth:</b> podcast titles and audio filenames come from <code>podcasts.json</code>. GitHub Pages cannot automatically list files inside folders, so <code>podcasts.json</code> is the index/menu for the audio files.</div>
 <div class="small" style="margin-top:8px">Recommended GitHub structure: <code>Podcast_Unit_01/00_Subunit_1.0_Introduction.mp3</code>, <code>Podcast_Unit_01/01_Subunit_1.1_Purpose_of_Internal_Auditing.mp3</code>, etc. You do not need the old root files like <code>Podcast_Unit_01.mp3</code> unless you want to keep them as backups.</div>
 <div id="podcastButtons" class="podcastGrid" style="margin-top:12px"></div>
 <div id="podcastPlayerBox" class="card podcastPlayer hidden">
   <h3 id="podcastTitle">Podcast</h3>
-  <div class="chapterTools"><button class="secondary" onclick="playAllSubunitsCurrentPodcast()">Play whole selected unit</button><button class="ghost" onclick="stopPodcast()">Stop</button><button class="ghost" onclick="exportPodcastConfig()">Download podcasts.json</button></div>
-  <audio id="podcastAudio" controls preload="none"></audio>
+  <div id="podcastNowPlaying"></div>
+  <audio id="podcastAudio" controls preload="none" playsinline></audio>
+  <div id="podcastResume" class="resumeBox hidden"></div>
+  <div class="chapterTools">
+    <button id="playSelectedBtn" onclick="playSelectedSubunits()">&#9654; Play selected</button>
+    <button class="secondary" onclick="playAllSubunitsCurrentPodcast()">&#9654; Play whole unit</button>
+    <button class="ghost" onclick="podcastSkip(-1)">&#9198; Previous</button>
+    <button class="ghost" onclick="podcastSkip(1)">&#9197; Next</button>
+    <button class="ghost" onclick="stopPodcast()">&#9632; Stop</button>
+  </div>
+  <div class="optRow">
+    <label class="inlineOpt"><input type="checkbox" id="autoAdvance" checked onchange="setAutoAdvance(this.checked)"> Autoplay next subunit</label>
+    <label class="inlineOpt">Speed
+      <select id="podcastRate" onchange="setPodcastRate(this.value)">
+        <option value="0.75">0.75x</option>
+        <option value="1" selected>1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="1.75">1.75x</option>
+        <option value="2">2x</option>
+      </select>
+    </label>
+  </div>
   <div id="podcastMsg" class="small" style="margin-top:8px"></div>
-  <div id="podcastChapters" class="chapterGrid"></div>
+  <div id="podcastChapters" class="chapterList"></div>
+  <div class="chapterTools" style="margin-top:12px"><button class="ghost" onclick="exportPodcastConfig()">Download podcasts.json</button></div>
+  <p class="footer-note">Phone tip: keep this tab open while listening. If your phone blocks the automatic start of the next file, a <b>Tap to continue</b> button appears and resumes the queue where it stopped. Lock-screen next/previous controls also work.</p>
 </div>
 </section>
 <section id="data" class="card panel hidden"><h2>Data / Add more questions</h2>
@@ -328,10 +351,32 @@ function updateTimerSuggestion(){
   else if(mode==='practice') el('timerSuggestion').innerHTML = `Study mode suggestion: for ${want} questions, use about <b>${suggested}</b> if you want real-exam pace.`;
   else el('timerSuggestion').innerHTML = `Wrong-only mode suggestion: timer is based on the number of questions selected, about <b>${suggested}</b>.`;
 }
-const PODCAST_EXTENSIONS = ['.mp3','.m4a','.wav','.ogg',''];
+/* ============================================================
+   Podcast player v15
+   Unit -> selectable subunit playlist with reliable mobile chaining.
+   Key mobile fixes:
+   - play() is called synchronously when the src is set (inside the
+     'ended' handler), which keeps the audio element's user-activation
+     on iOS/Android. Calling play() later from 'loadedmetadata' was the
+     reason playback stopped after the first subunit on phones.
+   - No redundant load() calls (they abort pending play() promises).
+   - Blocked playback is never swallowed: a "Tap to continue" button
+     appears and resumes exactly where the queue stopped.
+   - MediaSession metadata so lock-screen next/prev works.
+   - A missing/broken file auto-skips instead of killing the queue.
+   ============================================================ */
+const PODCAST_EXTENSIONS = ['.mp3','.m4a','.wav','.ogg'];
 let podcastTryState = null;
 let currentSubunitIndex = null;
-let autoPlaySubunits = false;
+let autoPlaySubunits = true;
+let podcastQueue = [];
+let queuePos = -1;
+let podcastSelected = new Set();
+let resolvedFileCache = {};
+let podcastRate = 1;
+let podcastSkipTimer = null;
+let podcastFailed = new Set();
+
 function podcastKey(unit){ return String(unit).padStart(2,'0'); }
 function podcastBaseName(unit){ return 'Podcast_Unit_' + podcastKey(unit); }
 function podcastUnitConfig(unit){
@@ -378,7 +423,7 @@ function fileCandidates(file){
   if(!f) return [];
   const hasExt=/\.(mp3|m4a|wav|ogg)$/i.test(f);
   if(hasExt) return [f];
-  return PODCAST_EXTENSIONS.map(ext=>f+ext).filter(Boolean);
+  return PODCAST_EXTENSIONS.map(ext=>f+ext);
 }
 function legacyUnitCandidates(unit){
   const cfg=podcastUnitConfig(unit); const base=podcastBaseName(unit); const out=[];
@@ -386,41 +431,58 @@ function legacyUnitCandidates(unit){
   PODCAST_EXTENSIONS.forEach(ext=>out.push(base+ext));
   return [...new Set(out.filter(Boolean))];
 }
+
+/* ---------- unit buttons ---------- */
 function renderPodcastButtons(){
   const box=el('podcastButtons'); if(!box) return;
   let html='';
   if(externalPodcastLoadError) html += `<div class="pill warn" style="grid-column:1/-1">${escapeHtml(PODCAST_FILE)} not found yet. Add it to GitHub to show podcast subunit buttons.</div>`;
   for(let i=1;i<=10;i++){
-    const cfg=podcastUnitConfig(i); const items=subunitList(i); const n=items.length;
+    const items=subunitList(i); const n=items.length;
     const label=n ? `${n} subunit file${n===1?'':'s'} available` : 'placeholder / no files yet';
     html += `<button class="podcastBtn ${currentPodcastUnit===i?'active':''}" onclick="openPodcastUnit(${i})"><b>Unit ${podcastKey(i)}</b><span>${escapeHtml(podcastUnitTitle(i))}</span><span>${escapeHtml(label)}</span></button>`;
   }
   box.innerHTML=html;
 }
+
+/* ---------- open a unit ---------- */
 function openPodcastUnit(unit){
   const player=el('podcastPlayerBox'), audio=el('podcastAudio'), msg=el('podcastMsg'), title=el('podcastTitle');
-  currentPodcastUnit=unit; currentSubunitIndex=null; autoPlaySubunits=false; podcastStopAt=null;
+  clearTimeout(podcastSkipTimer);
+  currentPodcastUnit=unit; currentSubunitIndex=null; podcastStopAt=null;
+  podcastQueue=[]; queuePos=-1; podcastFailed=new Set(); podcastTryState=null;
+  const items=subunitList(unit);
+  podcastSelected = new Set(items.map((_,i)=>i)); // everything ticked by default
   renderPodcastButtons();
   if(player) player.classList.remove('hidden');
   if(title) title.textContent = `Unit ${podcastKey(unit)} — ${podcastUnitTitle(unit)}`;
-  if(audio){ try{ audio.pause(); }catch(e){} audio.removeAttribute('src'); audio.load(); }
+  if(audio){ try{ audio.pause(); }catch(e){} audio.ontimeupdate=null; audio.removeAttribute('src'); try{ audio.load(); }catch(e){} }
+  hidePodcastResume();
   renderPodcastChapters(unit, null);
-  const items=subunitList(unit);
+  updateNowPlaying();
   if(msg){
-    msg.innerHTML = items.length ? `Choose a subunit below, or click <b>Play whole selected unit</b> to play all ${items.length} files in order.` : `No subunit files listed yet. Add them in <code>podcasts.json</code>.`;
+    msg.innerHTML = items.length
+      ? `Tick the subunits you want, then press <b>Play selected</b>. Playback continues automatically to the next ticked subunit.`
+      : `No subunit files listed yet. Add them in <code>podcasts.json</code>.`;
   }
   if(player) player.scrollIntoView({behavior:'smooth', block:'start'});
 }
+
+/* ---------- playlist rendering ---------- */
 function renderPodcastChapters(unit, activeIndex=null){
   const box=el('podcastChapters'); if(!box) return;
   const cfg=podcastUnitConfig(unit); const items=subunitList(unit);
   let html='';
-  if(cfg.note) html += `<div class="small" style="grid-column:1/-1">${escapeHtml(cfg.note)}</div>`;
+  if(cfg.note) html += `<div class="small">${escapeHtml(cfg.note)}</div>`;
   if(!items.length){
-    html += `<div class="small" style="grid-column:1/-1">No subunit audio listed yet. Add entries like <code>{"title":"1.1 Purpose", "file":"Podcast_Unit_01/01_Subunit_1.1_Purpose.mp3"}</code> in <code>podcasts.json</code>.</div>`;
-  } else {
-    html += `<div class="chapterActions"><button class="secondary" onclick="playAllSubunitsCurrentPodcast()">▶ Play all Unit ${podcastKey(unit)} subunits</button><button class="ghost" onclick="stopPodcast()">Stop audio</button></div>`;
+    html += `<div class="small">No subunit audio listed yet. Add entries like <code>{"title":"1.1 Purpose", "file":"Podcast_Unit_01/01_Subunit_1.1_Purpose.mp3"}</code> in <code>podcasts.json</code>.</div>`;
+    box.innerHTML=html; return;
   }
+  html += `<div class="chapterActions">
+    <button class="secondary" onclick="selectAllSubunits(true)">Select all</button>
+    <button class="secondary" onclick="selectAllSubunits(false)">Clear all</button>
+    <button class="secondary" onclick="selectRemainingSubunits()">Tick from current on</button>
+  </div>`;
   items.forEach((it,i)=>{
     let meta='';
     if(it.type==='chapter'){
@@ -429,108 +491,307 @@ function renderPodcastChapters(unit, activeIndex=null){
     }else{
       meta = it.file ? it.file : 'file missing in podcasts.json';
     }
-    html += `<button class="chapterBtn ${activeIndex===i?'active':''}" onclick="playPodcastSubunit(${unit},${i},false)"><b>${escapeHtml(it.title || ('Subunit '+(i+1)))}</b><small>${escapeHtml(meta)}</small></button>`;
+    if(podcastFailed.has(i)) meta += ' · not found';
+    const checked = podcastSelected.has(i) ? 'checked' : '';
+    const active = (activeIndex===i) ? ' active' : '';
+    const failed = podcastFailed.has(i) ? ' failed' : '';
+    html += `<div class="trackRow${active}${failed}" id="trackRow_${i}">
+      <input type="checkbox" id="pcsub_${i}" ${checked} onchange="togglePodcastSubunit(${i}, this.checked)" aria-label="Select subunit ${i+1}">
+      <span class="trackNum">${String(i+1).padStart(2,'0')}</span>
+      <button class="trackPlay" onclick="playFromSubunit(${i})"><b>${escapeHtml(it.title || ('Subunit '+(i+1)))}</b><small>${escapeHtml(meta)}</small></button>
+    </div>`;
   });
   box.innerHTML=html;
+  updatePlayButtonLabel();
 }
-function playAllSubunitsCurrentPodcast(){
-  if(!currentPodcastUnit) return;
+function updatePlayButtonLabel(){
+  const btn=el('playSelectedBtn'); if(!btn) return;
+  const n=podcastSelected.size;
+  btn.textContent = n ? `▶ Play selected (${n})` : `▶ Play selected (0)`;
+  btn.disabled = !n;
+}
+function togglePodcastSubunit(i, checked){
+  if(checked) podcastSelected.add(i); else podcastSelected.delete(i);
+  updatePlayButtonLabel();
+}
+function selectAllSubunits(v){
+  const items=subunitList(currentPodcastUnit);
+  podcastSelected = v ? new Set(items.map((_,i)=>i)) : new Set();
+  renderPodcastChapters(currentPodcastUnit, currentSubunitIndex);
+}
+function selectRemainingSubunits(){
+  const items=subunitList(currentPodcastUnit);
+  const from=(currentSubunitIndex===null?0:currentSubunitIndex);
+  podcastSelected=new Set(items.map((_,i)=>i).filter(i=>i>=from));
+  renderPodcastChapters(currentPodcastUnit, currentSubunitIndex);
+}
+
+/* ---------- queue control ---------- */
+function selectedIndices(){ return [...podcastSelected].sort((a,b)=>a-b); }
+
+function playSelectedSubunits(){
+  if(currentPodcastUnit===null) return;
   const items=subunitList(currentPodcastUnit);
   if(!items.length){ openPodcastUnit(currentPodcastUnit); return; }
-  playPodcastSubunit(currentPodcastUnit,0,true);
+  const sel=selectedIndices();
+  if(!sel.length){
+    const msg=el('podcastMsg'); if(msg) msg.innerHTML=`<span class="warntext">Tick at least one subunit first.</span>`;
+    return;
+  }
+  podcastFailed=new Set();
+  podcastQueue=sel; queuePos=0;
+  playCurrentQueueItem(true);
+}
+function playAllSubunitsCurrentPodcast(){
+  if(currentPodcastUnit===null) return;
+  const items=subunitList(currentPodcastUnit);
+  if(!items.length){ openPodcastUnit(currentPodcastUnit); return; }
+  podcastSelected=new Set(items.map((_,i)=>i));
+  renderPodcastChapters(currentPodcastUnit, currentSubunitIndex);
+  playSelectedSubunits();
 }
 function playWholeCurrentPodcast(){ playAllSubunitsCurrentPodcast(); }
 function playPodcast(unit){ openPodcastUnit(unit); }
-function playPodcastSubunit(unit, idx, autoplay){
-  const cfg=podcastUnitConfig(unit); const items=subunitList(unit); const item=items[idx];
-  if(!item) return;
-  currentPodcastUnit=unit; currentSubunitIndex=idx; autoPlaySubunits=!!autoplay;
-  const player=el('podcastPlayerBox'), audio=el('podcastAudio'), msg=el('podcastMsg'), title=el('podcastTitle');
-  if(!player || !audio) return;
-  player.classList.remove('hidden');
-  title.textContent = `Unit ${podcastKey(unit)} — ${podcastUnitTitle(unit)}`;
-  renderPodcastChapters(unit, idx);
-  if(item.type==='chapter'){
-    playLegacyPodcastChapter(unit, item, idx, autoplay);
-    return;
-  }
-  podcastStopAt=null;
-  const candidates=fileCandidates(item.file);
-  if(!candidates.length){
-    msg.innerHTML = `<span class="warntext"><b>Missing file name.</b></span> Add a <code>file</code> value for this subunit in <code>podcasts.json</code>.`;
-    return;
-  }
-  podcastTryState={unit,candidates,index:0,label:item.title || `Subunit ${idx+1}`,subunitIndex:idx,autoplay:!!autoplay,legacy:false};
-  msg.innerHTML = `Loading <code>${escapeHtml(candidates[0])}</code> · ${escapeHtml(podcastTryState.label)}`;
-  audio.onerror = tryNextPodcastCandidate;
-  audio.onloadedmetadata = () => { try{ audio.currentTime = 0; }catch(e){} audio.play().catch(()=>{}); };
-  audio.ontimeupdate = null;
-  audio.onended = handlePodcastEnded;
-  audio.oncanplay = () => { msg.innerHTML = `Loaded: <code>${escapeHtml(audio.getAttribute('src')||'')}</code> · Playing <b>${escapeHtml(podcastTryState.label)}</b>${autoPlaySubunits?' · auto-play on':''}`; };
-  audio.src = candidates[0]; audio.load();
+
+// Tapping a single track: play it and continue through the ticked ones after it.
+function playFromSubunit(i){
+  if(currentPodcastUnit===null) return;
+  let sel=selectedIndices().filter(x=>x>=i);
+  if(!sel.length || sel[0]!==i) sel=[i, ...sel];
+  podcastFailed=new Set();
+  podcastQueue=sel; queuePos=0;
+  playCurrentQueueItem(true);
 }
-function playLegacyPodcastChapter(unit, ch, idx, autoplay){
+// Kept for older buttons / saved links.
+function playPodcastSubunit(unit, idx, autoplay){
+  if(unit!==currentPodcastUnit) openPodcastUnit(unit);
+  if(autoplay) playFromSubunit(idx);
+  else { podcastQueue=[idx]; queuePos=0; playCurrentQueueItem(true); }
+}
+function podcastSkip(dir){
+  if(!podcastQueue.length) return;
+  const n=queuePos+dir;
+  if(n<0 || n>=podcastQueue.length) return;
+  clearTimeout(podcastSkipTimer);
+  queuePos=n;
+  playCurrentQueueItem(true);
+}
+
+/* ---------- the actual player ---------- */
+function playCurrentQueueItem(fromUserGesture){
+  const unit=currentPodcastUnit;
+  const audio=el('podcastAudio'), msg=el('podcastMsg'), title=el('podcastTitle'), player=el('podcastPlayerBox');
+  if(unit===null || !audio) return;
+  clearTimeout(podcastSkipTimer);
+  hidePodcastResume();
+  const items=subunitList(unit);
+  const idx=podcastQueue[queuePos];
+  const item=items[idx];
+  if(!item){ finishQueue(); return; }
+  currentSubunitIndex=idx;
+  if(player) player.classList.remove('hidden');
+  if(title) title.textContent = `Unit ${podcastKey(unit)} — ${podcastUnitTitle(unit)}`;
+  renderPodcastChapters(unit, idx);
+  updateNowPlaying();
+  updateMediaSession(item);
+  if(item.type==='chapter'){ playChapterItem(unit, item, idx); return; }
+  playFileItem(unit, item, idx);
+}
+function playFileItem(unit, item, idx){
+  const audio=el('podcastAudio'), msg=el('podcastMsg');
+  podcastStopAt=null;
+  audio.ontimeupdate=null;
+  const cached=resolvedFileCache[unit+'::'+idx];
+  const candidates = cached ? [cached] : fileCandidates(item.file);
+  if(!candidates.length){
+    if(msg) msg.innerHTML = `<span class="warntext"><b>Missing file name.</b></span> Add a <code>file</code> value for this subunit in <code>podcasts.json</code>.`;
+    podcastFailed.add(idx);
+    scheduleAutoSkip();
+    return;
+  }
+  podcastTryState={unit,candidates,index:0,label:item.title || `Subunit ${idx+1}`,subunitIndex:idx,legacy:false,startSec:0};
+  if(msg) msg.innerHTML = `Loading <code>${escapeHtml(candidates[0])}</code>`;
+  setAudioSource(candidates[0], 0);
+}
+function playChapterItem(unit, ch, idx){
   const audio=el('podcastAudio'), msg=el('podcastMsg');
   const startSec=parseTimeToSeconds(ch.start)||0;
   const endSec=parseTimeToSeconds(ch.end);
   podcastStopAt=(endSec!==null && endSec>startSec) ? endSec : null;
   const candidates=legacyUnitCandidates(unit);
-  podcastTryState={unit,candidates,index:0,startSec,endSec:podcastStopAt,label:ch.title || `Subunit ${idx+1}`,subunitIndex:idx,autoplay:!!autoplay,legacy:true};
-  msg.innerHTML = `Loading <code>${escapeHtml(candidates[0])}</code> · ${escapeHtml(podcastTryState.label)} ${startSec?`from ${formatPodcastTime(startSec)}`:''}${podcastStopAt?` to ${formatPodcastTime(podcastStopAt)}`:''}`;
-  audio.onerror = tryNextPodcastCandidate;
-  audio.onloadedmetadata = () => {
-    const st=Math.min(Math.max(0, startSec||0), Math.max(0,(audio.duration||0)-0.2));
-    try{ audio.currentTime = st; }catch(e){}
-    audio.play().catch(()=>{});
-  };
+  podcastTryState={unit,candidates,index:0,startSec,label:ch.title || `Subunit ${idx+1}`,subunitIndex:idx,legacy:true};
   audio.ontimeupdate = () => {
     if(podcastStopAt && audio.currentTime >= podcastStopAt){
-      audio.pause();
-      try{ audio.currentTime = podcastStopAt; }catch(e){}
-      msg.innerHTML = `Finished subsection: <b>${escapeHtml(podcastTryState.label)}</b>.`;
       podcastStopAt=null;
+      audio.ontimeupdate=null;
+      try{ audio.pause(); }catch(e){}
       handlePodcastEnded();
     }
   };
-  audio.onended = handlePodcastEnded;
-  audio.oncanplay = () => { msg.innerHTML = `Loaded: <code>${escapeHtml(audio.getAttribute('src')||'')}</code> · Playing <b>${escapeHtml(podcastTryState.label)}</b>${podcastStopAt?` (${formatPodcastTime(startSec)}–${formatPodcastTime(podcastStopAt)})`:''}`; };
-  audio.src = candidates[0]; audio.load();
+  const currentSrc=audio.getAttribute('src')||'';
+  const sameFile = candidates.includes(currentSrc);
+  if(sameFile && audio.readyState>0){
+    // same unit file, just seek: gapless and keeps mobile playback alive
+    try{ audio.currentTime = startSec; }catch(e){}
+    attemptPlay();
+    if(msg) msg.innerHTML = `Playing <b>${escapeHtml(podcastTryState.label)}</b>${startSec?` from ${formatPodcastTime(startSec)}`:''}`;
+    return;
+  }
+  if(msg) msg.innerHTML = `Loading <code>${escapeHtml(candidates[0])}</code>`;
+  setAudioSource(candidates[0], startSec);
 }
-function handlePodcastEnded(){
-  if(!autoPlaySubunits || currentPodcastUnit===null || currentSubunitIndex===null) return;
-  const items=subunitList(currentPodcastUnit);
-  const next=currentSubunitIndex+1;
-  if(next < items.length){
-    playPodcastSubunit(currentPodcastUnit,next,true);
-  }else{
-    const msg=el('podcastMsg'); if(msg) msg.innerHTML = `Finished all listed subunits for Unit ${podcastKey(currentPodcastUnit)}.`;
-    autoPlaySubunits=false;
+
+// Sets the source and starts playback immediately, synchronously.
+function setAudioSource(url, seekTo){
+  const audio=el('podcastAudio'); if(!audio) return;
+  audio.onerror = handleAudioError;
+  audio.onended = handlePodcastEnded;
+  audio.onloadedmetadata = () => {
+    if(seekTo){ try{ audio.currentTime = seekTo; }catch(e){} }
+    try{ audio.playbackRate = podcastRate; }catch(e){}
+    if(!podcastTryState || !podcastTryState.autostarted) attemptPlay();
+  };
+  audio.oncanplay = () => {
+    const st=podcastTryState;
+    if(st) resolvedFileCache[st.unit+'::'+st.subunitIndex] = audio.getAttribute('src')||url;
+    try{ audio.playbackRate = podcastRate; }catch(e){}
+    const msg=el('podcastMsg');
+    if(msg && st) msg.innerHTML = `Playing <b>${escapeHtml(st.label)}</b> · <code>${escapeHtml(audio.getAttribute('src')||'')}</code>${autoPlaySubunits?' · autoplay on':''}`;
+    // only auto-start once per source, so a manual pause is not undone by buffering
+    if(!st || !st.autostarted) attemptPlay();
+  };
+  audio.src = url;            // assigning src starts loading; no load() call, it aborts pending play()
+  try{ audio.playbackRate = podcastRate; }catch(e){}
+  attemptPlay();              // synchronous: this is what keeps mobile chaining alive
+}
+function attemptPlay(){
+  const audio=el('podcastAudio'); if(!audio) return;
+  if(!audio.paused) return;
+  let p;
+  try{ p = audio.play(); }catch(e){ showPodcastResume(); return; }
+  if(p && typeof p.then==='function'){
+    p.then(()=>{ if(podcastTryState) podcastTryState.autostarted=true; hidePodcastResume(); }).catch(err=>{
+      if(err && (err.name==='AbortError')) return;   // superseded by a newer load, ignore
+      if(err && err.name==='NotSupportedError') return; // the error handler deals with this
+      showPodcastResume();
+    });
   }
 }
-function tryNextPodcastCandidate(){
+function showPodcastResume(){
+  const box=el('podcastResume'); if(!box) return;
+  const items=subunitList(currentPodcastUnit);
+  const it=(currentSubunitIndex!==null)?items[currentSubunitIndex]:null;
+  const label=it ? (it.title || `Subunit ${currentSubunitIndex+1}`) : 'the next subunit';
+  box.classList.remove('hidden');
+  box.innerHTML = `<button onclick="resumePodcast()">▶ Tap to continue: ${escapeHtml(label)}</button>
+    <div class="small" style="margin-top:6px">Your phone blocked automatic playback of the next file. One tap resumes the queue from here.</div>`;
+}
+function hidePodcastResume(){
+  const box=el('podcastResume'); if(!box) return;
+  box.classList.add('hidden'); box.innerHTML='';
+}
+function resumePodcast(){
+  hidePodcastResume();
+  const audio=el('podcastAudio');
+  if(audio && audio.getAttribute('src') && audio.readyState>0){ attemptPlay(); return; }
+  playCurrentQueueItem(true);
+}
+function handlePodcastEnded(){
+  podcastStopAt=null;
+  const audio=el('podcastAudio'); if(audio) audio.ontimeupdate=null;
+  if(!autoPlaySubunits){ updateNowPlaying('Finished this subunit. Autoplay is off.'); return; }
+  if(queuePos+1 < podcastQueue.length){
+    queuePos++;
+    playCurrentQueueItem(false);
+  }else{
+    finishQueue();
+  }
+}
+function finishQueue(){
+  const msg=el('podcastMsg');
+  if(msg && currentPodcastUnit!==null) msg.innerHTML = `Finished all ${podcastQueue.length} selected subunit${podcastQueue.length===1?'':'s'} for Unit ${podcastKey(currentPodcastUnit)}.`;
+  updateNowPlaying();
+}
+function scheduleAutoSkip(delay=1500){
+  clearTimeout(podcastSkipTimer);
+  if(!autoPlaySubunits) return;
+  if(queuePos+1 >= podcastQueue.length){ finishQueue(); return; }
+  podcastSkipTimer=setTimeout(()=>{ queuePos++; playCurrentQueueItem(false); }, delay);
+}
+function handleAudioError(){
   const audio=el('podcastAudio'), msg=el('podcastMsg');
   if(!podcastTryState || !audio) return;
   podcastTryState.index += 1;
   if(podcastTryState.index >= podcastTryState.candidates.length){
-    msg.innerHTML = `<span class="warntext"><b>Audio file not found.</b></span> Upload this exact file to GitHub, or correct the <code>file</code> value in <code>podcasts.json</code>: <code>${escapeHtml((podcastTryState.candidates||[])[0]||'')}</code>`;
-    audio.removeAttribute('src'); audio.load();
+    const wanted=(podcastTryState.candidates||[])[0]||'';
+    podcastFailed.add(podcastTryState.subunitIndex);
+    if(msg) msg.innerHTML = `<span class="warntext"><b>Audio file not found:</b></span> <code>${escapeHtml(wanted)}</code>. Upload it to GitHub or fix the <code>file</code> value in <code>podcasts.json</code>.${autoPlaySubunits?' Skipping to the next selected subunit.':''}`;
+    renderPodcastChapters(currentPodcastUnit, currentSubunitIndex);
+    scheduleAutoSkip();
     return;
   }
   const next=podcastTryState.candidates[podcastTryState.index];
-  msg.innerHTML = `Trying <code>${escapeHtml(next)}</code> ...`;
-  audio.src = next; audio.load();
+  if(msg) msg.innerHTML = `Trying <code>${escapeHtml(next)}</code> ...`;
+  setAudioSource(next, podcastTryState.startSec||0);
 }
 function stopPodcast(){
   const audio=el('podcastAudio'), msg=el('podcastMsg');
-  autoPlaySubunits=false; podcastStopAt=null;
-  if(audio){ try{ audio.pause(); }catch(e){} }
-  if(msg) msg.innerHTML = currentPodcastUnit ? `Stopped. Choose a subunit or play the whole selected unit.` : `Stopped.`;
+  clearTimeout(podcastSkipTimer);
+  podcastStopAt=null;
+  hidePodcastResume();
+  if(audio){ try{ audio.pause(); }catch(e){} audio.ontimeupdate=null; }
+  if(msg) msg.innerHTML = currentPodcastUnit!==null ? `Stopped. Press play on a subunit, or <b>Play selected</b> to start the queue again.` : `Stopped.`;
+}
+
+/* ---------- options ---------- */
+function setAutoAdvance(v){
+  autoPlaySubunits=!!v;
+  try{ localStorage.setItem('IIA_POD_AUTO', autoPlaySubunits?'1':'0'); }catch(e){}
+  const msg=el('podcastMsg');
+  if(msg) msg.innerHTML = autoPlaySubunits ? `Autoplay is on: the next ticked subunit starts automatically.` : `Autoplay is off: playback stops at the end of each subunit.`;
+}
+function setPodcastRate(v){
+  podcastRate=Number(v)||1;
+  try{ localStorage.setItem('IIA_POD_RATE', String(podcastRate)); }catch(e){}
+  const audio=el('podcastAudio'); if(audio){ try{ audio.playbackRate=podcastRate; }catch(e){} }
+}
+function restorePodcastPrefs(){
+  try{
+    const a=localStorage.getItem('IIA_POD_AUTO');
+    if(a!==null){ autoPlaySubunits = a==='1'; const cb=el('autoAdvance'); if(cb) cb.checked=autoPlaySubunits; }
+    const r=Number(localStorage.getItem('IIA_POD_RATE'));
+    if(r>0){ podcastRate=r; const sel=el('podcastRate'); if(sel) sel.value=String(r); }
+  }catch(e){}
+}
+function updateNowPlaying(note){
+  const box=el('podcastNowPlaying'); if(!box) return;
+  if(currentPodcastUnit===null || currentSubunitIndex===null){ box.innerHTML=''; return; }
+  const items=subunitList(currentPodcastUnit);
+  const it=items[currentSubunitIndex];
+  const pos=(queuePos>=0 && podcastQueue.length) ? `Track ${queuePos+1} of ${podcastQueue.length} · ` : '';
+  box.innerHTML = `<span class="pill ok">${escapeHtml(pos)}${escapeHtml(it ? (it.title || ('Subunit '+(currentSubunitIndex+1))) : '')}</span>${note?`<span class="pill gray">${escapeHtml(note)}</span>`:''}`;
+}
+function updateMediaSession(item){
+  if(!('mediaSession' in navigator)) return;
+  try{
+    if(window.MediaMetadata){
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: item.title || `Subunit ${(currentSubunitIndex||0)+1}`,
+        artist: `Unit ${podcastKey(currentPodcastUnit)} — ${podcastUnitTitle(currentPodcastUnit)}`,
+        album: 'IIA CIA Part 1'
+      });
+    }
+    navigator.mediaSession.setActionHandler('play', ()=>attemptPlay());
+    navigator.mediaSession.setActionHandler('pause', ()=>{ const a=el('podcastAudio'); if(a){ try{ a.pause(); }catch(e){} } });
+    navigator.mediaSession.setActionHandler('nexttrack', ()=>podcastSkip(1));
+    navigator.mediaSession.setActionHandler('previoustrack', ()=>podcastSkip(-1));
+  }catch(e){}
 }
 function exportPodcastConfig(){
   const blob=new Blob([JSON.stringify(PODCAST_CONFIG,null,2)],{type:'application/json'});
   const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='podcasts.json'; a.click(); URL.revokeObjectURL(url);
 }
-function showPanel(id){ document.querySelectorAll('.panel').forEach(p=>p.classList.add('hidden')); el(id).classList.remove('hidden'); if(el('topControls')) el('topControls').classList.toggle('hidden', id==='quiz'); if(id==='setup'){renderSelectors(); renderBlueprint(); updateModeUI(); updateTimerSuggestion();} if(id==='podcasts'){renderPodcastButtons();} }
+function showPanel(id){ document.querySelectorAll('.panel').forEach(p=>p.classList.add('hidden')); el(id).classList.remove('hidden'); if(el('topControls')) el('topControls').classList.toggle('hidden', id==='quiz'); if(id==='setup'){renderSelectors(); renderBlueprint(); updateModeUI(); updateTimerSuggestion();} if(id==='podcasts'){restorePodcastPrefs(); renderPodcastButtons();} }
 function login(){ if(el('passwordInput').value===PASSWORD){ sessionStorage.setItem('IIA_UNLOCK','1'); el('login').classList.add('hidden'); el('app').classList.remove('hidden'); loadBank(); } else el('loginMsg').textContent='Wrong password.'; }
 function logout(){ sessionStorage.removeItem('IIA_UNLOCK'); location.reload(); }
 function updateModeUI(){
