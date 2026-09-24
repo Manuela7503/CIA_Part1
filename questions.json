@@ -30550,12 +30550,13 @@
     "subunit_number": 1,
     "subunit_title": "Fraud -- Risks and Types",
     "context": "",
-    "question": "John Williams is the Controller for a large U.S. publicly traded telecommunications equipment manufacturing company. The once highly profitable company has been struggling financially, and sales have declined markedly. Increasing pressure is on the senior management team to deliver profits. In a meeting to discuss the financial results, the CFO asked Williams to recategorize its operating leases to finance leases. This change would result in a $2 billion decrease in expenses and turn 4 net operating loss into a net operating gain. Williams is concerned about this directive because the change would be contrary to U.S. GAAP. He is also concerned that not following the CFO's directive could put his job in",
+    "question": "John Williams is the Controller for a large U.S. publicly traded telecommunications equipment manufacturing company. The once highly profitable company has been struggling financially, and sales have declined markedly. Increasing pressure is on the senior management team to deliver profits. In a meeting to discuss the financial results, the CFO asked Williams to recategorize its operating leases to finance leases. This change would result in a $2 billion decrease in expenses and turn 4 net operating loss into a net operating gain. Williams is concerned about this directive because the change would be contrary to U.S. GAAP. He is also concerned that not following the CFO's directive could put his job in jeopardy. Williams has personal financial pressures, including high medical expenses for his newborn son. According to the fraud triangle, which of the following statements is true?",
     "options": {
-      "A": "Williams has personal financial pressures, including high medical expenses for his newborn son. According to the fraud triangle, which of the following statements is true?",
-      "B": "None of the characteristics of the fraud triangle are present.",
-      "C": "Two of the three characteristics of the fraud triangle are present.",
-      "D": "All three characteristics of the fraud triangle are present."
+      "A": "None of the characteristics of the fraud triangle are present.",
+      "B": "Two of the three characteristics of the fraud triangle are present.",
+      "C": "All three characteristics of the fraud triangle are present.",
+      "D": "One of the characteristics of the fraud triangle is present."
+
     },
     "correct_answer": "B",
     "images": [],
@@ -31608,12 +31609,13 @@
     "subunit_number": 3,
     "subunit_title": "Fraud -- Investigation",
     "context": "",
-    "question": "The internal audit function has concluded a fraud investigation that revealed a previously undiscovered materially adverse impact on the financial position and results of operations for 2 years on which financial statements have already been",
+    "question": "The internal audit function has concluded a fraud investigation that revealed a previously undiscovered materially adverse impact on the financial position and results of operations for 2 years on which financial statements have already been issued. The chief audit executive should immediately inform",
     "options": {
-      "A": "The chief audit executive should immediately inform",
-      "B": "Senior management and the board.",
-      "C": "The appropriate governmental or regulatory agency.",
-      "D": "The internal accounting function ultimately responsible for making corrective journal entries."
+      "A": "Senior management and the board.",
+      "B": "The appropriate governmental or regulatory agency.",
+      "C": "The internal accounting function ultimately responsible for making corrective journal entries.",
+      "D": "The external auditing firm responsible for the financial statements affected by the discovery."
+
     },
     "correct_answer": "A",
     "images": [],
