@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>IIA CIA Part 1 Training App</title>
-<!-- v15 external questions.json + official exam domains + external podcasts.json; unit -> selectable subunit playlist with mobile-safe auto-advance; no embedded question data -->
+<!-- v16 external questions.json + image support + official exam domains + reliable selected-subunit podcast queue + last-session wrong-repeat -->
 <style>
 :root{--bg:#f6f7fb;--card:#fff;--ink:#142033;--muted:#667085;--line:#d7deea;--brand:#1d4ed8;--brand2:#0f172a;--ok:#15803d;--bad:#b91c1c;--warn:#b45309;}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);}
@@ -18,7 +18,7 @@ button{border:0;border-radius:12px;padding:12px 14px;font-weight:800;cursor:poin
 .countTable{width:100%;border-collapse:collapse} .countTable td,.countTable th{border-bottom:1px solid var(--line);padding:8px;text-align:left;font-size:14px} .countTable .indent{padding-left:26px;color:#334155}
 .selectorBox{border:1px solid var(--line);border-radius:14px;padding:10px;background:#fbfcff} .checkrow{display:flex;gap:8px;align-items:flex-start;margin:8px 0} .checkrow input{width:auto;margin-top:4px;transform:scale(1.15)} .checkrow label{margin:0;font-weight:650;line-height:1.3}
 .unitHead{background:#f8fafc;border-radius:10px;padding:8px;margin-top:8px} .subList{margin-left:10px;border-left:2px solid #e5e7eb;padding-left:10px}
-.timer{font-variant-numeric:tabular-nums;font-weight:900;font-size:18px} .timer.bad{color:var(--bad)} .qtitle{font-size:18px;font-weight:800;line-height:1.35;margin:10px 0} .context{white-space:pre-wrap;background:#f8fafc;border-left:4px solid #cbd5e1;padding:10px;border-radius:8px;color:#334155;margin:8px 0}
+.timer{font-variant-numeric:tabular-nums;font-weight:900;font-size:18px} .timer.bad{color:var(--bad)} .qtitle{font-size:18px;font-weight:800;line-height:1.35;margin:10px 0} .context{white-space:pre-wrap;background:#f8fafc;border-left:4px solid #cbd5e1;padding:10px;border-radius:8px;color:#334155;margin:8px 0}.questionImages{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:12px 0}.questionImageCard{border:1px solid var(--line);border-radius:14px;background:#fff;padding:8px}.questionImageCard a{display:block;color:inherit;text-decoration:none}.questionImageCard img{display:block;width:100%;max-height:440px;object-fit:contain;border-radius:10px;background:#f8fafc}.questionImageCaption{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.35}.imgMissing{border-color:#f59e0b;background:#fffbeb}.imgMissing img{display:none}.imgMissing:after{content:"Image could not load. Check that the filename in questions.json exactly matches the file in the images folder.";display:block;color:#92400e;font-weight:700;font-size:13px;line-height:1.35}
 .option{display:block;width:100%;text-align:left;margin:9px 0;padding:13px;border:1px solid var(--line);border-radius:12px;background:#fff;color:#111827;font-weight:650;line-height:1.35} .option.correct{border-color:#16a34a;background:#dcfce7} .option.wrong{border-color:#dc2626;background:#fee2e2}
 .feedback{font-weight:850;margin-top:12px} .good{color:var(--ok)} .badtext{color:var(--bad)} .warntext{color:var(--warn)} .progressbar{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden} .progressbar>div{height:100%;background:var(--brand);width:0%}
 hr{border:0;border-top:1px solid var(--line);margin:14px 0} .footer-note{font-size:12px;color:var(--muted);line-height:1.4}
@@ -27,7 +27,7 @@ audio{width:100%;margin-top:10px}.podcastGrid{display:grid;grid-template-columns
 </style>
 </head>
 <body>
-<header><h1>IIA CIA Part 1 Training App</h1><div class="small">Internal Auditor trainer · official Part 1 blueprint · external questions.json · unit/subunit podcasts</div></header>
+<header><h1>IIA CIA Part 1 Training App</h1><div class="small">Internal Auditor trainer · official Part 1 blueprint · question images · unit/subunit podcasts</div></header>
 <div class="wrap">
 <section id="login" class="card">
 <h2>Password</h2>
@@ -110,123 +110,92 @@ audio{width:100%;margin-top:10px}.podcastGrid{display:grid;grid-template-columns
 const PASSWORD = "IIA2026!";
 const QUESTION_FILE = "questions.json";
 const PODCAST_FILE = "podcasts.json";
-let BASE_BANK = [];
-let SESSION_IMPORT_BANK = [];
-let externalQuestionLoadAttempted = false;
-let externalQuestionLoadError = "";
-let PODCAST_CONFIG = {units:{}};
-let externalPodcastLoadAttempted = false;
-let externalPodcastLoadError = "";
-let currentPodcastUnit = null;
-let podcastStopAt = null;
+const IMAGE_DIR = "images/";
 
-async function loadExternalQuestionFile(){
-  if(externalQuestionLoadAttempted) return;
-  externalQuestionLoadAttempted = true;
-  try{
-    const res = await fetch(QUESTION_FILE, {cache:"no-store"});
-    if(!res.ok) throw new Error("Could not load " + QUESTION_FILE + " (HTTP " + res.status + ")");
-    const data = await res.json();
-    const arr = Array.isArray(data) ? data : (data.questions || []);
-    BASE_BANK = arr;
-    externalQuestionLoadError = "";
-  }catch(e){
-    externalQuestionLoadError = e.message || String(e);
-    BASE_BANK = [];
-  }
-}
-
-function defaultPodcastConfig(){
-  const units={};
-  for(let i=1;i<=10;i++){
-    const key=String(i).padStart(2,'0');
-    units[key]={title:`Unit ${key} podcast`,folder:`Podcast_Unit_${key}`,subunits:[]};
-  }
-  return {version:2, mode:'separate_subunit_files', units};
-}
-async function loadPodcastConfig(){
-  if(externalPodcastLoadAttempted) return;
-  externalPodcastLoadAttempted = true;
-  try{
-    const res = await fetch(PODCAST_FILE, {cache:"no-store"});
-    if(!res.ok) throw new Error("Could not load " + PODCAST_FILE + " (HTTP " + res.status + ")");
-    const data = await res.json();
-    PODCAST_CONFIG = data && data.units ? data : defaultPodcastConfig();
-    externalPodcastLoadError = "";
-  }catch(e){
-    externalPodcastLoadError = e.message || String(e);
-    PODCAST_CONFIG = defaultPodcastConfig();
-  }
-}
-
-const OFFICIAL_BLUEPRINT = [
-  {key:'foundations', label:'Foundations of Internal Auditing', weight:35, target:44},
-  {key:'ethics', label:'Ethics and Professionalism', weight:20, target:25},
-  {key:'grc', label:'Governance, Risk Management, and Control', weight:30, target:37},
-  {key:'fraud', label:'Fraud Risks', weight:15, target:19}
-];
-
-// Default mapping from study-unit menus to the official CIA Part 1 exam domains.
-// The JSON can override this with exam_domain_key or exam_domain on each question.
-const EXAM_DOMAIN_BY_UNIT = {
-  1:'foundations',
-  2:'foundations',
-  3:'foundations',
-  4:'foundations',
-  5:'ethics',
-  6:'grc',
-  7:'grc',
-  8:'grc',
-  9:'grc',
-  10:'fraud'
+// Known image fallback for the current bank. Best practice is still to keep
+// the image filename in questions.json, but this fallback makes the app work
+// with the current GitHub /images folder even if the JSON only says "see image".
+const KNOWN_IMAGE_BY_ID = {
+  "890": "question80figure_unit7_prime2.png",
+  "944": "unit7_secondidue_domanda36figure.png",
+  "945": "unit7_secondidue_domanda37.png",
+  "949": "unit7_secondidue_domanda41.png",
+  "996": "unit8_q9_matrix.png",
+  "1077": "unit8p2_q47_journal_entry.png",
+  "1101": "unit8p2_q71_invoice_batch.png",
+  "1116": "unit8p2_q86_matrix.png",
+  "1127": "unit8p2_q97_invoice_batch.png"
 };
-let lastExamWarnings = [];
 
-function domainOf(q){
-  const explicitKey = String(q.exam_domain_key || '').toLowerCase().trim();
-  if(OFFICIAL_BLUEPRINT.some(d=>d.key===explicitKey)) return explicitKey;
-
-  const explicit = String(q.exam_domain || q.domain || '').toLowerCase();
-  if(explicit.includes('ethic')) return 'ethics';
-  if(explicit.includes('fraud')) return 'fraud';
-  if(explicit.includes('governance') || explicit.includes('risk management') || explicit.includes('control') || explicit.includes('grc')) return 'grc';
-  if(explicit.includes('foundation') || explicit.includes('assurance') || explicit.includes('advisory')) return 'foundations';
-
-  const unitKey = EXAM_DOMAIN_BY_UNIT[Number(q.unit_number)];
-  if(unitKey) return unitKey;
-
-  const text = [q.unit_title, q.subunit_title, q.unit, q.subunit].join(' ').toLowerCase();
-  if(text.includes('ethic')) return 'ethics';
-  if(text.includes('fraud')) return 'fraud';
-  if(text.includes('governance') || text.includes('risk management')) return 'grc';
-  if(text.includes('foundation') || text.includes('assurance') || text.includes('advisory')) return 'foundations';
-  return 'unmapped';
+function normalizeImagePath(path){
+  let s=String(path||'').trim();
+  if(!s) return '';
+  s=s.replace(/^\.+\//,'');
+  if(/^https?:\/\//i.test(s) || /^data:image\//i.test(s)) return s;
+  if(s.startsWith('/')) s=s.replace(/^\/+/, '');
+  if(s.toLowerCase().startsWith(IMAGE_DIR.toLowerCase())) return s;
+  return IMAGE_DIR + s;
 }
-function domainLabel(key){ const d=OFFICIAL_BLUEPRINT.find(x=>x.key===key); return d?d.label:'Unmapped / not assigned'; }
-function domainWeight(key){ const d=OFFICIAL_BLUEPRINT.find(x=>x.key===key); return d?d.weight:null; }
-function examTargets(total){
-  total = Math.max(1, Number(total||125));
-  const raw = OFFICIAL_BLUEPRINT.map(d=>({ ...d, exact: total*d.weight/100 }));
-  let targets = raw.map(d=>({ ...d, targetN: Math.floor(d.exact) }));
-  let used = targets.reduce((s,d)=>s+d.targetN,0);
-  targets.sort((a,b)=>(b.exact-b.targetN)-(a.exact-a.targetN));
-  for(let i=0; used<total; i=(i+1)%targets.length){ targets[i].targetN++; used++; }
-  return OFFICIAL_BLUEPRINT.map(d=>targets.find(x=>x.key===d.key));
+function denormalizeImagePath(path){
+  let s=String(path||'').trim();
+  if(!s) return '';
+  return s.replace(/^\.\//,'').replace(/^images\//i,'');
 }
-function officialSecondsFor(n){ return Math.max(1, Math.round(Number(n||1) * 72)); }
-function formatDuration(sec){ sec=Math.max(0, Math.round(sec)); const m=Math.floor(sec/60), s=sec%60; return `${m}:${String(s).padStart(2,'0')}`; }
+function splitImageString(s){
+  const raw=String(s||'').trim();
+  if(!raw) return [];
+  // CSV export uses | for multiple images. Also accept semicolon/newline.
+  return raw.split(/\s*(?:\||;|\n)\s*/).map(x=>x.trim()).filter(Boolean);
+}
+function normalizeImageItem(item){
+  if(!item) return [];
+  if(typeof item==='string') return splitImageString(item).map(x=>({src:normalizeImagePath(x), caption:''}));
+  if(typeof item==='object'){
+    const raw = item.src || item.file || item.filename || item.path || item.url || item.image || item.image_file || '';
+    if(!raw) return [];
+    return splitImageString(raw).map(x=>({src:normalizeImagePath(x), caption:String(item.caption || item.title || item.alt || '').trim()}));
+  }
+  return [];
+}
+function collectQuestionImages(q){
+  const found=[];
+  const push = item => {
+    if(Array.isArray(item)){ item.forEach(push); return; }
+    normalizeImageItem(item).forEach(img=>{ if(img && img.src) found.push(img); });
+  };
 
-let BANK = [];
-let current = [];
-let idx = 0;
-let score = 0;
-let wrong = [];
-let answered = false;
-let timerInt = null;
-let remaining = 0;
+  // Explicit image fields from questions.json / imported JSON.
+  ['image','images','image_file','image_files','image_filename','image_path','figure','figures','figure_file','figure_files','screenshot','screenshots','exhibit','exhibits','attachment','attachments','media'].forEach(k=>push(q[k]));
 
-function el(id){ return document.getElementById(id); }
-function escapeHtml(s){ return String(s??'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+  // Fallback for the current question bank's known image questions.
+  const known = KNOWN_IMAGE_BY_ID[String(q.id || '').trim()];
+  if(known) push({file: known, caption: 'Question image'});
+
+  // Last-resort: if a filename is written directly in context/question/options, use it.
+  const scanText = [q.context, q.question, q.explanation, q.rationale, ...(Object.values(q.options || {}))].map(v=>String(v||'')).join(' ');
+  const matches = scanText.match(/(?:images\/)?[A-Za-z0-9][A-Za-z0-9_.()\- ]+\.(?:png|jpe?g|webp|gif|svg)/gi) || [];
+  matches.forEach(m=>push(m.trim()));
+
+  const seen=new Set();
+  return found.filter(img=>{
+    const key=String(img.src||'').toLowerCase();
+    if(!key || seen.has(key)) return false;
+    seen.add(key); return true;
+  });
+}
+function imageCsvValue(q){
+  const imgs = Array.isArray(q.images) ? q.images : collectQuestionImages(q);
+  return imgs.map(img=>denormalizeImagePath(img.src || img.file || img.image || '')).filter(Boolean).join(' | ');
+}
+function renderQuestionImages(q){
+  const imgs=Array.isArray(q.images) ? q.images : [];
+  if(!imgs.length) return '';
+  return `<div class="questionImages">${imgs.map((img,i)=>{
+    const src=escapeHtml(img.src || '');
+    const caption=escapeHtml(img.caption || `Question image ${i+1}`);
+    return `<div class="questionImageCard"><a href="${src}" target="_blank" rel="noopener"><img src="${src}" alt="${caption}" loading="lazy" onerror="this.closest('.questionImageCard').classList.add('imgMissing')"></a><div class="questionImageCaption">${caption}<br><code>${src}</code></div></div>`;
+  }).join('')}</div>`;
+}
 function shuffle(a){ a=[...a]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a; }
 function topicKey(q){ return `${q.unit_number}::${q.subunit_number}`; }
 function normalizeQuestion(q, source='import'){
@@ -238,6 +207,7 @@ function normalizeQuestion(q, source='import'){
   let ans = String(q.correct_answer ?? '').trim().toUpperCase().replace('.','');
   if(!cleanOpts[ans] && ans.length>1){ const m = ans.match(/[A-D]/g); if(m) ans = m[m.length-1]; }
 
+  const collectedImages = collectQuestionImages(q);
   const base = {
     id: q.id ? String(q.id) : `${u}-${su}-${Date.now()}-${Math.random().toString(36).slice(2)}`,
     type: q.type || 'single_choice',
@@ -249,6 +219,8 @@ function normalizeQuestion(q, source='import'){
     question:String(q.question ?? '').trim(),
     options:cleanOpts,
     correct_answer:ans,
+    image: collectedImages.map(img=>denormalizeImagePath(img.src)).filter(Boolean).join(' | '),
+    images: collectedImages,
     source_file:q.source_file || source,
     exam_domain_key:String(q.exam_domain_key || '').trim(),
     exam_domain:String(q.exam_domain || q.domain || '').trim(),
@@ -286,7 +258,10 @@ function renderStats(){
   const subCount = Object.values(units).reduce((n,u)=>n+Object.keys(u.subunits).length,0);
   const dc=domainCounts();
   const domainSummary = OFFICIAL_BLUEPRINT.map(d=>`${d.label}: ${dc[d.key]||0}`).join(' · ');
-  el('bankStats').innerHTML = `<b>${total}</b> questions loaded from <code>questions.json</code> · <b>${Object.keys(units).length}</b> units · <b>${subCount}</b> subunits<br><span class="small">${domainSummary}</span>`;
+  const imageCount = BANK.filter(q=>Array.isArray(q.images) && q.images.length).length;
+  const imageHintMissing = BANK.filter(q=>/(see image|figure above|image above|refer to .*figure)/i.test([q.context,q.question].join(' ')) && !(Array.isArray(q.images) && q.images.length)).length;
+  el('bankStats').innerHTML = `<b>${total}</b> questions loaded from <code>questions.json</code> · <b>${Object.keys(units).length}</b> units · <b>${subCount}</b> subunits · <b>${imageCount}</b> image-linked questions<br><span class="small">${domainSummary}</span>`;
+  if(imageHintMissing){ el('bankStats').innerHTML += ` <span class="pill warn">${imageHintMissing} question(s) mention an image but have no image filename</span>`; }
   if(SESSION_IMPORT_BANK.length){ el('bankStats').innerHTML += ` <span class="pill warn">${SESSION_IMPORT_BANK.length} session-only imported questions</span>`; }
   if(externalQuestionLoadError){ el('bankStats').innerHTML += ` <span class="pill warn">questions.json not loaded: ${escapeHtml(externalQuestionLoadError)}</span>`; }
   if(el('coverage')) el('coverage').innerHTML = '';
@@ -352,7 +327,7 @@ function updateTimerSuggestion(){
   else el('timerSuggestion').innerHTML = `Wrong-only mode suggestion: timer is based on the number of questions selected, about <b>${suggested}</b>.`;
 }
 /* ============================================================
-   Podcast player v15
+   Podcast player v16
    Unit -> selectable subunit playlist with reliable mobile chaining.
    Key mobile fixes:
    - play() is called synchronously when the src is set (inside the
@@ -376,6 +351,7 @@ let resolvedFileCache = {};
 let podcastRate = 1;
 let podcastSkipTimer = null;
 let podcastFailed = new Set();
+let podcastAutoplayWatchTimer = null;
 
 function podcastKey(unit){ return String(unit).padStart(2,'0'); }
 function podcastBaseName(unit){ return 'Podcast_Unit_' + podcastKey(unit); }
@@ -422,8 +398,9 @@ function fileCandidates(file){
   const f=normalizeAudioFileName(file);
   if(!f) return [];
   const hasExt=/\.(mp3|m4a|wav|ogg)$/i.test(f);
-  if(hasExt) return [f];
-  return PODCAST_EXTENSIONS.map(ext=>f+ext);
+  const raw = hasExt ? [f] : PODCAST_EXTENSIONS.map(ext=>f+ext);
+  const encoded = raw.map(x=>encodeURI(x));
+  return [...new Set([...raw, ...encoded])];
 }
 function legacyUnitCandidates(unit){
   const cfg=podcastUnitConfig(unit); const base=podcastBaseName(unit); const out=[];
@@ -528,6 +505,11 @@ function selectRemainingSubunits(){
 
 /* ---------- queue control ---------- */
 function selectedIndices(){ return [...podcastSelected].sort((a,b)=>a-b); }
+function forceAutoAdvanceForQueue(){
+  autoPlaySubunits=true;
+  const cb=el('autoAdvance'); if(cb) cb.checked=true;
+  try{ localStorage.setItem('IIA_POD_AUTO', '1'); }catch(e){}
+}
 
 function playSelectedSubunits(){
   if(currentPodcastUnit===null) return;
@@ -540,6 +522,7 @@ function playSelectedSubunits(){
   }
   podcastFailed=new Set();
   podcastQueue=sel; queuePos=0;
+  if(sel.length>1) forceAutoAdvanceForQueue();
   playCurrentQueueItem(true);
 }
 function playAllSubunitsCurrentPodcast(){
@@ -560,6 +543,7 @@ function playFromSubunit(i){
   if(!sel.length || sel[0]!==i) sel=[i, ...sel];
   podcastFailed=new Set();
   podcastQueue=sel; queuePos=0;
+  if(sel.length>1) forceAutoAdvanceForQueue();
   playCurrentQueueItem(true);
 }
 // Kept for older buttons / saved links.
@@ -644,8 +628,10 @@ function playChapterItem(unit, ch, idx){
 // Sets the source and starts playback immediately, synchronously.
 function setAudioSource(url, seekTo){
   const audio=el('podcastAudio'); if(!audio) return;
+  clearTimeout(podcastAutoplayWatchTimer);
   audio.onerror = handleAudioError;
   audio.onended = handlePodcastEnded;
+  audio.autoplay = true;
   audio.onloadedmetadata = () => {
     if(seekTo){ try{ audio.currentTime = seekTo; }catch(e){} }
     try{ audio.playbackRate = podcastRate; }catch(e){}
@@ -657,12 +643,15 @@ function setAudioSource(url, seekTo){
     try{ audio.playbackRate = podcastRate; }catch(e){}
     const msg=el('podcastMsg');
     if(msg && st) msg.innerHTML = `Playing <b>${escapeHtml(st.label)}</b> · <code>${escapeHtml(audio.getAttribute('src')||'')}</code>${autoPlaySubunits?' · autoplay on':''}`;
-    // only auto-start once per source, so a manual pause is not undone by buffering
     if(!st || !st.autostarted) attemptPlay();
   };
-  audio.src = url;            // assigning src starts loading; no load() call, it aborts pending play()
+  audio.src = url;
   try{ audio.playbackRate = podcastRate; }catch(e){}
-  attemptPlay();              // synchronous: this is what keeps mobile chaining alive
+  attemptPlay();
+  podcastAutoplayWatchTimer=setTimeout(()=>{
+    const st=podcastTryState;
+    if(st && !st.autostarted && audio.paused && !audio.error) showPodcastResume();
+  }, 2200);
 }
 function attemptPlay(){
   const audio=el('podcastAudio'); if(!audio) return;
@@ -670,7 +659,7 @@ function attemptPlay(){
   let p;
   try{ p = audio.play(); }catch(e){ showPodcastResume(); return; }
   if(p && typeof p.then==='function'){
-    p.then(()=>{ if(podcastTryState) podcastTryState.autostarted=true; hidePodcastResume(); }).catch(err=>{
+    p.then(()=>{ clearTimeout(podcastAutoplayWatchTimer); if(podcastTryState) podcastTryState.autostarted=true; hidePodcastResume(); }).catch(err=>{
       if(err && (err.name==='AbortError')) return;   // superseded by a newer load, ignore
       if(err && err.name==='NotSupportedError') return; // the error handler deals with this
       showPodcastResume();
@@ -737,6 +726,7 @@ function handleAudioError(){
 function stopPodcast(){
   const audio=el('podcastAudio'), msg=el('podcastMsg');
   clearTimeout(podcastSkipTimer);
+  clearTimeout(podcastAutoplayWatchTimer);
   podcastStopAt=null;
   hidePodcastResume();
   if(audio){ try{ audio.pause(); }catch(e){} audio.ontimeupdate=null; }
@@ -830,7 +820,7 @@ function startSession(){
   const mode=el('mode').value;
   let pool=[];
   let n = Math.max(1, Number(el('numQuestions').value||25));
-  if(mode==='wrong'){ pool=JSON.parse(localStorage.getItem('IIA_PART1_WRONG')||'[]'); pool=pool.map(id=>BANK.find(q=>q.id===id)).filter(Boolean); if(!pool.length){alert('No wrong questions saved yet.'); return;} }
+  if(mode==='wrong'){ pool=JSON.parse(localStorage.getItem('IIA_PART1_LAST_WRONG')||'[]'); pool=pool.map(id=>BANK.find(q=>q.id===id)).filter(Boolean); if(!pool.length){alert('No wrong questions from your last completed session.'); return;} n=pool.length; }
   else if(mode==='practice'){ pool=selectedPool(); if(!pool.length){alert('Select at least one unit/subunit.'); return;} }
   else { pool=buildOfficialExam(n); }
   n = Math.min(n, pool.length);
@@ -854,7 +844,8 @@ function renderQuestion(){
   const q=current[idx]; const pct=(idx/current.length)*100; el('bar').style.width=pct+'%';
   el('sessionMeta').innerHTML=`Question ${idx+1} of ${current.length} · Score ${score} · ${domainLabel(domainOf(q))} · Unit ${q.unit_number} / Subunit ${q.subunit_number}`;
   let options=Object.keys(q.options).sort().map(k=>`<button class="option" id="opt_${k}" onclick="answer('${k}')"><b>${k}.</b> ${escapeHtml(q.options[k])}</button>`).join('');
-  el('questionArea').innerHTML=`<div><span class="pill ok">${escapeHtml(domainLabel(domainOf(q)))}</span><span class="pill gray">Unit ${q.unit_number}: ${escapeHtml(q.unit_title)}</span><span class="pill gray">Subunit ${q.subunit_number}: ${escapeHtml(q.subunit_title)}</span></div>${q.context?`<div class="context">${escapeHtml(q.context)}</div>`:''}<div class="qtitle">${escapeHtml(q.question)}</div><div>${options}</div><div id="feedback" class="feedback"></div>`;
+  const imageHtml=renderQuestionImages(q);
+  el('questionArea').innerHTML=`<div><span class="pill ok">${escapeHtml(domainLabel(domainOf(q)))}</span><span class="pill gray">Unit ${q.unit_number}: ${escapeHtml(q.unit_title)}</span><span class="pill gray">Subunit ${q.subunit_number}: ${escapeHtml(q.subunit_title)}</span></div>${q.context?`<div class="context">${escapeHtml(q.context)}</div>`:''}${imageHtml}<div class="qtitle">${escapeHtml(q.question)}</div><div>${options}</div><div id="feedback" class="feedback"></div>`;
 }
 function answer(k){
   if(answered) return; answered=true;
@@ -869,10 +860,9 @@ function answer(k){
 function nextQuestion(){ if(idx<current.length-1){idx++; renderQuestion();} else endSession(false); }
 function endSession(timeout=false){
   clearInterval(timerInt); timerInt=null;
-  const prev=new Set(JSON.parse(localStorage.getItem('IIA_PART1_WRONG')||'[]'));
-  wrong.forEach(q=>prev.add(q.id));
-  if(wrong.length===0 && current.length>0){ current.forEach(q=>prev.delete(q.id)); }
-  localStorage.setItem('IIA_PART1_WRONG', JSON.stringify([...prev]));
+  const lastWrongIds=[...new Set(wrong.map(q=>q.id))];
+  localStorage.setItem('IIA_PART1_LAST_WRONG', JSON.stringify(lastWrongIds));
+  localStorage.setItem('IIA_PART1_LAST_SESSION', JSON.stringify({date:new Date().toISOString(), total:current.length, score, wrong:lastWrongIds.length}));
   const pct=current.length?Math.round(score/current.length*100):0;
   const byTopic={}; current.forEach(q=>{ const key=`U${q.unit_number} S${q.subunit_number}`; if(!byTopic[key]) byTopic[key]={n:0,w:0,title:q.subunit_title}; byTopic[key].n++; }); wrong.forEach(q=>{ const key=`U${q.unit_number} S${q.subunit_number}`; if(byTopic[key]) byTopic[key].w++; });
   let rows='<table class="countTable"><tr><th>Topic</th><th>Session questions</th><th>Wrong</th></tr>';
@@ -896,7 +886,7 @@ async function importFiles(){
 }
 function exportBank(){ const blob=new Blob([JSON.stringify(BANK,null,2)],{type:'application/json'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='questions.json'; a.click(); URL.revokeObjectURL(url); }
 function csvEscape(v){ const s=String(v??''); return /[",\n\r]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s; }
-function exportBankCsv(){ const headers=['id','type','exam_domain','unit_number','unit_title','subunit_number','subunit_title','context','question','option_A','option_B','option_C','option_D','correct_answer','source_file']; const rows=BANK.map(q=>[q.id,q.type,domainLabel(domainOf(q)),q.unit_number,q.unit_title,q.subunit_number,q.subunit_title,q.context,q.question,q.options?.A||'',q.options?.B||'',q.options?.C||'',q.options?.D||'',q.correct_answer,q.source_file||'']); const csv=[headers,...rows].map(r=>r.map(csvEscape).join(',')).join('\n'); const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='iia_part1_merged_question_bank.csv'; a.click(); URL.revokeObjectURL(url); }
+function exportBankCsv(){ const headers=['id','type','exam_domain','unit_number','unit_title','subunit_number','subunit_title','context','question','image','option_A','option_B','option_C','option_D','correct_answer','source_file']; const rows=BANK.map(q=>[q.id,q.type,domainLabel(domainOf(q)),q.unit_number,q.unit_title,q.subunit_number,q.subunit_title,q.context,q.question,imageCsvValue(q),q.options?.A||'',q.options?.B||'',q.options?.C||'',q.options?.D||'',q.correct_answer,q.source_file||'']); const csv=[headers,...rows].map(r=>r.map(csvEscape).join(',')).join('\n'); const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='iia_part1_merged_question_bank.csv'; a.click(); URL.revokeObjectURL(url); }
 window.addEventListener('load',()=>{ if(sessionStorage.getItem('IIA_UNLOCK')==='1'){ el('login').classList.add('hidden'); el('app').classList.remove('hidden'); loadBank(); } });
 </script>
 </body>
