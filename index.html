@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>IIA CIA Part 1 Training App</title>
-<!-- v17 external questions.json + image support + safer quiz controls + official exam domains + reliable selected-subunit podcast queue + last-session wrong-repeat -->
+<!-- v18 external questions.json + image support + safer quiz controls + robust login + official exam domains + reliable selected-subunit podcast queue + last-session wrong-repeat -->
 <style>
 :root{--bg:#f6f7fb;--card:#fff;--ink:#142033;--muted:#667085;--line:#d7deea;--brand:#1d4ed8;--brand2:#0f172a;--ok:#15803d;--bad:#b91c1c;--warn:#b45309;}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);}
@@ -187,6 +187,14 @@ function imageCsvValue(q){
   const imgs = Array.isArray(q.images) ? q.images : collectQuestionImages(q);
   return imgs.map(img=>denormalizeImagePath(img.src || img.file || img.image || '')).filter(Boolean).join(' | ');
 }
+
+function el(id){ return document.getElementById(id); }
+function escapeHtml(s){ return String(s??'').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+function safeSessionGet(key){ try{ return sessionStorage.getItem(key); }catch(e){ return null; } }
+function safeSessionSet(key,value){ try{ sessionStorage.setItem(key,value); }catch(e){} }
+function safeSessionRemove(key){ try{ sessionStorage.removeItem(key); }catch(e){} }
+function safeLocalGet(key, fallback){ try{ const v=localStorage.getItem(key); return v===null ? fallback : v; }catch(e){ return fallback; } }
+function safeLocalSet(key,value){ try{ localStorage.setItem(key,value); }catch(e){} }
 function renderQuestionImages(q){
   const imgs=Array.isArray(q.images) ? q.images : [];
   if(!imgs.length) return '';
@@ -736,20 +744,20 @@ function stopPodcast(){
 /* ---------- options ---------- */
 function setAutoAdvance(v){
   autoPlaySubunits=!!v;
-  try{ localStorage.setItem('IIA_POD_AUTO', autoPlaySubunits?'1':'0'); }catch(e){}
+  try{ safeLocalSet('IIA_POD_AUTO', autoPlaySubunits?'1':'0'); }catch(e){}
   const msg=el('podcastMsg');
   if(msg) msg.innerHTML = autoPlaySubunits ? `Autoplay is on: the next ticked subunit starts automatically.` : `Autoplay is off: playback stops at the end of each subunit.`;
 }
 function setPodcastRate(v){
   podcastRate=Number(v)||1;
-  try{ localStorage.setItem('IIA_POD_RATE', String(podcastRate)); }catch(e){}
+  try{ safeLocalSet('IIA_POD_RATE', String(podcastRate)); }catch(e){}
   const audio=el('podcastAudio'); if(audio){ try{ audio.playbackRate=podcastRate; }catch(e){} }
 }
 function restorePodcastPrefs(){
   try{
-    const a=localStorage.getItem('IIA_POD_AUTO');
+    const a=safeLocalGet('IIA_POD_AUTO', null);
     if(a!==null){ autoPlaySubunits = a==='1'; const cb=el('autoAdvance'); if(cb) cb.checked=autoPlaySubunits; }
-    const r=Number(localStorage.getItem('IIA_POD_RATE'));
+    const r=Number(safeLocalGet('IIA_POD_RATE', null));
     if(r>0){ podcastRate=r; const sel=el('podcastRate'); if(sel) sel.value=String(r); }
   }catch(e){}
 }
@@ -782,8 +790,8 @@ function exportPodcastConfig(){
   const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='podcasts.json'; a.click(); URL.revokeObjectURL(url);
 }
 function showPanel(id){ document.querySelectorAll('.panel').forEach(p=>p.classList.add('hidden')); el(id).classList.remove('hidden'); if(el('topControls')) el('topControls').classList.toggle('hidden', id==='quiz'); if(id==='setup'){renderSelectors(); renderBlueprint(); updateModeUI(); updateTimerSuggestion();} if(id==='podcasts'){restorePodcastPrefs(); renderPodcastButtons();} }
-function login(){ if(el('passwordInput').value===PASSWORD){ sessionStorage.setItem('IIA_UNLOCK','1'); el('login').classList.add('hidden'); el('app').classList.remove('hidden'); loadBank(); } else el('loginMsg').textContent='Wrong password.'; }
-function logout(){ sessionStorage.removeItem('IIA_UNLOCK'); location.reload(); }
+function login(){ const entered=String(el('passwordInput').value||'').trim(); if(entered===PASSWORD){ el('login').classList.add('hidden'); el('app').classList.remove('hidden'); safeSessionSet('IIA_UNLOCK','1'); loadBank(); } else el('loginMsg').textContent='Wrong password. Password is: '+PASSWORD; }
+function logout(){ safeSessionRemove('IIA_UNLOCK'); location.reload(); }
 function updateModeUI(){
   const mode=el('mode').value;
   el('practiceFilters').classList.toggle('hidden', mode==='exam' || mode==='wrong');
@@ -888,7 +896,7 @@ async function importFiles(){
 function exportBank(){ const blob=new Blob([JSON.stringify(BANK,null,2)],{type:'application/json'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='questions.json'; a.click(); URL.revokeObjectURL(url); }
 function csvEscape(v){ const s=String(v??''); return /[",\n\r]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s; }
 function exportBankCsv(){ const headers=['id','type','exam_domain','unit_number','unit_title','subunit_number','subunit_title','context','question','image','option_A','option_B','option_C','option_D','correct_answer','source_file']; const rows=BANK.map(q=>[q.id,q.type,domainLabel(domainOf(q)),q.unit_number,q.unit_title,q.subunit_number,q.subunit_title,q.context,q.question,imageCsvValue(q),q.options?.A||'',q.options?.B||'',q.options?.C||'',q.options?.D||'',q.correct_answer,q.source_file||'']); const csv=[headers,...rows].map(r=>r.map(csvEscape).join(',')).join('\n'); const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='iia_part1_merged_question_bank.csv'; a.click(); URL.revokeObjectURL(url); }
-window.addEventListener('load',()=>{ if(sessionStorage.getItem('IIA_UNLOCK')==='1'){ el('login').classList.add('hidden'); el('app').classList.remove('hidden'); loadBank(); } });
+window.addEventListener('load',()=>{ const input=el('passwordInput'); if(input){ input.addEventListener('keydown', ev=>{ if(ev.key==='Enter') login(); }); } if(safeSessionGet('IIA_UNLOCK')==='1'){ el('login').classList.add('hidden'); el('app').classList.remove('hidden'); loadBank(); } });
 </script>
 </body>
 </html>
