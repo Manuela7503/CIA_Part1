@@ -291,6 +291,22 @@
         {
           "title": "8.3 Final Mixed Exam Drill / Closing",
           "file": "Podcast_Unit_08/03_Subunit_8.3_Mixed_Exam_Drill_Closing.mp3"
+        },
+        {
+          "title": "BONUS 8.4 Introduction",
+          "file": "Podcast_Unit_08/BONUS_8.4_Introduction.mp3"
+        },
+        {
+          "title": "BONUS 8.5 Overview of Control",
+          "file": "Podcast_Unit_08/BONUS_8.5_Overview_of_Control.mp3"
+        },
+        {
+          "title": "BONUS 8.6 Types of Controls",
+          "file": "Podcast_Unit_08/BONUS_8.6_Types_of_Controls.mp3"
+        },
+        {
+          "title": "BONUS 8.7 Mixed Exam Drill / Closing",
+          "file": "Podcast_Unit_08/BONUS_8.7_Mixed_Exam_Drill_Closing.mp3"
         }
       ],
       "note": "Placeholder subunit structure from the exam outline (question counts confirmed). Replace file paths with the exact GitHub names after the audio is uploaded."
